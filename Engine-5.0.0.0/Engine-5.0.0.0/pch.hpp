@@ -44,3 +44,4 @@
 #include "Logger.hpp"
 #include "Random.hpp"
 #include "TextReader.hpp"
+#include "Timer.hpp"
