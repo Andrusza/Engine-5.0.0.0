@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{26747010-8dce-4d20-94d1-4e17d4d77503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\BinaryConverter">
+      <UniqueIdentifier>{ace3e845-c9fc-4aad-859b-04ddf0d86144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\InputDevices">
+      <UniqueIdentifier>{db459c29-0906-4f76-b4eb-088d30b39b97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine-5.0.0.0.cpp">
@@ -25,6 +34,12 @@
   <ItemGroup>
     <ClInclude Include="pch.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.hpp">
+      <Filter>Header Files\Utilities\InputDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryConverter.hpp">
+      <Filter>Header Files\Utilities\InputDevices</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

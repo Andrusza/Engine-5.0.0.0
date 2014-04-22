@@ -154,3 +154,5 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+Engine-5.0.0.0/Debug/Engine-5.0.0.0.ilk
+Engine-5.0.0.0/Debug/Engine-5.0.0.0.pdb
