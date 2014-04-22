@@ -31,6 +31,9 @@
     <Filter Include="Source Files\Utilities\InputDevices">
       <UniqueIdentifier>{35f3cd8a-e5b4-478a-8272-6381d015cdbd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utilities\Logger">
+      <UniqueIdentifier>{4247afb0-586b-4e4e-b29a-684f0617af5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine-5.0.0.0.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="Mouse.cpp">
       <Filter>Source Files\Utilities\InputDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files\Utilities\Logger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,11 +1,9 @@
-
 #include "pch.hpp"
-//#include "ExternalLibraries\Visual Leak Detector\include\vld.h"
+#include "ExternalLibraries\Visual Leak Detector\include\vld.h"
 
 int main()
 {
-	Keyboard k;
-	Mouse m;
+	Logger::Write("Dadas", "dasdad");
+
 	return 0;
 }
-

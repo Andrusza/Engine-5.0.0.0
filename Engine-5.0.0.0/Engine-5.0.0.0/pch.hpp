@@ -1,5 +1,8 @@
 #pragma once
-#pragma warning(disable:4996)
+#pragma warning(disable: 4996) 
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
 
 //C++
 #include <stdio.h>
@@ -12,6 +15,7 @@
 #include <map>
 #include <sstream>
 #include <iomanip>
+
 
 //YAML
 #include "ExternalLibraries\yaml-cpp\include\yaml-cpp\yaml.h"
