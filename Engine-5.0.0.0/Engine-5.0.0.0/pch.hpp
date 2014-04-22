@@ -29,3 +29,6 @@
 #include "ExternalLibraries\glm-0.9.4.3\glm\gtc\quaternion.hpp"
 #include "ExternalLibraries\glm-0.9.4.3\glm\gtx\euler_angles.hpp"
 #include "ExternalLibraries\glm-0.9.4.3\glm\gtc\matrix_transform.hpp"
+
+//Project
+#include "BinaryConverter.hpp"

@@ -13,24 +13,5 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Utilities">
-      <UniqueIdentifier>{26747010-8dce-4d20-94d1-4e17d4d77503}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Engine-5.0.0.0.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="pch.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryConverter.hpp">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
