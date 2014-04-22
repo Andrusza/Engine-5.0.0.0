@@ -20,6 +20,7 @@
 #include "ExternalLibraries\glew-1.9.0\include\GL\glew.h"
 #include "ExternalLibraries\freeglut\include\GL\freeglut.h"
 
+
 //FreeImage
 #include "ExternalLibraries\FreeImage\FreeImage.h"
 
@@ -32,4 +33,7 @@
 
 //Project
 #include "BinaryConverter.hpp"
+#include "Keyboard.hpp"
+#include "Mouse.hpp"
 #include "Input.hpp"
+#include "Logger.hpp"

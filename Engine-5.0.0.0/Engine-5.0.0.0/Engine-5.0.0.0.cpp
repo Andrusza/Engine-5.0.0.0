@@ -1,11 +1,11 @@
 
 #include "pch.hpp"
-#include "ExternalLibraries\Visual Leak Detector\include\vld.h"
+//#include "ExternalLibraries\Visual Leak Detector\include\vld.h"
 
 int main()
 {
-	UINT test = 2;
-	BinaryConverter::CheckAt(test, 0);
+	Keyboard k;
+	Mouse m;
 	return 0;
 }
 

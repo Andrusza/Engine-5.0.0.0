@@ -22,6 +22,15 @@
     <Filter Include="Header Files\Utilities\InputDevices">
       <UniqueIdentifier>{db459c29-0906-4f76-b4eb-088d30b39b97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utilities\Logger">
+      <UniqueIdentifier>{991f824d-dda0-4da3-bcf8-f5a8c9e155e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{860ffd95-4372-4484-b27f-be3588836b8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\InputDevices">
+      <UniqueIdentifier>{35f3cd8a-e5b4-478a-8272-6381d015cdbd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine-5.0.0.0.cpp">
@@ -29,6 +38,15 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files\Utilities\InputDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\Utilities\InputDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files\Utilities\InputDevices</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -38,8 +56,17 @@
     <ClInclude Include="Input.hpp">
       <Filter>Header Files\Utilities\InputDevices</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryConverter.hpp">
+    <ClInclude Include="Keyboard.hpp">
       <Filter>Header Files\Utilities\InputDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.hpp">
+      <Filter>Header Files\Utilities\InputDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.hpp">
+      <Filter>Header Files\Utilities\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryConverter.hpp">
+      <Filter>Header Files\Utilities\BinaryConverter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
