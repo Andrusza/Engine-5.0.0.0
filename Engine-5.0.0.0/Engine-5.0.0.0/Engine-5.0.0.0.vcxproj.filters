@@ -40,6 +40,12 @@
     <Filter Include="Source Files\Utilities\Random">
       <UniqueIdentifier>{cc55c478-65f2-4406-8e71-f2819688802a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utilities\TextReader">
+      <UniqueIdentifier>{ceca9f50-cf0b-4d07-9b90-83bdd4092e40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\TextReader">
+      <UniqueIdentifier>{66a349e5-fa9e-4c66-b43e-3ea47f9d5a03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine-5.0.0.0.cpp">
@@ -63,6 +69,9 @@
     <ClCompile Include="Random.cpp">
       <Filter>Source Files\Utilities\Random</Filter>
     </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Source Files\Utilities\TextReader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.hpp">
@@ -85,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="Random.hpp">
       <Filter>Header Files\Utilities\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="TextReader.hpp">
+      <Filter>Header Files\Utilities\TextReader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

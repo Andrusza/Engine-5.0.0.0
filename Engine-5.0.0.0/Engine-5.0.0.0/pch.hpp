@@ -15,6 +15,7 @@
 #include <map>
 #include <sstream>
 #include <iomanip>
+#include <exception>
 
 
 //YAML
@@ -42,3 +43,4 @@
 #include "Input.hpp"
 #include "Logger.hpp"
 #include "Random.hpp"
+#include "TextReader.hpp"

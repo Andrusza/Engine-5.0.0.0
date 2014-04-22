@@ -3,11 +3,6 @@
 
 int main()
 {
-	Random rng(2);
-	for (int i = 0; i < 100; i++)
-	{
-		int x = rng.NextInt();
-		std::cout << x <<std::endl;
-	}
+	pString test = TextFile::Read("error.log");
 	return 0;
 }
