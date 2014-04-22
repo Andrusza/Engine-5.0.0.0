@@ -26,7 +26,7 @@ public:
 		return delta;
 	}
 
-	inline const float& GetDuration() const
+	inline const float GetDuration() const
 	{
 		return duration;
 	}

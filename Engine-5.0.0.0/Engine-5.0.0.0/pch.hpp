@@ -1,8 +1,4 @@
 #pragma once
-#pragma warning(disable: 4996) 
-#ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS
-#endif
 
 //C++
 #include <stdio.h>
