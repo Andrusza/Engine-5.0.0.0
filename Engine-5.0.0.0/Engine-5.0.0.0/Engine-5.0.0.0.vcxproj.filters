@@ -34,6 +34,12 @@
     <Filter Include="Source Files\Utilities\Logger">
       <UniqueIdentifier>{4247afb0-586b-4e4e-b29a-684f0617af5a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utilities\Random">
+      <UniqueIdentifier>{d4b4a6a2-3bc8-41b7-b14e-2741a5ac3f3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\Random">
+      <UniqueIdentifier>{cc55c478-65f2-4406-8e71-f2819688802a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine-5.0.0.0.cpp">
@@ -54,6 +60,9 @@
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files\Utilities\Logger</Filter>
     </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Source Files\Utilities\Random</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.hpp">
@@ -73,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="BinaryConverter.hpp">
       <Filter>Header Files\Utilities\BinaryConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.hpp">
+      <Filter>Header Files\Utilities\Random</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

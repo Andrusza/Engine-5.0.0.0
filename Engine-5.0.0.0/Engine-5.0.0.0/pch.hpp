@@ -41,3 +41,4 @@
 #include "Mouse.hpp"
 #include "Input.hpp"
 #include "Logger.hpp"
+#include "Random.hpp"
