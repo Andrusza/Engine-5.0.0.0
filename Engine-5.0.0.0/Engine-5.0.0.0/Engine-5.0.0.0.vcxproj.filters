@@ -98,6 +98,9 @@
     <ClCompile Include="ColorMask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Blending.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.hpp">
@@ -140,6 +143,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ColorMask.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Blending.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

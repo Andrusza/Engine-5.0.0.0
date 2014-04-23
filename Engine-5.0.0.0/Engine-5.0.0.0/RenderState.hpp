@@ -1,34 +1,40 @@
 #pragma once
+#include "ColorMask.hpp"
 
-enum class ProgramPointSize
+namespace Engine
 {
-	Enabled,
-	Disabled
-};
+	enum class ProgramPointSize
+	{
+		Enabled,
+		Disabled
+	};
 
-enum class RasterizationMode
-{
-	Point,
-	Line,
-	Fill
-};
+	enum class RasterizationMode
+	{
+		Point,
+		Line,
+		Fill
+	};
 
-class RenderState
-{
-private:
-	bool depthMask;
-	ColorMask colorMask;
+	class RenderState
+	{
+	private:
+		bool depthMask;
+		ColorMask colorMask;
 
-public:
-	inline const bool DepthMask() const { return depthMask; }
-	void depthMask(const bool& value) { depthMask = value; }
-	
+	public:
+		inline const bool DepthMask() const { return depthMask; }
+		void DepthMask(const bool& value) { depthMask = value; }
+
+		inline const ColorMask ColorMask() const { return colorMask; }
+		void ColorMask(const Engine::ColorMask& value) { colorMask = value; }
 
 
-	RenderState();
-	RenderState(const RenderState &) = delete;
-	RenderState & operator=(const RenderState &) = delete;
-	RenderState(RenderState  && rhs) = delete;
-	RenderState & operator=(RenderState && rhs) = delete;
-	~RenderState() = default;
-};
+		RenderState();
+		RenderState(const RenderState &) = delete;
+		RenderState & operator=(const RenderState &) = delete;
+		RenderState(RenderState  && rhs) = delete;
+		RenderState & operator=(RenderState && rhs) = delete;
+		~RenderState() = default;
+	};
+}

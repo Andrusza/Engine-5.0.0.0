@@ -83,6 +83,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BinaryConverter.hpp" />
+    <ClInclude Include="Blending.hpp" />
     <ClInclude Include="ColorMask.hpp" />
     <ClInclude Include="Device.hpp" />
     <ClInclude Include="Input.hpp" />
@@ -98,6 +99,7 @@
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Blending.cpp" />
     <ClCompile Include="ColorMask.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="Engine-5.0.0.0.cpp" />
