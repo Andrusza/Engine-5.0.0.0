@@ -28,5 +28,6 @@ pString TextFile::Read(const char *fileName)
 	catch (std::exception& e)
 	{
 		Logger::Write("TextFile::Read", e.what());
+		return nullptr;
 	}
 }

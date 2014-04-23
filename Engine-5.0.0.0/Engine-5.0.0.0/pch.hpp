@@ -1,5 +1,4 @@
 #pragma once
-#pragma warning(disable:4996)
 
 //C++
 #include <stdio.h>
@@ -12,6 +11,8 @@
 #include <map>
 #include <sstream>
 #include <iomanip>
+#include <exception>
+
 
 //YAML
 #include "ExternalLibraries\yaml-cpp\include\yaml-cpp\yaml.h"
@@ -19,6 +20,7 @@
 //OpenGL
 #include "ExternalLibraries\glew-1.9.0\include\GL\glew.h"
 #include "ExternalLibraries\freeglut\include\GL\freeglut.h"
+
 
 //FreeImage
 #include "ExternalLibraries\FreeImage\FreeImage.h"
@@ -32,3 +34,11 @@
 
 //Project
 #include "BinaryConverter.hpp"
+#include "Keyboard.hpp"
+#include "Mouse.hpp"
+#include "Input.hpp"
+#include "Logger.hpp"
+#include "Random.hpp"
+#include "TextReader.hpp"
+#include "Timer.hpp"
+#include "Device.hpp"

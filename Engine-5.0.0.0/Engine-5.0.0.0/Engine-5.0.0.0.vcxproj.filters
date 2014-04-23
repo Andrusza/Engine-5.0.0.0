@@ -16,6 +16,42 @@
     <Filter Include="Header Files\Utilities">
       <UniqueIdentifier>{26747010-8dce-4d20-94d1-4e17d4d77503}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utilities\BinaryConverter">
+      <UniqueIdentifier>{ace3e845-c9fc-4aad-859b-04ddf0d86144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\InputDevices">
+      <UniqueIdentifier>{db459c29-0906-4f76-b4eb-088d30b39b97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\Logger">
+      <UniqueIdentifier>{991f824d-dda0-4da3-bcf8-f5a8c9e155e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{860ffd95-4372-4484-b27f-be3588836b8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\InputDevices">
+      <UniqueIdentifier>{35f3cd8a-e5b4-478a-8272-6381d015cdbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\Logger">
+      <UniqueIdentifier>{4247afb0-586b-4e4e-b29a-684f0617af5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\Random">
+      <UniqueIdentifier>{d4b4a6a2-3bc8-41b7-b14e-2741a5ac3f3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\Random">
+      <UniqueIdentifier>{cc55c478-65f2-4406-8e71-f2819688802a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\TextReader">
+      <UniqueIdentifier>{ceca9f50-cf0b-4d07-9b90-83bdd4092e40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\TextReader">
+      <UniqueIdentifier>{66a349e5-fa9e-4c66-b43e-3ea47f9d5a03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\Timer">
+      <UniqueIdentifier>{540a23d3-b98a-4e03-b7f3-49c322995079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\Timer">
+      <UniqueIdentifier>{0b0301d7-f5d4-4e9a-bda1-693079d4fa2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine-5.0.0.0.cpp">
@@ -24,13 +60,69 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files\Utilities\InputDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\Utilities\InputDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files\Utilities\InputDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files\Utilities\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Source Files\Utilities\Random</Filter>
+    </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Source Files\Utilities\TextReader</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files\Utilities\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryConverter.hpp">
-      <Filter>Header Files\Utilities</Filter>
+    <ClInclude Include="Input.hpp">
+      <Filter>Header Files\Utilities\InputDevices</Filter>
     </ClInclude>
+    <ClInclude Include="Keyboard.hpp">
+      <Filter>Header Files\Utilities\InputDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.hpp">
+      <Filter>Header Files\Utilities\InputDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.hpp">
+      <Filter>Header Files\Utilities\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryConverter.hpp">
+      <Filter>Header Files\Utilities\BinaryConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.hpp">
+      <Filter>Header Files\Utilities\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="TextReader.hpp">
+      <Filter>Header Files\Utilities\TextReader</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.hpp">
+      <Filter>Header Files\Utilities\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Engine-5.0.0.0.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
