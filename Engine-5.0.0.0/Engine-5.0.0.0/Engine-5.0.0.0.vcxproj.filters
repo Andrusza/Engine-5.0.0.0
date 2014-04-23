@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\Utilities">
       <UniqueIdentifier>{26747010-8dce-4d20-94d1-4e17d4d77503}</UniqueIdentifier>
     </Filter>
@@ -52,6 +48,12 @@
     <Filter Include="Source Files\Utilities\Timer">
       <UniqueIdentifier>{0b0301d7-f5d4-4e9a-bda1-693079d4fa2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Window">
+      <UniqueIdentifier>{1a26816d-c438-4b8e-b8a6-aed6c1448f3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Window">
+      <UniqueIdentifier>{d637e5da-bb46-4701-abab-421589887544}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine-5.0.0.0.cpp">
@@ -84,6 +86,12 @@
     <ClCompile Include="Device.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderEvents.cpp">
+      <Filter>Source Files\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.hpp">
@@ -113,16 +121,14 @@
     <ClInclude Include="Timer.hpp">
       <Filter>Header Files\Utilities\Timer</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Device.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Engine-5.0.0.0.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <ClInclude Include="Window.hpp">
+      <Filter>Header Files\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderEvents.hpp">
+      <Filter>Header Files\Window</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

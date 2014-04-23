@@ -34,7 +34,7 @@ struct SomeData
 	}
 };
 
-int main()
+int main(int argc, char* argv[])
 {
 	{
 		std::ofstream os("out.cereal", std::ios::binary);
@@ -65,6 +65,10 @@ int main()
 	std::cout << myData.data[0].x << " " << myData.data[0].z;
 	myData.data[0].x;
 }
+	glutInit(&argc, argv);
+	WindowGL(400, 400, "derp", WindowType::Windowed);
+
+	glutMainLoop();
 
 	return 0;
 }

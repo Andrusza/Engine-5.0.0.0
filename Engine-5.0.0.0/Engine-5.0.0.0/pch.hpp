@@ -42,3 +42,5 @@
 #include "TextReader.hpp"
 #include "Timer.hpp"
 #include "Device.hpp"
+#include "RenderEvents.hpp"
+#include "Window.hpp"
