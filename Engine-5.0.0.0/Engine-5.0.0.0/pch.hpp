@@ -44,3 +44,6 @@
 #include "Device.hpp"
 #include "RenderEvents.hpp"
 #include "Window.hpp"
+#include "RenderState.hpp"
+#include "ColorMask.hpp"
+

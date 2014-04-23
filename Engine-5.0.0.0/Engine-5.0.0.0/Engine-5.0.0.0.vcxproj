@@ -83,6 +83,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BinaryConverter.hpp" />
+    <ClInclude Include="ColorMask.hpp" />
     <ClInclude Include="Device.hpp" />
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Keyboard.hpp" />
@@ -91,11 +92,13 @@
     <ClInclude Include="pch.hpp" />
     <ClInclude Include="Random.hpp" />
     <ClInclude Include="RenderEvents.hpp" />
+    <ClInclude Include="RenderState.hpp" />
     <ClInclude Include="TextReader.hpp" />
     <ClInclude Include="Timer.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ColorMask.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="Engine-5.0.0.0.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -108,6 +111,7 @@
     </ClCompile>
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="RenderEvents.cpp" />
+    <ClCompile Include="RenderState.cpp" />
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Window.cpp" />

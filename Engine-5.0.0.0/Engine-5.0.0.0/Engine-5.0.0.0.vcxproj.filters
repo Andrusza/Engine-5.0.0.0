@@ -92,6 +92,12 @@
     <ClCompile Include="RenderEvents.cpp">
       <Filter>Source Files\Window</Filter>
     </ClCompile>
+    <ClCompile Include="RenderState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorMask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.hpp">
@@ -129,6 +135,12 @@
     </ClInclude>
     <ClInclude Include="RenderEvents.hpp">
       <Filter>Header Files\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorMask.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
