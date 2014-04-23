@@ -25,7 +25,7 @@ namespace Engine
 
 		ColorMask(bool red, bool green, bool blue, bool alfa);
 
-		ColorMask() = delete;
+		ColorMask() = default;
 		ColorMask(const ColorMask &) = default;
 		ColorMask & operator=(const ColorMask &) = default;
 		ColorMask(ColorMask  && rhs) = delete;

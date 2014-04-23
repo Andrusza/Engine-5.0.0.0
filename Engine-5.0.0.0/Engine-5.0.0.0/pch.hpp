@@ -46,6 +46,8 @@
 #include "Window.hpp"
 #include "RenderState.hpp"
 #include "ColorMask.hpp"
+#include "Blending.hpp"
+#include "RenderState.hpp"
 
 
 
