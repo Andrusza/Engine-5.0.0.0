@@ -14,13 +14,9 @@
 #include <exception>
 
 
-//YAML
-#include "ExternalLibraries\yaml-cpp\include\yaml-cpp\yaml.h"
-
 //OpenGL
 #include "ExternalLibraries\glew-1.9.0\include\GL\glew.h"
 #include "ExternalLibraries\freeglut\include\GL\freeglut.h"
-
 
 //FreeImage
 #include "ExternalLibraries\FreeImage\FreeImage.h"
