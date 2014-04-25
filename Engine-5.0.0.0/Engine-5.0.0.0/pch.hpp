@@ -14,13 +14,9 @@
 #include <exception>
 
 
-//YAML
-#include "ExternalLibraries\yaml-cpp\include\yaml-cpp\yaml.h"
-
 //OpenGL
 #include "ExternalLibraries\glew-1.9.0\include\GL\glew.h"
 #include "ExternalLibraries\freeglut\include\GL\freeglut.h"
-
 
 //FreeImage
 #include "ExternalLibraries\FreeImage\FreeImage.h"
@@ -44,3 +40,10 @@
 #include "Device.hpp"
 #include "RenderEvents.hpp"
 #include "Window.hpp"
+#include "RenderState.hpp"
+#include "ColorMask.hpp"
+#include "Blending.hpp"
+#include "RenderState.hpp"
+
+
+

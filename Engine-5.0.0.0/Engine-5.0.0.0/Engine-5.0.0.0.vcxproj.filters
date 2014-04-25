@@ -54,6 +54,12 @@
     <Filter Include="Source Files\Window">
       <UniqueIdentifier>{d637e5da-bb46-4701-abab-421589887544}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\RenderState">
+      <UniqueIdentifier>{26cad785-fb04-4848-8253-7e73c8ffbbb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RenderState">
+      <UniqueIdentifier>{3f0a9ee1-631e-4cc3-9a81-0229daa3c142}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine-5.0.0.0.cpp">
@@ -92,6 +98,33 @@
     <ClCompile Include="RenderEvents.cpp">
       <Filter>Source Files\Window</Filter>
     </ClCompile>
+    <ClCompile Include="Blending.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorMask.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthRange.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthTest.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="FacetCulling.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimitiveRestart.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="ScissorTest.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="StencilTest.cpp">
+      <Filter>Source Files\RenderState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.hpp">
@@ -129,6 +162,33 @@
     </ClInclude>
     <ClInclude Include="RenderEvents.hpp">
       <Filter>Header Files\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Blending.hpp">
+      <Filter>Header Files\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorMask.hpp">
+      <Filter>Header Files\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthRange.hpp">
+      <Filter>Header Files\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthTest.hpp">
+      <Filter>Header Files\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="FacetCulling.hpp">
+      <Filter>Header Files\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveRestart.hpp">
+      <Filter>Header Files\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState.hpp">
+      <Filter>Header Files\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="ScissorTest.hpp">
+      <Filter>Header Files\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="StencilTest.hpp">
+      <Filter>Header Files\RenderState</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

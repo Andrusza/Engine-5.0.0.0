@@ -83,21 +83,35 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BinaryConverter.hpp" />
+    <ClInclude Include="Blending.hpp" />
+    <ClInclude Include="ColorMask.hpp" />
+    <ClInclude Include="DepthRange.hpp" />
+    <ClInclude Include="DepthTest.hpp" />
     <ClInclude Include="Device.hpp" />
+    <ClInclude Include="FacetCulling.hpp" />
     <ClInclude Include="Input.hpp" />
     <ClInclude Include="Keyboard.hpp" />
     <ClInclude Include="Logger.hpp" />
     <ClInclude Include="Mouse.hpp" />
     <ClInclude Include="pch.hpp" />
+    <ClInclude Include="PrimitiveRestart.hpp" />
     <ClInclude Include="Random.hpp" />
     <ClInclude Include="RenderEvents.hpp" />
+    <ClInclude Include="RenderState.hpp" />
+    <ClInclude Include="ScissorTest.hpp" />
+    <ClInclude Include="StencilTest.hpp" />
     <ClInclude Include="TextReader.hpp" />
     <ClInclude Include="Timer.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Blending.cpp" />
+    <ClCompile Include="ColorMask.cpp" />
+    <ClCompile Include="DepthRange.cpp" />
+    <ClCompile Include="DepthTest.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="Engine-5.0.0.0.cpp" />
+    <ClCompile Include="FacetCulling.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Logger.cpp" />
@@ -106,8 +120,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PrimitiveRestart.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="RenderEvents.cpp" />
+    <ClCompile Include="RenderState.cpp" />
+    <ClCompile Include="ScissorTest.cpp" />
+    <ClCompile Include="StencilTest.cpp" />
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Window.cpp" />
