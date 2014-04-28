@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region License
+//
+// (C) Copyright 2010 Patrick Cozzi and Kevin Ring
+//
+// Distributed under the MIT License.
+// See License.txt or http://www.opensource.org/licenses/mit-license.php.
+//
+#endregion
 
-namespace Renderer.Textures
+namespace Engine.Renderer
 {
     public enum ImageFormat
     {

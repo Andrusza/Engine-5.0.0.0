@@ -7,7 +7,7 @@
 //
 #endregion
 
-namespace Engine.Renderer.Buffers
+namespace Engine.Renderer
 {
     public enum PixelBufferHint
     {

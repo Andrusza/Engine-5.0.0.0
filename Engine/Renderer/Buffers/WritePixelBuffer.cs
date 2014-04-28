@@ -12,7 +12,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using Engine.Core;
 
-namespace Engine.Renderer.Buffers
+namespace Engine.Renderer
 {
     public abstract class WritePixelBuffer : Disposable
     {

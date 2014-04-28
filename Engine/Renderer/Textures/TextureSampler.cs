@@ -9,7 +9,7 @@
 
 using Engine.Core;
 
-namespace Engine.Renderer.Textures
+namespace Engine.Renderer
 {
     public abstract class TextureSampler : Disposable
     {

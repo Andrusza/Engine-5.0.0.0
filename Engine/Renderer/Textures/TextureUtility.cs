@@ -8,10 +8,10 @@
 #endregion
 
 using System;
+using Engine.Core;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
-using Renderer.Textures;
 
-namespace Engine.Renderer.Textures
+namespace Engine.Renderer
 {
     internal static class TextureUtility
     {

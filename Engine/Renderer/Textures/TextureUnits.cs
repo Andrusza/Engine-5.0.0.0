@@ -9,7 +9,7 @@
 
 using System.Collections;
 
-namespace Engine.Renderer.Textures
+namespace Engine.Renderer
 {
     public abstract class TextureUnits
     {

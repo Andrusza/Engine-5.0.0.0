@@ -17,7 +17,6 @@ namespace Engine.Renderer
         public event EventHandler<MouseButtonEventArgs> ButtonDown;
         public event EventHandler<MouseButtonEventArgs> ButtonUp;
         public event EventHandler<MouseMoveEventArgs> Move;
-        public event EventHandler<MouseWheelEventArgs> Wheel;
 
         protected virtual void OnButtonDown(Point point, MouseButton button)
         {
@@ -43,15 +42,6 @@ namespace Engine.Renderer
             if (handler != null)
             {
                 handler(this, new MouseMoveEventArgs(point));
-            }
-        }
-
-        protected virtual void OnWheel(int direction)
-        {
-            EventHandler<MouseWheelEventArgs> handler = Wheel;
-            if(handler != null)
-            {
-                handler(this, new MouseWheelEventArgs(direction));
             }
         }
     }

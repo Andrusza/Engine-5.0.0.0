@@ -7,7 +7,7 @@
 //
 #endregion
 
-namespace Engine.Renderer.Textures
+namespace Engine.Renderer
 {
     public enum TextureWrap
     {

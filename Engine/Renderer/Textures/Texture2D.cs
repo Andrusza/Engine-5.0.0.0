@@ -1,22 +1,19 @@
 ﻿#region License
-
 //
 // (C) Copyright 2009 Patrick Cozzi and Deron Ohlarik
 //
 // Distributed under the MIT License.
 // See License.txt or http://www.opensource.org/licenses/mit-license.php.
 //
+#endregion
 
-#endregion License
-
-using Engine.Core;
-using Engine.Renderer.Buffers;
-using Renderer.Textures;
 using System;
-using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Diagnostics;
+using Engine.Core;
 
-namespace Engine.Renderer.Textures
+namespace Engine.Renderer
 {
     public abstract class Texture2D : Disposable
     {
@@ -51,9 +48,9 @@ namespace Engine.Renderer.Textures
         {
             return CopyToBuffer(format, dataType, 4);
         }
-
+        
         public abstract ReadPixelBuffer CopyToBuffer(
-            ImageFormat format,
+            ImageFormat format, 
             ImageDatatype dataType,
             int rowAlignment);
 
@@ -89,7 +86,7 @@ namespace Engine.Renderer.Textures
             //
             using (ReadPixelBuffer pixelBuffer = CopyToBuffer(ImageFormat.BlueGreenRed, ImageDatatype.UnsignedByte, 4))
             {
-                Bitmap bitmap = pixelBuffer.CopyToBitmap(Description.Width, Description.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                Bitmap bitmap = pixelBuffer.CopyToBitmap(Description.Width, Description.Height, PixelFormat.Format24bppRgb);
                 bitmap.Save(filename);
             }
         }
@@ -124,7 +121,7 @@ namespace Engine.Renderer.Textures
                 //
                 float oneOverDelta = (deltaValue > 0) ? (1 / deltaValue) : 1;
 
-                Bitmap bitmap = new Bitmap(Description.Width, Description.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                Bitmap bitmap = new Bitmap(Description.Width, Description.Height, PixelFormat.Format24bppRgb);
                 int j = 0;
                 for (int y = Description.Height - 1; y >= 0; --y)
                 {

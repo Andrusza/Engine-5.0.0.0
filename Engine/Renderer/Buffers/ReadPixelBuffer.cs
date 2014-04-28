@@ -12,7 +12,7 @@ using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using Engine.Core;
 
-namespace Engine.Renderer.Buffers
+namespace Engine.Renderer
 {
     public abstract class ReadPixelBuffer : Disposable
     {
@@ -23,7 +23,7 @@ namespace Engine.Renderer.Buffers
 
         public virtual void CopyFromSystemMemory<T>(T[] bufferInSystemMemory, int destinationOffsetInBytes) where T : struct
         {
-            //CopyFromSystemMemory<T>(bufferInSystemMemory, destinationOffsetInBytes, ArraySizeInBytes.Size(bufferInSystemMemory));
+            CopyFromSystemMemory<T>(bufferInSystemMemory, destinationOffsetInBytes, ArraySizeInBytes.Size(bufferInSystemMemory));
         }
 
         public abstract void CopyFromSystemMemory<T>(
