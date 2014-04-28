@@ -51,6 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="Input\KeyboardKey.cs" />
+    <Compile Include="Input\KeyboardKeyEvent.cs" />
+    <Compile Include="Input\KeyboardKeyEventArgs.cs" />
+    <Compile Include="Input\Mouse.cs" />
+    <Compile Include="Input\MouseButton.cs" />
+    <Compile Include="Input\MouseButtonEvent.cs" />
+    <Compile Include="Input\MouseButtonEventArgs.cs" />
+    <Compile Include="Input\MouseMoveEventArgs.cs" />
+    <Compile Include="Input\MouseWheelEventArgs.cs" />
     <Compile Include="RenderState\Blending.cs" />
     <Compile Include="RenderState\ColorMask.cs" />
     <Compile Include="RenderState\DepthRange.cs" />
