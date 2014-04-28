@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     public abstract class Disposable : IDisposable
     {

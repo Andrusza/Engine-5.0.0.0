@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,11 +51,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RenderState\Blending.cs" />
+    <Compile Include="RenderState\ColorMask.cs" />
+    <Compile Include="RenderState\DepthRange.cs" />
+    <Compile Include="RenderState\DepthTest.cs" />
+    <Compile Include="RenderState\FacetCulling.cs" />
+    <Compile Include="RenderState\PrimitiveRestart.cs" />
+    <Compile Include="RenderState\RenderState.cs" />
+    <Compile Include="RenderState\ScissorTest.cs" />
+    <Compile Include="RenderState\StencilTest.cs" />
+    <Compile Include="RenderState\StencilTestFace.cs" />
+    <Compile Include="Textures\BlittableBGRA.cs" />
+    <Compile Include="Textures\BlittableRGBA.cs" />
+    <Compile Include="GameWindow.cs" />
+    <Compile Include="GL4x\FinalizerThreadContextGL.cs" />
+    <Compile Include="GL4x\GameWindowGL.cs" />
+    <Compile Include="Textures\ImageFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Textures\ImageDatatype.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{a409631e-b8eb-4f37-a051-3c3de5a4c33e}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
