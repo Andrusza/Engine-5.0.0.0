@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Diagnostics;
 using Engine.Core;
-using Engine.Renderer.GL3x;
 using OpenTK.Graphics.OpenGL;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 

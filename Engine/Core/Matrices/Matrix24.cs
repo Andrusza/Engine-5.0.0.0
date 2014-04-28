@@ -11,7 +11,7 @@ using System;
 using System.Globalization;
 using System.Runtime.InteropServices;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     /// <summary>
     /// 2x4 matrix - 2 columns and 4 rows.

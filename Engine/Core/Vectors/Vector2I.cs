@@ -11,7 +11,7 @@ using System;
 using System.Globalization;
 using System.Runtime.InteropServices;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     /// <summary>
     /// A set of 2-dimensional cartesian coordinates where the two components,

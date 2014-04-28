@@ -7,7 +7,7 @@
 //
 #endregion
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     public enum IndicesType
     {

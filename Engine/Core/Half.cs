@@ -66,7 +66,7 @@
 using System;
 using System.Globalization;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     /// <summary>
     /// A half-precision (16-bit) floating-point number.  This format has

@@ -139,9 +139,9 @@ namespace Engine.Renderer
                 Convert.ToDouble(up[2], CultureInfo.InvariantCulture));
         }
 
-        public double Height(Ellipsoid shape)
-        {
-            return shape.ToGeodetic3D(Eye).Height;
-        }
+        //public double Height(Ellipsoid shape)
+        //{
+        //    return shape.ToGeodetic3D(Eye).Height;
+        //}
     }
 }

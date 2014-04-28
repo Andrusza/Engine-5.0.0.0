@@ -7,7 +7,7 @@
 //
 #endregion
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     public class VertexAttributeFloatVector3 : VertexAttribute<Vector3F>
     {

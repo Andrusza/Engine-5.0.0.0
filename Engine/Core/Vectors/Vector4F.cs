@@ -13,7 +13,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Globalization;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     /// <summary>
     /// A set of 4-dimensional cartesian coordinates where the four components,

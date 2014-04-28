@@ -1,13 +1,9 @@
-﻿using OpenTK;
+﻿using Engine.Renderer;
+using OpenTK;
 using OpenTK.Graphics;
-using OpenTK.Graphics.OpenGL4;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Renderer.GL4x
+namespace Renderer.Renderer
 {
     internal class GraphicsWindowGL : GraphicsWindow
     {
@@ -23,36 +19,27 @@ namespace Renderer.GL4x
                 throw new ArgumentOutOfRangeException("height", "Height must be greater than or equal to zero.");
             }
 
-            if (windowType == GameWindowFlags.Fullscreen)
+            GameWindowFlags gameWindowFlags = (windowType == WindowType.Default) ? GameWindowFlags.Default : GameWindowFlags.Fullscreen;
+            if (windowType == WindowType.FullScreen)
             {
                 width = DisplayDevice.Default.Width;
                 height = DisplayDevice.Default.Height;
             }
 
-            _gameWindow = new GameWindow
-                        (
-                              width,
-                              height,
-                              new GraphicsMode(24, 24, 8),
-                              title,
-                              windowType,
-                              DisplayDevice.Default,
-                              4,
-                              4,
-                              GraphicsContextFlags.ForwardCompatible | GraphicsContextFlags.Debug
-                         );
+            _gameWindow = new GameWindow(width, height, new GraphicsMode(24, 24, 8), title, gameWindowFlags,
+                DisplayDevice.Default, 3, 3, GraphicsContextFlags.ForwardCompatible | GraphicsContextFlags.Debug);
 
-            FinalizerThreadContextGL.Initialize();
+            FinalizerThreadContextGL3x.Initialize();
             _gameWindow.MakeCurrent();
 
             _gameWindow.Resize += new EventHandler<EventArgs>(this.OnResize);
             _gameWindow.UpdateFrame += new EventHandler<FrameEventArgs>(this.OnUpdateFrame);
             _gameWindow.RenderFrame += new EventHandler<FrameEventArgs>(this.OnRenderFrame);
-        }
 
-        protected override void ReleaseManagedResources()
-        {
-            _gameWindow.Dispose();
+            _context = new ContextGL3x(_gameWindow, width, height);
+
+            _mouse = new MouseGL3x(_gameWindow.Mouse);
+            _keyboard = new KeyboardGL3x(_gameWindow.Keyboard);
         }
 
         private void OnResize<T>(object sender, T e)
@@ -73,9 +60,16 @@ namespace Renderer.GL4x
             _gameWindow.SwapBuffers();
         }
 
+        #region GraphicsWindow Members
+
         public override void Run(double updateRate)
         {
             _gameWindow.Run(updateRate);
+        }
+
+        public override Context Context
+        {
+            get { return _context; }
         }
 
         public override int Width
@@ -88,6 +82,34 @@ namespace Renderer.GL4x
             get { return _gameWindow.Height; }
         }
 
+        public override Mouse Mouse
+        {
+            get { return _mouse; }
+        }
+
+        public override Keyboard Keyboard
+        {
+            get { return _keyboard; }
+        }
+
+        #endregion
+
+        #region Disposable Members
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _gameWindow.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
         private GameWindow _gameWindow;
+        private ContextGL3x _context;
+        private MouseGL3x _mouse;
+        private KeyboardGL3x _keyboard;
     }
 }

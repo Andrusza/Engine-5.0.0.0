@@ -7,10 +7,11 @@
 //
 #endregion
 
+using Engine.Core;
 using System;
 using System.Globalization;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     public struct RectangleD : IEquatable<RectangleD>
     {

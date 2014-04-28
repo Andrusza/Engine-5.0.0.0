@@ -7,9 +7,10 @@
 //
 #endregion
 
+using Engine.Core;
 using System.Collections.Generic;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     public enum PrimitiveType
     {

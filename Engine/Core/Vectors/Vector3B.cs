@@ -11,7 +11,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Globalization;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     /// <summary>
     /// A set of three booleans.

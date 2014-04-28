@@ -10,7 +10,7 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace OpenGlobe.Core
+namespace Engine.Core
 {
     public enum ImageRowOrder
     {
