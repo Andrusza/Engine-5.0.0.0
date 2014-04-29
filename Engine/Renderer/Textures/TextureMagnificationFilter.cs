@@ -9,7 +9,7 @@
 
 namespace OpenGlobe.Renderer
 {
-    public enum TextureMagnificationFilter
+    public enum TextureMagFilter
     {
         Nearest,
         Linear

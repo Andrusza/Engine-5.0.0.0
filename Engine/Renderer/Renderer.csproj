@@ -62,7 +62,16 @@
     <Compile Include="Buffers\VertexBuffer.cs" />
     <Compile Include="Buffers\WritePixelBuffer.cs" />
     <Compile Include="ClearState.cs" />
+    <Compile Include="Context.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CouldNotCreateVideoCardResourceException.cs" />
+    <Compile Include="Device.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DrawState.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Extensions.cs" />
     <Compile Include="Framebuffer\ColorAttachments.cs" />
     <Compile Include="Framebuffer\Framebuffer.cs" />
@@ -78,6 +87,7 @@
     <Compile Include="GL3x\Buffers\VertexBufferGL3x.cs" />
     <Compile Include="GL3x\Buffers\WritePixelBufferGL3x.cs" />
     <Compile Include="GL3x\ExtensionsGL3x.cs" />
+    <Compile Include="GL3x\Framebuffer\ColorAttachmentsGL3x.cs" />
     <Compile Include="GL3x\ICleanable.cs" />
     <Compile Include="GL3x\ICleanableObserver.cs" />
     <Compile Include="GL3x\Input\KeyboardGL3x.cs" />
@@ -112,7 +122,10 @@
     <Compile Include="GL3x\Shaders\UniformIntVector2GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformIntVector3GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformIntVector4GL3x.cs" />
-    <Compile Include="GL3x\TypeConverterGL3x.cs" />
+    <Compile Include="GL3x\Textures\TextureSamplerGL3x.cs" />
+    <Compile Include="GraphicsWindow.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Infrastructure\EmbeddedResources.cs" />
     <Compile Include="Input\Keyboard.cs" />
     <Compile Include="Input\KeyboardKey.cs" />
@@ -124,6 +137,10 @@
     <Compile Include="Input\MouseButtonEventArgs.cs" />
     <Compile Include="Input\MouseMoveEventArgs.cs" />
     <Compile Include="InsufficientVideoCardException.cs" />
+    <Compile Include="Mesh\MeshBuffers.cs" />
+    <Compile Include="Mesh\MeshVertexBufferAttributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderState\Blending.cs" />
     <Compile Include="RenderState\ColorMask.cs" />
@@ -141,7 +158,178 @@
     <Compile Include="RenderState\StencilTestFace.cs" />
     <Compile Include="Scene\Camera.cs" />
     <Compile Include="Scene\SceneState.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeHighUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeHighUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeLowUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeLowUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraLightPositionUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraLightPositionUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\DrawAutomaticUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\DrawAutomaticUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\DrawAutomaticUniformFactoryCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\HighResolutionSnapScaleUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\HighResolutionSnapScaleUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\InverseViewportDimensionsUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\InverseViewportDimensionsUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\LightPropertiesUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\LightPropertiesUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewMatrixRelativeToEyeUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewMatrixRelativeToEyeUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewOrthographicMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewOrthographicMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewPerspectiveMatrixRelativeToEyeUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewPerspectiveMatrixRelativeToEyeUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewPerspectiveMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewPerspectiveMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelZToClipCoordinatesUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelZToClipCoordinatesUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\OrthographicMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\OrthographicMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveFarPlaneDistanceUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveFarPlaneDistanceUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveNearPlaneDistanceUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveNearPlaneDistanceUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\PixelSizePerDistanceUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\PixelSizePerDistanceUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\SunPositionUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\SunPositionUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportOrthographicMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportOrthographicMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportTransformationMatrixUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportTransformationMatrixUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\Wgs84HeightUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\Wgs84HeightUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\WindowToWorldNearPlaneUniform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shaders\DrawAutomaticUniforms\WindowToWorldNearPlaneUniformFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Shaders\FragmentOutputs.cs" />
+    <Compile Include="Shaders\LinkAutomaticUniforms\LinkAutomaticUniform.cs" />
+    <Compile Include="Shaders\LinkAutomaticUniforms\LinkAutomaticUniformCollection.cs" />
+    <Compile Include="Shaders\LinkAutomaticUniforms\TextureUniform.cs" />
+    <Compile Include="Shaders\ShaderProgram.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Shaders\ShaderVertexAttribute.cs" />
     <Compile Include="Shaders\Uniform.cs" />
     <Compile Include="Shaders\UniformBlock.cs" />
@@ -153,7 +341,9 @@
     <Compile Include="Shaders\UniformBlockMemberCollection.cs" />
     <Compile Include="Shaders\UniformCollection.cs" />
     <Compile Include="ShaderVertexAttributeCollection.cs" />
-    <Compile Include="Synchronization\Fence.cs" />
+    <Compile Include="Synchronization\Fence.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Textures\ImageDatatype.cs" />
     <Compile Include="Textures\ImageFormat.cs" />
     <Compile Include="Textures\Texture2D.cs" />
@@ -162,6 +352,7 @@
     <Compile Include="Textures\TextureMagnificationFilter.cs" />
     <Compile Include="Textures\TextureMinificationFilter.cs" />
     <Compile Include="Textures\TextureSampler.cs" />
+    <Compile Include="Textures\TextureSamplers.cs" />
     <Compile Include="Textures\TextureUnit.cs" />
     <Compile Include="Textures\TextureUnits.cs">
       <SubType>Code</SubType>
@@ -188,11 +379,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GL3x\Framebuffer\" />
     <Folder Include="GL3x\Synchronization\" />
-    <Folder Include="GL3x\Textures\" />
     <Folder Include="GL3x\VertexArray\" />
-    <Folder Include="Mesh\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

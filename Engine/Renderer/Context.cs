@@ -14,6 +14,7 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using OpenGlobe.Core;
 using Engine.Core;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
@@ -31,7 +32,7 @@ namespace OpenGlobe.Renderer
     {
         public abstract void MakeCurrent();
 
-        public virtual VertexArray CreateVertexArray(Mesh mesh, ShaderVertexAttributeCollection shaderAttributes, BufferHint usageHint)
+        public virtual VertexArray CreateVertexArray(Mesh mesh, ShaderVertexAttributeCollection shaderAttributes, BufferUsageHint usageHint)
         {
             return CreateVertexArray(Device.CreateMeshBuffers(mesh, shaderAttributes, usageHint));
         }

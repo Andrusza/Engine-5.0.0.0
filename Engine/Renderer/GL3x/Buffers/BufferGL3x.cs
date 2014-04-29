@@ -18,7 +18,7 @@ namespace OpenGlobe.Renderer.GL3x
     {
         public BufferGL3x(
             BufferTarget type, 
-            BufferHint usageHint, 
+            BufferUsageHint usageHint, 
             int sizeInBytes)
         {
             if (sizeInBytes <= 0)
@@ -30,7 +30,7 @@ namespace OpenGlobe.Renderer.GL3x
 
             _sizeInBytes = sizeInBytes;
             _type = type;
-            _usageHint = TypeConverterGL3x.To(usageHint);
+            _usageHint = usageHint;
 
             //
             // Allocating here with GL.BufferData, then writing with GL.BufferSubData
@@ -118,9 +118,9 @@ namespace OpenGlobe.Renderer.GL3x
             get { return _sizeInBytes; }
         }
 
-        public BufferHint UsageHint
+        public BufferUsageHint UsageHint
         {
-            get { return TypeConverterGL3x.To(_usageHint); }
+            get { return _usageHint; }
         }
 
         public BufferNameGL3x Handle

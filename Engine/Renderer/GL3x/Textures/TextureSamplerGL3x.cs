@@ -7,17 +7,17 @@
 //
 #endregion
 
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer.GL3x
 {
     internal class TextureSamplerGL3x : TextureSampler
     {
         public TextureSamplerGL3x(
-            TextureMinificationFilter minificationFilter,
-            TextureMagnificationFilter magnificationFilter,
-            TextureWrap wrapS,
-            TextureWrap wrapT,
+            TextureMinFilter minificationFilter,
+            TextureMagFilter magnificationFilter,
+            TextureWrapMode wrapS,
+            TextureWrapMode wrapT,
             float maximumAnistropy)
             : base(
                 minificationFilter, 
@@ -28,19 +28,23 @@ namespace OpenGlobe.Renderer.GL3x
         {
             _name = new SamplerNameGL3x();
 
-            int glMinificationFilter = (int)TypeConverterGL3x.To(minificationFilter);
-            int glMagnificationFilter = (int)TypeConverterGL3x.To(magnificationFilter);
-            int glWrapS = (int)TypeConverterGL3x.To(wrapS);
-            int glWrapT = (int)TypeConverterGL3x.To(wrapT);
+            
 
-            GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureMinFilter, ref glMinificationFilter);
-            GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureMagFilter, ref glMagnificationFilter);
-            GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureWrapS, ref glWrapS);
-            GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureWrapT, ref glWrapT);
+            //int glMinificationFilter = (int)minificationFilter
+            //int glMagnificationFilter = (int)TextureMinFilter;
+            //int glWrapS = (int)TypeConverterGL3x.To(wrapS);
+            //int glWrapT = (int)TypeConverterGL3x.To(wrapT);
+
+            
+
+            //GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureMinFilter, ref glMinificationFilter);
+            //GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureMagFilter, ref glMagnificationFilter);
+            //GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureWrapModeS, ref glWrapS);
+            //GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureWrapModeT, ref glWrapT);
 
             if (Device.Extensions.AnisotropicFiltering)
             {
-                GL.SamplerParameter(_name.Value, (ArbSamplerObjects)All.TextureMaxAnisotropyExt, maximumAnistropy);
+                //GL.SamplerParameter(_name.Value, (ArbSamplerObjects)All.TextureMaxAnisotropyExt, maximumAnistropy);
             }
             else
             {

@@ -9,13 +9,14 @@
 
 using System;
 using OpenTK;
+using OpenTK.Graphics.OpenGL4;
 using OpenTK.Graphics;
 
 namespace OpenGlobe.Renderer.GL3x
 {
     internal class GraphicsWindowGL3x : GraphicsWindow
     {
-        public GraphicsWindowGL3x(int width, int height, string title, WindowType windowType)
+        public GraphicsWindowGL3x(int width, int height, string title, GameWindowFlags gameWindowFlags)
         {
             if (width < 0)
             {
@@ -27,15 +28,15 @@ namespace OpenGlobe.Renderer.GL3x
                 throw new ArgumentOutOfRangeException("height", "Height must be greater than or equal to zero.");
             }
 
-            GameWindowFlags gameWindowFlags = (windowType == WindowType.Default) ? GameWindowFlags.Default : GameWindowFlags.Fullscreen;
-            if (windowType == WindowType.FullScreen)
+          
+            if (gameWindowFlags == GameWindowFlags.Fullscreen)
             {
                 width = DisplayDevice.Default.Width;
                 height = DisplayDevice.Default.Height;
             }
             
             _gameWindow = new GameWindow(width, height, new GraphicsMode(24, 24, 8), title, gameWindowFlags,
-                DisplayDevice.Default, 3, 3, GraphicsContextFlags.ForwardCompatible | GraphicsContextFlags.Debug);
+                DisplayDevice.Default, 4, 4, GraphicsContextFlags.ForwardCompatible | GraphicsContextFlags.Debug);
 
             FinalizerThreadContextGL3x.Initialize();
             _gameWindow.MakeCurrent();

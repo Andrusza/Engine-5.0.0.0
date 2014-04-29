@@ -9,6 +9,7 @@
 
 using System;
 using System.Globalization;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
@@ -17,28 +18,28 @@ namespace OpenGlobe.Renderer
         internal TextureSamplers ()
 	    {
             _nearestClamp = Device.CreateTexture2DSampler(
-                    TextureMinificationFilter.Nearest,
-                    TextureMagnificationFilter.Nearest,
-                    TextureWrap.Clamp,
-                    TextureWrap.Clamp);
+                    TextureMinFilter.Nearest,
+                    TextureMagFilter.Nearest,
+                    TextureWrapMode.Clamp,
+                    TextureWrapMode.Clamp);
 
             _linearClamp = Device.CreateTexture2DSampler(
-                    TextureMinificationFilter.Linear,
-                    TextureMagnificationFilter.Linear,
-                    TextureWrap.Clamp,
-                    TextureWrap.Clamp);
+                    TextureMinFilter.Linear,
+                    TextureMagFilter.Linear,
+                    TextureWrapMode.Clamp,
+                    TextureWrapMode.Clamp);
 
             _nearestRepeat = Device.CreateTexture2DSampler(
-                    TextureMinificationFilter.Nearest,
-                    TextureMagnificationFilter.Nearest,
-                    TextureWrap.Repeat,
-                    TextureWrap.Repeat);
+                    TextureMinFilter.Nearest,
+                    TextureMagFilter.Nearest,
+                    TextureWrapMode.Repeat,
+                    TextureWrapMode.Repeat);
 
             _linearRepeat = Device.CreateTexture2DSampler(
-                    TextureMinificationFilter.Linear,
-                    TextureMagnificationFilter.Linear,
-                    TextureWrap.Repeat,
-                    TextureWrap.Repeat);
+                    TextureMinFilter.Linear,
+                    TextureMagFilter.Linear,
+                    TextureWrapMode.Repeat,
+                    TextureWrapMode.Repeat);
 	    }
 
         public TextureSampler NearestClamp

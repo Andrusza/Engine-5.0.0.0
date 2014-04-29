@@ -9,7 +9,7 @@
 
 namespace OpenGlobe.Renderer
 {
-    public enum PixelBufferHint
+    public enum PixelBufferUsageHint
     {
         Stream,
         Static,

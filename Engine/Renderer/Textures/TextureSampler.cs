@@ -8,16 +8,17 @@
 #endregion
 
 using Engine.Core;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
     public abstract class TextureSampler : Disposable
     {
         protected TextureSampler(
-            TextureMinificationFilter minificationFilter,
-            TextureMagnificationFilter magnificationFilter,
-            TextureWrap wrapS,
-            TextureWrap wrapT,
+            TextureMinFilter minificationFilter,
+            TextureMagFilter magnificationFilter,
+            TextureWrapMode wrapS,
+            TextureWrapMode wrapT,
             float maximumAnistropy)
         {
             _minificationFilter = minificationFilter;
@@ -27,22 +28,22 @@ namespace OpenGlobe.Renderer
             _maximumAnistropy = maximumAnistropy;
         }
 
-        public TextureMinificationFilter MinificationFilter
+        public TextureMinFilter MinificationFilter
         {
             get { return _minificationFilter; }
         }
 
-        public TextureMagnificationFilter MagnificationFilter
+        public TextureMagFilter MagnificationFilter
         {
             get { return _magnificationFilter; }
         }
 
-        public TextureWrap WrapS
+        public TextureWrapMode WrapS
         {
             get { return _wrapS; }
         }
 
-        public TextureWrap WrapT
+        public TextureWrapMode WrapT
         {
             get { return _wrapT; }
         }
@@ -52,10 +53,10 @@ namespace OpenGlobe.Renderer
             get { return _maximumAnistropy; }
         }
 
-        private readonly TextureMinificationFilter _minificationFilter;
-        private readonly TextureMagnificationFilter _magnificationFilter;
-        private readonly TextureWrap _wrapS;
-        private readonly TextureWrap _wrapT;
+        private readonly TextureMinFilter _minificationFilter;
+        private readonly TextureMagFilter _magnificationFilter;
+        private readonly TextureWrapMode _wrapS;
+        private readonly TextureWrapMode _wrapT;
         private readonly float _maximumAnistropy;
     }
 }

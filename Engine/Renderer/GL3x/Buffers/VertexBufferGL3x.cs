@@ -14,7 +14,7 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal class VertexBufferGL3x : VertexBuffer
     {
-        public VertexBufferGL3x(BufferHint usageHint, int sizeInBytes)
+        public VertexBufferGL3x(BufferUsageHint usageHint, int sizeInBytes)
         {
             _bufferObject = new BufferGL3x(BufferTarget.ArrayBuffer, usageHint, sizeInBytes);
         }
@@ -49,7 +49,7 @@ namespace OpenGlobe.Renderer.GL3x
             get { return _bufferObject.SizeInBytes; }
         }
 
-        public override BufferHint UsageHint
+        public override BufferUsageHint UsageHint
         {
             get { return _bufferObject.UsageHint; }
         }

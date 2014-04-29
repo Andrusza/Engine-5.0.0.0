@@ -15,6 +15,7 @@ namespace Engine.Core
     {
         protected virtual void Dispose(bool disposing)
         {
+
         }
 
         #region IDisposable Members

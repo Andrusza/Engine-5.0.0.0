@@ -22,7 +22,7 @@ namespace OpenGlobe.Renderer
 
         public override void Set(Context context, DrawState drawState, SceneState sceneState)
         {
-            _uniform.Value = (float)sceneState.Camera.Height(Ellipsoid.Wgs84);
+            _uniform.Value = 0; //ToDO
         }
 
         #endregion

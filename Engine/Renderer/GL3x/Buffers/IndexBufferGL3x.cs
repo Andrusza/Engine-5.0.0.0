@@ -16,7 +16,7 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal class IndexBufferGL3x : IndexBuffer
     {
-        public IndexBufferGL3x(BufferHint usageHint, int sizeInBytes)
+        public IndexBufferGL3x(BufferUsageHint usageHint, int sizeInBytes)
         {
             _bufferObject = new BufferGL3x(BufferTarget.ElementArrayBuffer, usageHint, sizeInBytes);
         }
@@ -72,7 +72,7 @@ namespace OpenGlobe.Renderer.GL3x
             get { return _bufferObject.SizeInBytes; }
         }
 
-        public override BufferHint UsageHint
+        public override BufferUsageHint UsageHint
         {
             get { return _bufferObject.UsageHint; }
         }

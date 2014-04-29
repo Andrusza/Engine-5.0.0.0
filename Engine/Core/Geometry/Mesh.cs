@@ -8,24 +8,25 @@
 #endregion
 
 
+using OpenTK.Graphics.OpenGL4;
 using System.Collections.Generic;
 
 namespace Engine.Core
 {
-    public enum PrimitiveType
-    {
-        Points,
-        Lines,
-        LineLoop,
-        LineStrip,
-        Triangles,
-        TriangleStrip,
-        TriangleFan,
-        LinesAdjacency,
-        LineStripAdjacency,
-        TrianglesAdjacency,
-        TriangleStripAdjacency
-    }
+    //public enum PrimitiveType
+    //{
+    //    Points,
+    //    Lines,
+    //    LineLoop,
+    //    LineStrip,
+    //    Triangles,
+    //    TriangleStrip,
+    //    TriangleFan,
+    //    LinesAdjacency,
+    //    LineStripAdjacency,
+    //    TrianglesAdjacency,
+    //    TriangleStripAdjacency
+    //}
 
     public enum WindingOrder
     {

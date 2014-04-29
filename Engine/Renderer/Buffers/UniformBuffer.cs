@@ -9,6 +9,7 @@
 
 using System.Runtime.InteropServices;
 using Engine.Core;
+using OpenTK.Graphics.OpenGL4;
 
 
 namespace OpenGlobe.Renderer
@@ -38,6 +39,6 @@ namespace OpenGlobe.Renderer
         public abstract T[] CopyToSystemMemory<T>(int offsetInBytes, int sizeInBytes) where T : struct;
 
         public abstract int SizeInBytes { get; }
-        public abstract BufferHint UsageHint { get; }
+        public abstract BufferUsageHint UsageHint { get; }
     }
 }

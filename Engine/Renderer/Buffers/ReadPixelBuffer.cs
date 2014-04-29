@@ -43,6 +43,6 @@ namespace OpenGlobe.Renderer
         public abstract Bitmap CopyToBitmap(int width, int height, PixelFormat pixelFormat);
 
         public abstract int SizeInBytes { get; }
-        public abstract PixelBufferHint UsageHint { get; }
+        public abstract PixelBufferUsageHint UsageHint { get; }
     }
 }

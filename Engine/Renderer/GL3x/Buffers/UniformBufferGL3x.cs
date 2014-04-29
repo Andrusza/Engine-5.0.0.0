@@ -14,7 +14,7 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal class UniformBufferGL3x : UniformBuffer
     {
-        public UniformBufferGL3x(BufferHint usageHint, int sizeInBytes)
+        public UniformBufferGL3x(BufferUsageHint usageHint, int sizeInBytes)
         {
             _bufferObject = new BufferGL3x(BufferTarget.UniformBuffer, usageHint, sizeInBytes);
         }
@@ -44,7 +44,7 @@ namespace OpenGlobe.Renderer.GL3x
             get { return _bufferObject.SizeInBytes; }
         }
 
-        public override BufferHint UsageHint
+        public override BufferUsageHint UsageHint
         {
             get { return _bufferObject.UsageHint; }
         }

@@ -9,7 +9,7 @@
 
 namespace OpenGlobe.Renderer
 {
-    public enum TextureWrap
+    public enum TextureWrapMode
     {
         Clamp,
         Repeat,
