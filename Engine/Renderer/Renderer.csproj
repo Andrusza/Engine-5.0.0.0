@@ -122,7 +122,12 @@
     <Compile Include="GL3x\Shaders\UniformIntVector2GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformIntVector3GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformIntVector4GL3x.cs" />
+    <Compile Include="GL3x\Textures\Texture2DGL3x.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GL3x\Textures\TextureSamplerGL3x.cs" />
+    <Compile Include="GL3x\Textures\TextureUnitGL3x.cs" />
+    <Compile Include="GL3x\Textures\TextureUnitsGL3x.cs" />
     <Compile Include="GraphicsWindow.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -158,6 +163,8 @@
     <Compile Include="RenderState\StencilTestFace.cs" />
     <Compile Include="Scene\Camera.cs" />
     <Compile Include="Scene\SceneState.cs" />
+    <Compile Include="Shaders\Cache\CachedShaderProgram.cs" />
+    <Compile Include="Shaders\Cache\ShaderCache.cs" />
     <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeHighUniform.cs">
       <SubType>Code</SubType>
     </Compile>

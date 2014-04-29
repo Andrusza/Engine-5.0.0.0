@@ -9,8 +9,8 @@
 
 using System;
 using OpenGlobe.Renderer;
-using OpenTK.Graphics.OpenGL;
-using OpenTKTextureUnit = OpenTK.Graphics.OpenGL.TextureUnit;
+using OpenTK.Graphics.OpenGL4;
+using OpenTKTextureUnit = OpenTK.Graphics.OpenGL4.TextureUnit;
 
 namespace OpenGlobe.Renderer.GL3x
 {
@@ -138,16 +138,16 @@ namespace OpenGlobe.Renderer.GL3x
 
                 if (_texture.Target == TextureTarget.TextureRectangle)
                 {
-                    if (_textureSampler.MinificationFilter != TextureMinificationFilter.Linear &&
-                        _textureSampler.MinificationFilter != TextureMinificationFilter.Nearest)
+                    if (_textureSampler.MinificationFilter != TextureMinFilter.Linear &&
+                        _textureSampler.MinificationFilter != TextureMinFilter.Nearest)
                     {
                         throw new InvalidOperationException("The texture sampler is incompatible with the rectangle texture bound to the same texture unit.  Rectangle textures only support linear and nearest minification filters.");
                     }
 
-                    if (_textureSampler.WrapS == TextureWrap.Repeat ||
-                        _textureSampler.WrapS == TextureWrap.MirroredRepeat ||
-                        _textureSampler.WrapT == TextureWrap.Repeat ||
-                        _textureSampler.WrapT == TextureWrap.MirroredRepeat)
+                    if (_textureSampler.WrapS == TextureWrapMode.Repeat ||
+                        _textureSampler.WrapS == TextureWrapMode.MirroredRepeat ||
+                        _textureSampler.WrapT == TextureWrapMode.Repeat ||
+                        _textureSampler.WrapT == TextureWrapMode.MirroredRepeat)
                     {
                         throw new InvalidOperationException("The texture sampler is incompatible with the rectangle texture bound to the same texture unit.  Rectangle textures do not support repeat or mirrored repeat wrap modes.");
                     }

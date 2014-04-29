@@ -107,20 +107,22 @@ namespace OpenGlobe.Renderer
             return null;
         }
 
-        //public static ShaderProgram CreateShaderProgram(
-        //    string vertexShaderSource,
-        //    string fragmentShaderSource)
-        //{
-        //    return new ShaderProgramGL3x(vertexShaderSource, fragmentShaderSource);
-        //}
+        public static ShaderProgram CreateShaderProgram(
+            string vertexShaderSource,
+            string fragmentShaderSource)
+        {
+            //return new ShaderProgramGL3x(vertexShaderSource, fragmentShaderSource);
+            return null;
+        }
 
-        //public static ShaderProgram CreateShaderProgram(
-        //    string vertexShaderSource,
-        //    string geometryShaderSource,
-        //    string fragmentShaderSource)
-        //{
-        //    return new ShaderProgramGL3x(vertexShaderSource, geometryShaderSource, fragmentShaderSource);
-        //}
+        public static ShaderProgram CreateShaderProgram(
+            string vertexShaderSource,
+            string geometryShaderSource,
+            string fragmentShaderSource)
+        {
+            //return new ShaderProgramGL3x(vertexShaderSource, geometryShaderSource, fragmentShaderSource);
+            return null;
+        }
 
         //public static VertexBuffer CreateVertexBuffer(BufferUsageHint usageHint, int sizeInBytes)
         //{

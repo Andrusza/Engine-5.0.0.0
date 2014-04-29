@@ -9,8 +9,8 @@
 
 using System;
 using OpenGlobe.Renderer;
-using OpenTK.Graphics.OpenGL;
-using OpenTKTextureUnit = OpenTK.Graphics.OpenGL.TextureUnit;
+using OpenTK.Graphics.OpenGL4;
+using OpenTKTextureUnit = OpenTK.Graphics.OpenGL4.TextureUnit;
 
 namespace OpenGlobe.Renderer.GL3x
 {
@@ -54,16 +54,16 @@ namespace OpenGlobe.Renderer.GL3x
             //
             // TexImage2D is just used to allocate the texture so a PBO can't be bound.
             //
-            WritePixelBufferGL3x.UnBind();
-            BindToLastTextureUnit();
-            GL.TexImage2D(_target, 0,
-                TypeConverterGL3x.To(description.TextureFormat),
-                description.Width,
-                description.Height,
-                0,
-                TypeConverterGL3x.TextureToPixelFormat(description.TextureFormat),   
-                TypeConverterGL3x.TextureToPixelType(description.TextureFormat),
-                new IntPtr());
+            //WritePixelBufferGL3x.UnBind();
+            //BindToLastTextureUnit();
+            //GL.TexImage2D(_target, 0,
+            //    TypeConverterGL3x.To(description.TextureFormat),
+            //    description.Width,
+            //    description.Height,
+            //    0,
+            //    TypeConverterGL3x.TextureToPixelFormat(description.TextureFormat),   
+            //    TypeConverterGL3x.TextureToPixelType(description.TextureFormat),
+            //    new IntPtr());
 
             //
             // Default sampler, compatiable when attaching a non-mimapped 
@@ -142,17 +142,17 @@ namespace OpenGlobe.Renderer.GL3x
 
             WritePixelBufferGL3x bufferObjectGL = (WritePixelBufferGL3x)pixelBuffer;
 
-            bufferObjectGL.Bind();
-            BindToLastTextureUnit();
-            GL.PixelStore(PixelStoreParameter.UnpackAlignment, rowAlignment);
-            GL.TexSubImage2D(_target, 0,
-                xOffset,
-                yOffset,
-                width,
-                height,
-                TypeConverterGL3x.To(format),
-                TypeConverterGL3x.To(dataType),
-                new IntPtr());
+            //bufferObjectGL.Bind();
+            //BindToLastTextureUnit();
+            //GL.PixelStore(PixelStoreParameter.UnpackAlignment, rowAlignment);
+            //GL.TexSubImage2D(_target, 0,
+            //    xOffset,
+            //    yOffset,
+            //    width,
+            //    height,
+            //    format,
+            //    dataType,
+            //    new IntPtr());
 
             GenerateMipmaps();
         }
@@ -169,18 +169,19 @@ namespace OpenGlobe.Renderer.GL3x
 
             VerifyRowAlignment(rowAlignment);
 
-            ReadPixelBufferGL3x pixelBuffer = new ReadPixelBufferGL3x(PixelBufferHint.Stream,
-                TextureUtility.RequiredSizeInBytes(_description.Width, _description.Height, format, dataType, rowAlignment));
+            //ReadPixelBufferGL3x pixelBuffer = new ReadPixelBufferGL3x(PixelBufferHint.Stream,
+            //    TextureUtility.RequiredSizeInBytes(_description.Width, _description.Height, format, dataType, rowAlignment));
 
-            pixelBuffer.Bind();
-            BindToLastTextureUnit();
-            GL.PixelStore(PixelStoreParameter.PackAlignment, rowAlignment);
-            GL.GetTexImage(_target, 0,
-                TypeConverterGL3x.To(format),
-                TypeConverterGL3x.To(dataType),
-                new IntPtr());
+            //pixelBuffer.Bind();
+            //BindToLastTextureUnit();
+            //GL.PixelStore(PixelStoreParameter.PackAlignment, rowAlignment);
+            //GL.GetTexImage(_target, 0,
+            //    TypeConverterGL3x.To(format),
+            //    TypeConverterGL3x.To(dataType),
+            //    new IntPtr());
 
-            return pixelBuffer;
+            //return pixelBuffer;
+            return null;
         }
 
         private void VerifyRowAlignment(int rowAlignment)
@@ -211,15 +212,15 @@ namespace OpenGlobe.Renderer.GL3x
 
         private void ApplySampler(TextureSampler sampler)
         {
-            TextureMinFilter minFilter = TypeConverterGL3x.To(sampler.MinificationFilter);
-            TextureMagFilter magFilter = TypeConverterGL3x.To(sampler.MagnificationFilter);
-            TextureWrapMode wrapS = TypeConverterGL3x.To(sampler.WrapS);
-            TextureWrapMode wrapT = TypeConverterGL3x.To(sampler.WrapT);
+            //TextureMinFilter minFilter = TypeConverterGL3x.To(sampler.MinificationFilter);
+            //TextureMagFilter magFilter = TypeConverterGL3x.To(sampler.MagnificationFilter);
+            //TextureWrapMode wrapS = TypeConverterGL3x.To(sampler.WrapS);
+            //TextureWrapMode wrapT = TypeConverterGL3x.To(sampler.WrapT);
 
-            GL.TexParameter(_target, TextureParameterName.TextureMinFilter, (int)minFilter);
-            GL.TexParameter(_target, TextureParameterName.TextureMagFilter, (int)magFilter);
-            GL.TexParameter(_target, TextureParameterName.TextureWrapS, (int)wrapS);
-            GL.TexParameter(_target, TextureParameterName.TextureWrapT, (int)wrapT);
+            //GL.TexParameter(_target, TextureParameterName.TextureMinFilter, (int)minFilter);
+            //GL.TexParameter(_target, TextureParameterName.TextureMagFilter, (int)magFilter);
+            //GL.TexParameter(_target, TextureParameterName.TextureWrapModeS, (int)wrapS);
+            //GL.TexParameter(_target, TextureParameterName.TextureWrapModeT, (int)wrapT);
         }
 
         #region Disposable Members

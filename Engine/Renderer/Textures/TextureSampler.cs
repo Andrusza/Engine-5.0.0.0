@@ -30,7 +30,7 @@ namespace OpenGlobe.Renderer
 
         public TextureMinFilter MinificationFilter
         {
-            get { return _minificationFilter; }
+            get { return _minificationFilter;  }
         }
 
         public TextureMagFilter MagnificationFilter
