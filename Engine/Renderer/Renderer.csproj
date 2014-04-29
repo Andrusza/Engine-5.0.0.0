@@ -69,6 +69,14 @@
     <Compile Include="GL3x\Buffers\BufferGL3x.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GL3x\Buffers\IndexBufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\PixelBufferGL3x.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GL3x\Buffers\ReadPixelBufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\UniformBufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\VertexBufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\WritePixelBufferGL3x.cs" />
     <Compile Include="GL3x\ExtensionsGL3x.cs" />
     <Compile Include="GL3x\ICleanable.cs" />
     <Compile Include="GL3x\ICleanableObserver.cs" />

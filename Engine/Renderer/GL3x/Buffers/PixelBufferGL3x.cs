@@ -10,7 +10,7 @@
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 using OpenGlobe.Core;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 using Engine.Core;
