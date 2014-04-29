@@ -8,9 +8,12 @@
 #endregion
 
 using System;
-using OpenTK.Graphics.OpenGL;
-using OpenGlobe.Core;
+using OpenTK.Graphics.OpenGL4;
+using Engine.Core;
 using OpenGlobe.Renderer;
+
+using Renderer.Buffers;
+using Renderer;
 
 namespace OpenGlobe.Renderer.GL3x
 {
@@ -251,31 +254,31 @@ namespace OpenGlobe.Renderer.GL3x
             throw new ArgumentException("type");
         }
 
-        public static BeginMode To(PrimitiveType type)
+        public static BeginMode To(Engine.Core.PrimitiveType type)
         {
             switch (type)
             {
-                case PrimitiveType.Points:
+                case Engine.Core.PrimitiveType.Points:
                     return BeginMode.Points;
-                case PrimitiveType.Lines:
+                case Engine.Core.PrimitiveType.Lines:
                     return BeginMode.Lines;
-                case PrimitiveType.LineLoop:
+                case Engine.Core.PrimitiveType.LineLoop:
                     return BeginMode.LineLoop;
-                case PrimitiveType.LineStrip:
+                case Engine.Core.PrimitiveType.LineStrip:
                     return BeginMode.LineStrip;
-                case PrimitiveType.Triangles:
+                case Engine.Core.PrimitiveType.Triangles:
                     return BeginMode.Triangles;
-                case PrimitiveType.TriangleStrip:
+                case Engine.Core.PrimitiveType.TriangleStrip:
                     return BeginMode.TriangleStrip;
-                case PrimitiveType.LinesAdjacency:
+                case Engine.Core.PrimitiveType.LinesAdjacency:
                     return BeginMode.LinesAdjacency;;
-                case PrimitiveType.LineStripAdjacency:
+                case Engine.Core.PrimitiveType.LineStripAdjacency:
                     return BeginMode.LineStripAdjacency;
-                case PrimitiveType.TrianglesAdjacency:
+                case Engine.Core.PrimitiveType.TrianglesAdjacency:
                     return BeginMode.TrianglesAdjacency;
-                case PrimitiveType.TriangleStripAdjacency:
+                case Engine.Core.PrimitiveType.TriangleStripAdjacency:
                     return BeginMode.TriangleStripAdjacency;
-                case PrimitiveType.TriangleFan:
+                case Engine.Core.PrimitiveType.TriangleFan:
                     return BeginMode.TriangleFan;
             }
 

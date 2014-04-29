@@ -7,6 +7,7 @@
 //
 #endregion
 
+using Renderer.Buffers;
 using System.Drawing;
 
 namespace OpenGlobe.Renderer

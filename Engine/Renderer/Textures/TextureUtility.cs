@@ -8,7 +8,7 @@
 #endregion
 
 using System;
-using OpenGlobe.Core;
+using Engine.Core;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 
 namespace OpenGlobe.Renderer

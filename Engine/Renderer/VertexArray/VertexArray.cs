@@ -7,6 +7,7 @@
 //
 #endregion
 
+using Engine.Core;
 using OpenGlobe.Core;
 
 namespace OpenGlobe.Renderer

@@ -11,6 +11,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Diagnostics;
+using Engine.Core;
 using OpenGlobe.Core;
 
 namespace OpenGlobe.Renderer

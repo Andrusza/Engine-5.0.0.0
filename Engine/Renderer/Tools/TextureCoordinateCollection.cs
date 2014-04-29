@@ -7,9 +7,10 @@
 //
 #endregion
 
+using Engine.Core;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Engine.Core;
+
 
 namespace OpenGlobe.Renderer
 {

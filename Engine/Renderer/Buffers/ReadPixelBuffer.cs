@@ -10,8 +10,8 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
-using OpenGlobe.Core;
 using Engine.Core;
+
 
 namespace OpenGlobe.Renderer
 {

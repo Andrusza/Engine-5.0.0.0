@@ -13,6 +13,7 @@ using System.Drawing.Imaging;
 using OpenTK.Graphics.OpenGL;
 using OpenGlobe.Core;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
+using Engine.Core;
 
 namespace OpenGlobe.Renderer.GL3x
 {

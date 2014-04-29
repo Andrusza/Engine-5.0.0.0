@@ -54,16 +54,21 @@
     <Compile Include="BlittableBGRA.cs" />
     <Compile Include="BlittableRGBA.cs" />
     <Compile Include="Buffers\BufferHint.cs" />
+    <Compile Include="Buffers\ClearBuffers.cs" />
     <Compile Include="Buffers\IndexBuffer.cs" />
     <Compile Include="Buffers\PixelBufferHint.cs" />
     <Compile Include="Buffers\ReadPixelBuffer.cs" />
     <Compile Include="Buffers\UniformBuffer.cs" />
     <Compile Include="Buffers\VertexBuffer.cs" />
     <Compile Include="Buffers\WritePixelBuffer.cs" />
+    <Compile Include="ClearState.cs" />
     <Compile Include="CouldNotCreateVideoCardResourceException.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Framebuffer\ColorAttachments.cs" />
     <Compile Include="Framebuffer\Framebuffer.cs" />
+    <Compile Include="GL3x\Buffers\BufferGL3x.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GL3x\ExtensionsGL3x.cs" />
     <Compile Include="GL3x\ICleanable.cs" />
     <Compile Include="GL3x\ICleanableObserver.cs" />
@@ -99,6 +104,7 @@
     <Compile Include="GL3x\Shaders\UniformIntVector2GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformIntVector3GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformIntVector4GL3x.cs" />
+    <Compile Include="GL3x\TypeConverterGL3x.cs" />
     <Compile Include="Infrastructure\EmbeddedResources.cs" />
     <Compile Include="Input\Keyboard.cs" />
     <Compile Include="Input\KeyboardKey.cs" />
@@ -115,7 +121,13 @@
     <Compile Include="RenderState\ColorMask.cs" />
     <Compile Include="RenderState\DepthRange.cs" />
     <Compile Include="RenderState\DepthTest.cs" />
+    <Compile Include="RenderState\FacetCulling.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RenderState\PrimitiveRestart.cs" />
+    <Compile Include="RenderState\RenderState.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RenderState\ScissorTest.cs" />
     <Compile Include="RenderState\StencilTest.cs" />
     <Compile Include="RenderState\StencilTestFace.cs" />
@@ -139,7 +151,23 @@
     <Compile Include="Textures\Texture2D.cs" />
     <Compile Include="Textures\Texture2DDescription.cs" />
     <Compile Include="Textures\TextureFormat.cs" />
+    <Compile Include="Textures\TextureMagnificationFilter.cs" />
+    <Compile Include="Textures\TextureMinificationFilter.cs" />
+    <Compile Include="Textures\TextureSampler.cs" />
+    <Compile Include="Textures\TextureUnit.cs" />
+    <Compile Include="Textures\TextureUnits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Textures\TextureUtility.cs" />
+    <Compile Include="Textures\TextureWrap.cs" />
     <Compile Include="Tools\TextureCoordinateCollection.cs" />
+    <Compile Include="VertexArray\ComponentDatatype.cs" />
+    <Compile Include="VertexArray\VertexArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VertexArray\VertexArraySizes.cs" />
+    <Compile Include="VertexArray\VertexBufferAttribute.cs" />
+    <Compile Include="VertexArray\VertexBufferAttributes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -152,8 +180,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GL3x\Buffers\" />
+    <Folder Include="GL3x\Framebuffer\" />
     <Folder Include="GL3x\Synchronization\" />
+    <Folder Include="GL3x\Textures\" />
+    <Folder Include="GL3x\VertexArray\" />
     <Folder Include="Mesh\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

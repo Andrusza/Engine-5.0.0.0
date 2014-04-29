@@ -8,10 +8,10 @@
 #endregion
 
 using OpenTK;
-using OpenTK.Graphics.OpenGL;
-using OpenGlobe.Core;
-using OpenGlobe.Renderer;
+using OpenTK.Graphics.OpenGL4;
 using Engine.Core;
+using OpenGlobe.Renderer;
+
 
 namespace OpenGlobe.Renderer.GL3x
 {

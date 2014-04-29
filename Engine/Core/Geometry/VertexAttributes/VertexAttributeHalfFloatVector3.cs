@@ -7,7 +7,7 @@
 //
 #endregion
 
-using Engine.Core;
+
 namespace Engine.Core
 {
     public class VertexAttributeHalfFloatVector3 : VertexAttribute<Vector3H>

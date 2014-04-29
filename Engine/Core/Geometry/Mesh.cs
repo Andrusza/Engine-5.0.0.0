@@ -7,7 +7,7 @@
 //
 #endregion
 
-using Engine.Core;
+
 using System.Collections.Generic;
 
 namespace Engine.Core

@@ -40,47 +40,47 @@ namespace OpenGlobe.Renderer
 
                 ///////////////////////////////////////////////////////////////
 
-                LinkAutomaticUniformCollection linkAutomaticUniforms = new LinkAutomaticUniformCollection();
+                //LinkAutomaticUniformCollection linkAutomaticUniforms = new LinkAutomaticUniformCollection();
 
-                for (int i = 0; i < window.Context.TextureUnits.Count; ++i)
-                {
-                    linkAutomaticUniforms.Add(new TextureUniform(i));
-                }
+                //for (int i = 0; i < window.Context.TextureUnits.Count; ++i)
+                //{
+                //    linkAutomaticUniforms.Add(new TextureUniform(i));
+                //}
 
-                s_linkAutomaticUniforms = linkAutomaticUniforms;
+                //s_linkAutomaticUniforms = linkAutomaticUniforms;
 
-                ///////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////
 
-                DrawAutomaticUniformFactoryCollection drawAutomaticUniformFactories = new DrawAutomaticUniformFactoryCollection();
+                //DrawAutomaticUniformFactoryCollection drawAutomaticUniformFactories = new DrawAutomaticUniformFactoryCollection();
 
-                drawAutomaticUniformFactories.Add(new SunPositionUniformFactory());
-                drawAutomaticUniformFactories.Add(new LightPropertiesUniformFactory());
-                drawAutomaticUniformFactories.Add(new CameraLightPositionUniformFactory());
-                drawAutomaticUniformFactories.Add(new CameraEyeUniformFactory());
-                drawAutomaticUniformFactories.Add(new CameraEyeHighUniformFactory());
-                drawAutomaticUniformFactories.Add(new CameraEyeLowUniformFactory());
-                drawAutomaticUniformFactories.Add(new ModelViewPerspectiveMatrixRelativeToEyeUniformFactory());
-                drawAutomaticUniformFactories.Add(new ModelViewMatrixRelativeToEyeUniformFactory());
-                drawAutomaticUniformFactories.Add(new ModelViewPerspectiveMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new ModelViewOrthographicMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new ModelViewMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new ModelMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new ViewMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new PerspectiveMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new OrthographicMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new ViewportOrthographicMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new ViewportUniformFactory());
-                drawAutomaticUniformFactories.Add(new InverseViewportDimensionsUniformFactory());
-                drawAutomaticUniformFactories.Add(new ViewportTransformationMatrixUniformFactory());
-                drawAutomaticUniformFactories.Add(new ModelZToClipCoordinatesUniformFactory());
-                drawAutomaticUniformFactories.Add(new WindowToWorldNearPlaneUniformFactory());
-                drawAutomaticUniformFactories.Add(new Wgs84HeightUniformFactory());
-                drawAutomaticUniformFactories.Add(new PerspectiveNearPlaneDistanceUniformFactory());
-                drawAutomaticUniformFactories.Add(new PerspectiveFarPlaneDistanceUniformFactory());
-                drawAutomaticUniformFactories.Add(new HighResolutionSnapScaleUniformFactory());
-                drawAutomaticUniformFactories.Add(new PixelSizePerDistanceUniformFactory());
+                //drawAutomaticUniformFactories.Add(new SunPositionUniformFactory());
+                //drawAutomaticUniformFactories.Add(new LightPropertiesUniformFactory());
+                //drawAutomaticUniformFactories.Add(new CameraLightPositionUniformFactory());
+                //drawAutomaticUniformFactories.Add(new CameraEyeUniformFactory());
+                //drawAutomaticUniformFactories.Add(new CameraEyeHighUniformFactory());
+                //drawAutomaticUniformFactories.Add(new CameraEyeLowUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ModelViewPerspectiveMatrixRelativeToEyeUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ModelViewMatrixRelativeToEyeUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ModelViewPerspectiveMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ModelViewOrthographicMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ModelViewMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ModelMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ViewMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new PerspectiveMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new OrthographicMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ViewportOrthographicMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ViewportUniformFactory());
+                //drawAutomaticUniformFactories.Add(new InverseViewportDimensionsUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ViewportTransformationMatrixUniformFactory());
+                //drawAutomaticUniformFactories.Add(new ModelZToClipCoordinatesUniformFactory());
+                //drawAutomaticUniformFactories.Add(new WindowToWorldNearPlaneUniformFactory());
+                //drawAutomaticUniformFactories.Add(new Wgs84HeightUniformFactory());
+                //drawAutomaticUniformFactories.Add(new PerspectiveNearPlaneDistanceUniformFactory());
+                //drawAutomaticUniformFactories.Add(new PerspectiveFarPlaneDistanceUniformFactory());
+                //drawAutomaticUniformFactories.Add(new HighResolutionSnapScaleUniformFactory());
+                //drawAutomaticUniformFactories.Add(new PixelSizePerDistanceUniformFactory());
 
-                s_drawAutomaticUniformFactories = drawAutomaticUniformFactories;
+                //s_drawAutomaticUniformFactories = drawAutomaticUniformFactories;
 
                 ///////////////////////////////////////////////////////////////
 

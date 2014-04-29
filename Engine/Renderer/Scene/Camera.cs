@@ -10,8 +10,8 @@
 using System;
 using System.Globalization;
 using System.Xml;
-using OpenGlobe.Core;
 using Engine.Core;
+
 
 namespace OpenGlobe.Renderer
 {

@@ -7,9 +7,9 @@
 //
 #endregion
 
+
 using Engine.Core;
-using OpenGlobe.Core;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
 
 namespace OpenGlobe.Renderer.GL3x

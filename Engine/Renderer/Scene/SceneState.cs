@@ -10,8 +10,8 @@
 using OpenTK;
 using System.Drawing;
 using System.Diagnostics;
-using OpenGlobe.Core;
 using Engine.Core;
+
 
 namespace OpenGlobe.Renderer
 {
