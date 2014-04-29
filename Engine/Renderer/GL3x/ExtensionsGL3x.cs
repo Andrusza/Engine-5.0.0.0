@@ -7,9 +7,9 @@
 //
 #endregion
 
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class ExtensionsGL3x : Extensions
     {
@@ -18,9 +18,9 @@ namespace Engine.Renderer.GL3x
             _anisotropicFiltering = false;
             int numberOfExtensions;
             GL.GetInteger(GetPName.NumExtensions, out numberOfExtensions);
-            for (int i = 0; i < numberOfExtensions; ++i)
+            for (uint i = 0; i < numberOfExtensions; ++i)
             {
-                if (GL.GetString(StringName.Extensions, i) == "GL_EXT_texture_filter_anisotropic")
+                if (GL.GetString(StringNameIndexed.Extensions, i) == "GL_EXT_texture_filter_anisotropic")
                 {
                     _anisotropicFiltering = true;
                     break;

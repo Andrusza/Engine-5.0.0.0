@@ -10,9 +10,10 @@
 using OpenTK;
 using System.Drawing;
 using System.Diagnostics;
+using OpenGlobe.Core;
 using Engine.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class SceneState
     {

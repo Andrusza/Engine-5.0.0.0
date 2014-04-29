@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Engine.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class TextureCoordinateCollection : Collection<RectangleH>
     {

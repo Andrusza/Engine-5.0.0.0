@@ -8,9 +8,9 @@
 #endregion
 
 using System;
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     internal class WindowToWorldNearPlaneUniform : DrawAutomaticUniform
     {

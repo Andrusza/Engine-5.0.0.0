@@ -8,9 +8,9 @@
 #endregion
 
 using System.Collections;
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public abstract class VertexBufferAttributes
     {

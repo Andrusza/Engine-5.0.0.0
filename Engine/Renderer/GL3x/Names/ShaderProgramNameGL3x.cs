@@ -8,9 +8,9 @@
 #endregion
 
 using System;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal sealed class ShaderProgramNameGL3x : IDisposable
     {

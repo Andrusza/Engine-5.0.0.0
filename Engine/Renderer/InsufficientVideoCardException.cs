@@ -10,7 +10,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     [Serializable]
     public class InsufficientVideoCardException : Exception

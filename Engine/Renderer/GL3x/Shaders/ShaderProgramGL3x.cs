@@ -12,7 +12,7 @@ using System.Text;
 using System.Collections.Generic;
 using OpenTK.Graphics.OpenGL;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class ShaderProgramGL3x : ShaderProgram, ICleanableObserver
     {

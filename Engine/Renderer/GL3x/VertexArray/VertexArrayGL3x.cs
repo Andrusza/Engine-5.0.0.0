@@ -9,9 +9,9 @@
 
 using System.Collections.Generic;
 using OpenTK.Graphics.OpenGL;
-using Engine.Renderer;
+using OpenGlobe.Renderer;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class VertexArrayGL3x : VertexArray
     {

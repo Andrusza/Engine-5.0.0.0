@@ -10,9 +10,10 @@
 using System.Runtime.InteropServices;
 using System.Drawing;
 using System.Drawing.Imaging;
+using OpenGlobe.Core;
 using Engine.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public abstract class WritePixelBuffer : Disposable
     {

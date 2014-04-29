@@ -8,15 +8,15 @@
 #endregion
 
 using System;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal sealed class FenceNameGL3x : IDisposable
     {
         public FenceNameGL3x()
         {
-            _value = GL.FenceSync(ArbSync.SyncGpuCommandsComplete, 0);
+            _value = GL.FenceSync(SyncCondition.SyncGpuCommandsComplete, 0);
         }
 
         ~FenceNameGL3x()

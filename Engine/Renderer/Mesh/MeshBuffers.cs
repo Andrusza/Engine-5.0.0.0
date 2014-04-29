@@ -7,9 +7,9 @@
 //
 #endregion
 
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     /// <summary>
     /// Does not own vertex and index buffers.  They must be disposed.

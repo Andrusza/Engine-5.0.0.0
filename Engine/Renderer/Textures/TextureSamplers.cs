@@ -10,7 +10,7 @@
 using System;
 using System.Globalization;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class TextureSamplers
     {

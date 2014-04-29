@@ -7,7 +7,7 @@
 //
 #endregion
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     internal class HighResolutionSnapScaleUniform : DrawAutomaticUniform
     {

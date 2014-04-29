@@ -11,10 +11,10 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 using OpenTK.Graphics.OpenGL;
-using Engine.Renderer;
-using Engine.Core;
+using OpenGlobe.Renderer;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     internal class MeshVertexBufferAttributes : VertexBufferAttributes
     {

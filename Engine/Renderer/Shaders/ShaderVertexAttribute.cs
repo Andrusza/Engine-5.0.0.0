@@ -7,7 +7,8 @@
 //
 #endregion
 
-namespace Engine.Renderer
+
+namespace OpenGlobe.Renderer
 {
     public enum ShaderVertexAttributeType
     {

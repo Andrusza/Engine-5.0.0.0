@@ -7,9 +7,9 @@
 //
 #endregion
 
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public abstract class GraphicsWindow : Disposable
     {

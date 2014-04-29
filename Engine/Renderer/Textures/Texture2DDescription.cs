@@ -10,7 +10,7 @@
 using System;
 using System.Globalization;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public struct Texture2DDescription : IEquatable<Texture2DDescription>
     {

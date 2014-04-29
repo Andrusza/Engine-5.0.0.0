@@ -8,11 +8,11 @@
 #endregion
 
 using System;
-using Engine.Renderer;
+using OpenGlobe.Renderer;
 using OpenTK.Graphics.OpenGL;
 using OpenTKTextureUnit = OpenTK.Graphics.OpenGL.TextureUnit;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class TextureUnitGL3x : TextureUnit, ICleanable
     {

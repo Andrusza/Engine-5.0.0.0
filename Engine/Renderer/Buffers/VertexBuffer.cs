@@ -8,9 +8,10 @@
 #endregion
 
 using System.Runtime.InteropServices;
+using OpenGlobe.Core;
 using Engine.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public abstract class VertexBuffer : Disposable
     {

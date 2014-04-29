@@ -11,11 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Diagnostics;
-using Engine.Core;
+using OpenGlobe.Core;
+using OpenGlobe.Renderer.GL3x;
 using OpenTK.Graphics.OpenGL;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public enum WindowType
     {

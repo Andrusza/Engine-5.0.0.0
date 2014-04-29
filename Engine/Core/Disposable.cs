@@ -1,10 +1,23 @@
-﻿using System;
+﻿#region License
+//
+// (C) Copyright 2009 Patrick Cozzi and Deron Ohlarik
+//
+// Distributed under the MIT License.
+// See License.txt or http://www.opensource.org/licenses/mit-license.php.
+//
+#endregion
 
-namespace Engine.Core
+using System;
+
+namespace OpenGlobe.Core
 {
     public abstract class Disposable : IDisposable
     {
-        private bool _disposed;
+        protected virtual void Dispose(bool disposing)
+        {
+        }
+
+        #region IDisposable Members
 
         public void Dispose()
         {
@@ -12,24 +25,6 @@ namespace Engine.Core
             GC.SuppressFinalize(this);
         }
 
-        ~Disposable()
-        {
-            Dispose(false);
-        }
-
-        protected abstract void ReleaseManagedResources();
-
-        private void Dispose(bool disposing)
-        {
-            if (_disposed)
-                return;
-
-            if (disposing)
-            {
-                ReleaseManagedResources();
-            }
-
-            _disposed = true;
-        }
+        #endregion
     }
 }

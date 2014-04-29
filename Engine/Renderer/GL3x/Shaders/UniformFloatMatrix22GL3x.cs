@@ -8,9 +8,10 @@
 #endregion
 
 using Engine.Core;
+using OpenGlobe.Core;
 using OpenTK.Graphics.OpenGL;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class UniformFloatMatrix22GL3x : Uniform<Matrix2<float>>, ICleanable
     {

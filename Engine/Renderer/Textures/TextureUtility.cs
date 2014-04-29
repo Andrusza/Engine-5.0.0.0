@@ -8,10 +8,10 @@
 #endregion
 
 using System;
-using Engine.Core;
+using OpenGlobe.Core;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     internal static class TextureUtility
     {

@@ -10,9 +10,9 @@
 using System;
 using System.Collections;
 using OpenTK.Graphics.OpenGL;
-using Engine.Renderer;
+using OpenGlobe.Renderer;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal struct VertexBufferAttributeGL3x
     {

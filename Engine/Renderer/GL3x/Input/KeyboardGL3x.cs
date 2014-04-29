@@ -10,7 +10,7 @@
 using System;
 using OpenTK.Input;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class KeyboardGL3x : Keyboard
     {

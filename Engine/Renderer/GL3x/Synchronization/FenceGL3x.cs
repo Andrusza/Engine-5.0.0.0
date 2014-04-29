@@ -8,10 +8,10 @@
 #endregion
 
 using System;
-using Engine.Renderer;
+using OpenGlobe.Renderer;
 using OpenTK.Graphics.OpenGL;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     public class FenceGL3x : Fence
     {

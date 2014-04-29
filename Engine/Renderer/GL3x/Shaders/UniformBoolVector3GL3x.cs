@@ -8,9 +8,10 @@
 #endregion
 
 using Engine.Core;
+using OpenGlobe.Core;
 using OpenTK.Graphics.OpenGL;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class UniformBoolVector3GL3x : Uniform<Vector3B>, ICleanable
     {

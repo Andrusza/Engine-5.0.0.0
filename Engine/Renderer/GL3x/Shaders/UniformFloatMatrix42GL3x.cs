@@ -9,10 +9,11 @@
 
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
+using OpenGlobe.Core;
+using OpenGlobe.Renderer;
 using Engine.Core;
-using Engine.Renderer;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class UniformFloatMatrix42GL3x : Uniform<Matrix42<float>>, ICleanable
     {

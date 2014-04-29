@@ -9,7 +9,7 @@
 
 using System.Collections.Generic;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class ShaderCache
     {

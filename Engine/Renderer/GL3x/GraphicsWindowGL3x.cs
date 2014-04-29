@@ -11,7 +11,7 @@ using System;
 using OpenTK;
 using OpenTK.Graphics;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class GraphicsWindowGL3x : GraphicsWindow
     {

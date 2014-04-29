@@ -11,9 +11,9 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Diagnostics;
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public abstract class Texture2D : Disposable
     {

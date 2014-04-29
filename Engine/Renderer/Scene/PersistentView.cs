@@ -9,7 +9,7 @@
 
 using System.IO;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public static class PersistentView
     {

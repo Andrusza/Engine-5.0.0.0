@@ -9,7 +9,7 @@
 
 using System.Collections.ObjectModel;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class UniformBlockCollection : KeyedCollection<string, UniformBlock>
     {

@@ -8,10 +8,10 @@
 #endregion
 
 using System.Diagnostics;
-using Engine.Core;
+using OpenGlobe.Core;
 using System;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class VertexBufferAttribute
     {

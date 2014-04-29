@@ -12,10 +12,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using Engine.Core;
+using OpenGlobe.Core;
 
-
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     [Flags]
     public enum ClearBuffers

@@ -7,7 +7,7 @@
 //
 #endregion
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class StencilTest
     {

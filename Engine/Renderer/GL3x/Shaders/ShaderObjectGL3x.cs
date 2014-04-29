@@ -10,9 +10,9 @@
 using System;
 using System.Globalization;
 using OpenTK.Graphics.OpenGL;
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class ShaderObjectGL3x : Disposable
     {
@@ -42,7 +42,7 @@ namespace Engine.Renderer.GL3x
                 "const float og_maximumFloat =     " + float.MaxValue.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
                 "const float og_minimumFloat =     " + float.MinValue.ToString(NumberFormatInfo.InvariantInfo) + "; \n";
 
-            string builtinFunctions = EmbeddedResources.GetText("Engine.Renderer.GL3x.GLSL.BuiltinFunctions.glsl");
+            string builtinFunctions = EmbeddedResources.GetText("OpenGlobe.Renderer.GL3x.GLSL.BuiltinFunctions.glsl");
 
             string modifiedSource;
 

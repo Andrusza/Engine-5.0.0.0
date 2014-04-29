@@ -11,9 +11,9 @@ using System;
 using System.Drawing;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class ContextGL3x : Context
     {

@@ -9,10 +9,11 @@
 
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
+using OpenGlobe.Core;
+using OpenGlobe.Renderer;
 using Engine.Core;
-using Engine.Renderer;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class UniformFloatVector2GL3x : Uniform<Vector2F>, ICleanable
     {

@@ -9,7 +9,7 @@
 
 using System.Drawing;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class ScissorTest
     {

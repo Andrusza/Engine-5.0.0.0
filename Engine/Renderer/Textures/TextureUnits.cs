@@ -9,7 +9,7 @@
 
 using System.Collections;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public abstract class TextureUnits
     {

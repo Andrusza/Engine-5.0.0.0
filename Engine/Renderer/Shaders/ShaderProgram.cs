@@ -8,9 +8,9 @@
 #endregion
 
 using System.Collections.Generic;
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public abstract class ShaderProgram : Disposable
     {

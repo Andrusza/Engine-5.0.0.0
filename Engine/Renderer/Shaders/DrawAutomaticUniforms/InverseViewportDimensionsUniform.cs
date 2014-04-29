@@ -8,9 +8,9 @@
 #endregion
 
 using System.Drawing;
-using Engine.Core;
+using OpenGlobe.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     internal class InverseViewportDimensionsUniform : DrawAutomaticUniform
     {

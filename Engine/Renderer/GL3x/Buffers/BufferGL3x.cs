@@ -9,9 +9,10 @@
 
 using System;
 using OpenTK.Graphics.OpenGL;
+using OpenGlobe.Core;
 using Engine.Core;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal sealed class BufferGL3x : IDisposable
     {

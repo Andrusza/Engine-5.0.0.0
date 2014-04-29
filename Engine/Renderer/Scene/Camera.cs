@@ -10,9 +10,10 @@
 using System;
 using System.Globalization;
 using System.Xml;
+using OpenGlobe.Core;
 using Engine.Core;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     public class Camera
     {

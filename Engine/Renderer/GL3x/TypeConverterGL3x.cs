@@ -9,10 +9,10 @@
 
 using System;
 using OpenTK.Graphics.OpenGL;
-using Engine.Core;
-using Engine.Renderer;
+using OpenGlobe.Core;
+using OpenGlobe.Renderer;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal static class TypeConverterGL3x
     {

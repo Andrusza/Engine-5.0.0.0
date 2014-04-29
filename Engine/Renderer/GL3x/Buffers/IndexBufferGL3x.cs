@@ -7,11 +7,11 @@
 //
 #endregion
 
-using Engine.Core;
+using OpenGlobe.Core;
 using OpenTK.Graphics.OpenGL;
 using System;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class IndexBufferGL3x : IndexBuffer
     {

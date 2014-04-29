@@ -9,7 +9,7 @@
 
 using System;
 
-namespace Engine.Renderer
+namespace OpenGlobe.Renderer
 {
     internal class PixelSizePerDistanceUniform : DrawAutomaticUniform
     {

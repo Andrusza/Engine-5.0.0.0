@@ -11,10 +11,10 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using OpenTK.Graphics.OpenGL;
-using Engine.Core;
+using OpenGlobe.Core;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal sealed class PixelBufferGL3x : IDisposable
     {

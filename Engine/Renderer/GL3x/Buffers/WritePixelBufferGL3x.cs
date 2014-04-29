@@ -11,7 +11,7 @@ using System.Drawing;
 using OpenTK.Graphics.OpenGL;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 
-namespace Engine.Renderer.GL3x
+namespace OpenGlobe.Renderer.GL3x
 {
     internal class WritePixelBufferGL3x : WritePixelBuffer
     {
