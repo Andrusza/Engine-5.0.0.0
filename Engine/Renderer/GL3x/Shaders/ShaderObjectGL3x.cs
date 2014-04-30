@@ -11,6 +11,7 @@ using System;
 using System.Globalization;
 using OpenTK.Graphics.OpenGL;
 using OpenGlobe.Core;
+using Engine.Core;
 
 namespace OpenGlobe.Renderer.GL3x
 {
@@ -69,13 +70,13 @@ namespace OpenGlobe.Renderer.GL3x
             int[] lengths = new[] { builtinConstants.Length, builtinFunctions.Length, modifiedSource.Length };
 
             _shaderObject = GL.CreateShader(shaderType);
-            unsafe
-            {
-                fixed (int *lengthPointer = lengths)
-                {
-                    GL.ShaderSource(_shaderObject, sources.Length, sources, lengthPointer);
-                }
-            }
+            //unsafe
+            //{
+            //    fixed (int *lengthPointer = lengths)
+            //    {
+            //        GL.ShaderSource(_shaderObject, sources.Length, sources, lengthPointer);
+            //    }
+            //}
             GL.CompileShader(_shaderObject);
 
             int compileStatus;

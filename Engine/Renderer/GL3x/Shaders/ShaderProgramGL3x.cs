@@ -47,8 +47,8 @@ namespace OpenGlobe.Renderer.GL3x
 
             GL.LinkProgram(programHandle);
 
-            int linkStatus;
-            GL.GetProgram(programHandle, ProgramParameter.LinkStatus, out linkStatus);
+            int linkStatus = 0;
+            //GL.GetProgram(programHandle, ProgramParameter.LinkStatus, out linkStatus);
 
             if (linkStatus == 0)
             {
@@ -68,11 +68,11 @@ namespace OpenGlobe.Renderer.GL3x
         {
             int programHandle = program.Value;
 
-            int numberOfAttributes;
-            GL.GetProgram(programHandle, ProgramParameter.ActiveAttributes, out numberOfAttributes);
+            int numberOfAttributes = 0;
+            //GL.GetProgram(programHandle, ProgramParameter.ActiveAttributes, out numberOfAttributes);
 
-            int attributeNameMaxLength;
-            GL.GetProgram(programHandle, ProgramParameter.ActiveAttributeMaxLength, out attributeNameMaxLength);
+            int attributeNameMaxLength = 0;
+            //GL.GetProgram(programHandle, ProgramParameter.ActiveAttributeMaxLength, out attributeNameMaxLength);
 
             ShaderVertexAttributeCollection vertexAttributes = new ShaderVertexAttributeCollection();
             for (int i = 0; i < numberOfAttributes; ++i)
@@ -97,8 +97,8 @@ namespace OpenGlobe.Renderer.GL3x
 
                 int attributeLocation = GL.GetAttribLocation(programHandle, attributeName);
 
-                vertexAttributes.Add(new ShaderVertexAttribute(
-                    attributeName, attributeLocation, TypeConverterGL3x.To(attributeType), attributeLength));
+                //vertexAttributes.Add(new ShaderVertexAttribute(
+                //    attributeName, attributeLocation, TypeConverterGL3x.To(attributeType), attributeLength));
             }
 
             return vertexAttributes;
@@ -108,11 +108,11 @@ namespace OpenGlobe.Renderer.GL3x
         {
             int programHandle = program.Value;
 
-            int numberOfUniforms;
-            GL.GetProgram(programHandle, ProgramParameter.ActiveUniforms, out numberOfUniforms);
+            int numberOfUniforms = 0;
+            //GL.GetProgram(programHandle, ProgramParameter.ActiveUniforms, out numberOfUniforms);
 
-            int uniformNameMaxLength;
-            GL.GetProgram(programHandle, ProgramParameter.ActiveUniformMaxLength, out uniformNameMaxLength);
+            int uniformNameMaxLength = 0;
+            //GL.GetProgram(programHandle, ProgramParameter.ActiveUniformMaxLength, out uniformNameMaxLength);
 
             UniformCollection uniforms = new UniformCollection();
             for (int i = 0; i < numberOfUniforms; ++i)
@@ -234,7 +234,8 @@ namespace OpenGlobe.Renderer.GL3x
                 case ActiveUniformType.UnsignedIntSamplerCube:
                 case ActiveUniformType.UnsignedIntSampler1DArray:
                 case ActiveUniformType.UnsignedIntSampler2DArray:
-                    return new UniformIntGL3x(name, location, TypeConverterGL3x.To(type), this);
+                    //return new UniformIntGL3x(name, location, TypeConverterGL3x.To(type), this);
+                    return null;
             }
 
             //
@@ -247,8 +248,8 @@ namespace OpenGlobe.Renderer.GL3x
         {
             int programHandle = program.Value;
 
-            int numberOfUniformBlocks;
-            GL.GetProgram(programHandle, ProgramParameter.ActiveUniformBlocks, out numberOfUniformBlocks);
+            int numberOfUniformBlocks = 0;
+            //GL.GetProgram(programHandle, ProgramParameter.ActiveUniformBlocks, out numberOfUniformBlocks);
 
             UniformBlockCollection uniformBlocks = new UniformBlockCollection();
             for (int i = 0; i < numberOfUniformBlocks; ++i)
@@ -287,11 +288,11 @@ namespace OpenGlobe.Renderer.GL3x
                     string uniformName = GL.GetActiveUniformName(programHandle, uniformIndicesInBlock[j]);
                     uniformName = CorrectUniformName(uniformName);
 
-                    UniformType uniformType = TypeConverterGL3x.To((ActiveUniformType)uniformTypes[j]);
+                    //UniformType uniformType = TypeConverterGL3x.To((ActiveUniformType)uniformTypes[j]);
 
-                    uniformBlock.Members.Add(CreateUniformBlockMember(uniformName,
-                        uniformType, uniformOffsetsInBytes[j], uniformLengths[j], uniformArrayStridesInBytes[j],
-                        uniformmatrixStrideInBytess[j], uniformRowMajors[j]));
+                    //uniformBlock.Members.Add(CreateUniformBlockMember(uniformName,
+                    //    uniformType, uniformOffsetsInBytes[j], uniformLengths[j], uniformArrayStridesInBytes[j],
+                    //    uniformmatrixStrideInBytess[j], uniformRowMajors[j]));
                 }
 
                 uniformBlocks.Add(uniformBlock);

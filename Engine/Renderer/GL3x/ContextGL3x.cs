@@ -10,7 +10,7 @@
 using System;
 using System.Drawing;
 using OpenTK;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 using OpenGlobe.Core;
 
 namespace OpenGlobe.Renderer.GL3x
@@ -45,56 +45,56 @@ namespace OpenGlobe.Renderer.GL3x
 
         private static void ForceApplyRenderState(RenderState renderState)
         {
-            Enable(EnableCap.PrimitiveRestart, renderState.PrimitiveRestart.Enabled);
-            GL.PrimitiveRestartIndex(renderState.PrimitiveRestart.Index);
+            //Enable(EnableCap.PrimitiveRestart, renderState.PrimitiveRestart.Enabled);
+            //GL.PrimitiveRestartIndex(renderState.PrimitiveRestart.Index);
 
-            Enable(EnableCap.CullFace, renderState.FacetCulling.Enabled);
-            GL.CullFace(TypeConverterGL3x.To(renderState.FacetCulling.Face));
-            GL.FrontFace(TypeConverterGL3x.To(renderState.FacetCulling.FrontFaceWindingOrder));
+            //Enable(EnableCap.CullFace, renderState.FacetCulling.Enabled);
+            //GL.CullFace(TypeConverterGL3x.To(renderState.FacetCulling.Face));
+            //GL.FrontFace(TypeConverterGL3x.To(renderState.FacetCulling.FrontFaceWindingOrder));
 
-            Enable(EnableCap.ProgramPointSize, renderState.ProgramPointSize == ProgramPointSize.Enabled);
-            GL.PolygonMode(MaterialFace.FrontAndBack, TypeConverterGL3x.To(renderState.RasterizationMode));
+            //Enable(EnableCap.ProgramPointSize, renderState.ProgramPointSize == ProgramPointSize.Enabled);
+            //GL.PolygonMode(MaterialFace.FrontAndBack, TypeConverterGL3x.To(renderState.RasterizationMode));
 
-            Enable(EnableCap.ScissorTest, renderState.ScissorTest.Enabled);
-            Rectangle rectangle = renderState.ScissorTest.Rectangle;
-            GL.Scissor(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+            //Enable(EnableCap.ScissorTest, renderState.ScissorTest.Enabled);
+            //Rectangle rectangle = renderState.ScissorTest.Rectangle;
+            //GL.Scissor(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
 
-            Enable(EnableCap.StencilTest, renderState.StencilTest.Enabled);
-            ForceApplyRenderStateStencil(StencilFace.Front, renderState.StencilTest.FrontFace);
-            ForceApplyRenderStateStencil(StencilFace.Back, renderState.StencilTest.BackFace);
+            //Enable(EnableCap.StencilTest, renderState.StencilTest.Enabled);
+            //ForceApplyRenderStateStencil(StencilFace.Front, renderState.StencilTest.FrontFace);
+            //ForceApplyRenderStateStencil(StencilFace.Back, renderState.StencilTest.BackFace);
 
-            Enable(EnableCap.DepthTest, renderState.DepthTest.Enabled);
-            GL.DepthFunc(TypeConverterGL3x.To(renderState.DepthTest.Function));
+            //Enable(EnableCap.DepthTest, renderState.DepthTest.Enabled);
+            //GL.DepthFunc(TypeConverterGL3x.To(renderState.DepthTest.Function));
 
-            GL.DepthRange(renderState.DepthRange.Near, renderState.DepthRange.Far);
+            //GL.DepthRange(renderState.DepthRange.Near, renderState.DepthRange.Far);
 
-            Enable(EnableCap.Blend, renderState.Blending.Enabled);
-            GL.BlendFuncSeparate(
-                TypeConverterGL3x.To(renderState.Blending.SourceRGBFactor),
-                TypeConverterGL3x.To(renderState.Blending.DestinationRGBFactor),
-                TypeConverterGL3x.To(renderState.Blending.SourceAlphaFactor),
-                TypeConverterGL3x.To(renderState.Blending.DestinationAlphaFactor));
-            GL.BlendEquationSeparate(
-                TypeConverterGL3x.To(renderState.Blending.RGBEquation),
-                TypeConverterGL3x.To(renderState.Blending.AlphaEquation));
-            GL.BlendColor(renderState.Blending.Color);
+            //Enable(EnableCap.Blend, renderState.Blending.Enabled);
+            //GL.BlendFuncSeparate(
+            //    TypeConverterGL3x.To(renderState.Blending.SourceRGBFactor),
+            //    TypeConverterGL3x.To(renderState.Blending.DestinationRGBFactor),
+            //    TypeConverterGL3x.To(renderState.Blending.SourceAlphaFactor),
+            //    TypeConverterGL3x.To(renderState.Blending.DestinationAlphaFactor));
+            //GL.BlendEquationSeparate(
+            //    TypeConverterGL3x.To(renderState.Blending.RGBEquation),
+            //    TypeConverterGL3x.To(renderState.Blending.AlphaEquation));
+            //GL.BlendColor(renderState.Blending.Color);
 
-            GL.DepthMask(renderState.DepthMask);
-            GL.ColorMask(renderState.ColorMask.Red, renderState.ColorMask.Green, 
-                renderState.ColorMask.Blue, renderState.ColorMask.Alpha);
+            //GL.DepthMask(renderState.DepthMask);
+            //GL.ColorMask(renderState.ColorMask.Red, renderState.ColorMask.Green, 
+            //    renderState.ColorMask.Blue, renderState.ColorMask.Alpha);
         }
 
         private static void ForceApplyRenderStateStencil(StencilFace face, StencilTestFace test)
         {
-            GL.StencilOpSeparate(face,
-                TypeConverterGL3x.To(test.StencilFailOperation),
-                TypeConverterGL3x.To(test.DepthFailStencilPassOperation),
-                TypeConverterGL3x.To(test.DepthPassStencilPassOperation));
+            //GL.StencilOpSeparate(face,
+            //    TypeConverterGL3x.To(test.StencilFailOperation),
+            //    TypeConverterGL3x.To(test.DepthFailStencilPassOperation),
+            //    TypeConverterGL3x.To(test.DepthPassStencilPassOperation));
 
-            GL.StencilFuncSeparate(face,
-                TypeConverterGL3x.To(test.Function),
-                test.ReferenceValue,
-                test.Mask);
+            //GL.StencilFuncSeparate(face,
+            //    TypeConverterGL3x.To(test.Function),
+            //    test.ReferenceValue,
+            //    test.Mask);
         }
 
         #endregion
@@ -176,7 +176,7 @@ namespace OpenGlobe.Renderer.GL3x
                 _clearStencil = clearState.Stencil;
             }
 
-            GL.Clear(TypeConverterGL3x.To(clearState.Buffers));
+            //GL.Clear(TypeConverterGL3x.To(clearState.Buffers));
         }
 
         public override void Draw(PrimitiveType primitiveType, int offset, int count, DrawState drawState, SceneState sceneState)
@@ -189,14 +189,14 @@ namespace OpenGlobe.Renderer.GL3x
             
             if (indexBuffer != null)
             {
-                GL.DrawRangeElements(TypeConverterGL3x.To(primitiveType),
-                    0, vertexArray.MaximumArrayIndex(), count,
-                    TypeConverterGL3x.To(indexBuffer.Datatype), new
-                    IntPtr(offset * VertexArraySizes.SizeOf(indexBuffer.Datatype)));
+                //GL.DrawRangeElements(TypeConverterGL3x.To(primitiveType),
+                //    0, vertexArray.MaximumArrayIndex(), count,
+                //    TypeConverterGL3x.To(indexBuffer.Datatype), new
+                //    IntPtr(offset * VertexArraySizes.SizeOf(indexBuffer.Datatype)));
             }
             else
             {
-                GL.DrawArrays(TypeConverterGL3x.To(primitiveType), offset, count);
+                //GL.DrawArrays(TypeConverterGL3x.To(primitiveType), offset, count);
             }
         }
 
@@ -210,14 +210,14 @@ namespace OpenGlobe.Renderer.GL3x
 
             if (indexBuffer != null)
             {
-                GL.DrawRangeElements(TypeConverterGL3x.To(primitiveType),
-                    0, vertexArray.MaximumArrayIndex(), indexBuffer.Count,
-                    TypeConverterGL3x.To(indexBuffer.Datatype), new IntPtr());
+                //GL.DrawRangeElements(TypeConverterGL3x.To(primitiveType),
+                //    0, vertexArray.MaximumArrayIndex(), indexBuffer.Count,
+                //    TypeConverterGL3x.To(indexBuffer.Datatype), new IntPtr());
             }
             else
             {
-                GL.DrawArrays(TypeConverterGL3x.To(primitiveType), 0,
-                    vertexArray.MaximumArrayIndex() + 1);
+                //GL.DrawArrays(TypeConverterGL3x.To(primitiveType), 0,
+                //    vertexArray.MaximumArrayIndex() + 1);
             }
         }
 
@@ -251,17 +251,17 @@ namespace OpenGlobe.Renderer.GL3x
 
             if (facetCulling.Enabled)
             {
-                if (_renderState.FacetCulling.Face != facetCulling.Face)
-                {
-                    GL.CullFace(TypeConverterGL3x.To(facetCulling.Face));
-                    _renderState.FacetCulling.Face = facetCulling.Face;
-                }
+                //if (_renderState.FacetCulling.Face != facetCulling.Face)
+                //{
+                //    GL.CullFace(TypeConverterGL3x.To(facetCulling.Face));
+                //    _renderState.FacetCulling.Face = facetCulling.Face;
+                //}
 
-                if (_renderState.FacetCulling.FrontFaceWindingOrder != facetCulling.FrontFaceWindingOrder)
-                {
-                    GL.FrontFace(TypeConverterGL3x.To(facetCulling.FrontFaceWindingOrder));
-                    _renderState.FacetCulling.FrontFaceWindingOrder = facetCulling.FrontFaceWindingOrder;
-                }
+                //if (_renderState.FacetCulling.FrontFaceWindingOrder != facetCulling.FrontFaceWindingOrder)
+                //{
+                //    GL.FrontFace(TypeConverterGL3x.To(facetCulling.FrontFaceWindingOrder));
+                //    _renderState.FacetCulling.FrontFaceWindingOrder = facetCulling.FrontFaceWindingOrder;
+                //}
             }
         }
 
@@ -276,11 +276,11 @@ namespace OpenGlobe.Renderer.GL3x
 
         private void ApplyRasterizationMode(RasterizationMode rasterizationMode)
         {
-            if (_renderState.RasterizationMode != rasterizationMode)
-            {
-                GL.PolygonMode(MaterialFace.FrontAndBack, TypeConverterGL3x.To(rasterizationMode));
-                _renderState.RasterizationMode = rasterizationMode;
-            }
+            //if (_renderState.RasterizationMode != rasterizationMode)
+            //{
+            //    GL.PolygonMode(MaterialFace.FrontAndBack, TypeConverterGL3x.To(rasterizationMode));
+            //    _renderState.RasterizationMode = rasterizationMode;
+            //}
         }
 
         private void ApplyScissorTest(ScissorTest scissorTest)
@@ -338,10 +338,10 @@ namespace OpenGlobe.Renderer.GL3x
                 (currentTest.DepthFailStencilPassOperation != test.DepthFailStencilPassOperation) ||
                 (currentTest.DepthPassStencilPassOperation != test.DepthPassStencilPassOperation))
             {
-                GL.StencilOpSeparate(face,
-                    TypeConverterGL3x.To(test.StencilFailOperation),
-                    TypeConverterGL3x.To(test.DepthFailStencilPassOperation),
-                    TypeConverterGL3x.To(test.DepthPassStencilPassOperation));
+                //GL.StencilOpSeparate(face,
+                //    TypeConverterGL3x.To(test.StencilFailOperation),
+                //    TypeConverterGL3x.To(test.DepthFailStencilPassOperation),
+                //    TypeConverterGL3x.To(test.DepthPassStencilPassOperation));
 
                 currentTest.StencilFailOperation = test.StencilFailOperation;
                 currentTest.DepthFailStencilPassOperation = test.DepthFailStencilPassOperation;
@@ -352,10 +352,10 @@ namespace OpenGlobe.Renderer.GL3x
                 (currentTest.ReferenceValue != test.ReferenceValue) ||
                 (currentTest.Mask != test.Mask))
             {
-                GL.StencilFuncSeparate(face,
-                    TypeConverterGL3x.To(test.Function),
-                    test.ReferenceValue,
-                    test.Mask);
+                //GL.StencilFuncSeparate(face,
+                //    TypeConverterGL3x.To(test.Function),
+                //    test.ReferenceValue,
+                //    test.Mask);
 
                 currentTest.Function = test.Function;
                 currentTest.ReferenceValue = test.ReferenceValue;
@@ -373,11 +373,11 @@ namespace OpenGlobe.Renderer.GL3x
 
             if (depthTest.Enabled)
             {
-                if (_renderState.DepthTest.Function != depthTest.Function)
-                {
-                    GL.DepthFunc(TypeConverterGL3x.To(depthTest.Function));
-                    _renderState.DepthTest.Function = depthTest.Function;
-                }
+                //if (_renderState.DepthTest.Function != depthTest.Function)
+                //{
+                //    GL.DepthFunc(TypeConverterGL3x.To(depthTest.Function));
+                //    _renderState.DepthTest.Function = depthTest.Function;
+                //}
             }
         }
 
@@ -409,48 +409,48 @@ namespace OpenGlobe.Renderer.GL3x
 
         private void ApplyBlending(Blending blending)
         {
-            if (_renderState.Blending.Enabled != blending.Enabled)
-            {
-                Enable(EnableCap.Blend, blending.Enabled);
-                _renderState.Blending.Enabled = blending.Enabled;
-            }
+            //if (_renderState.Blending.Enabled != blending.Enabled)
+            //{
+            //    Enable(EnableCap.Blend, blending.Enabled);
+            //    _renderState.Blending.Enabled = blending.Enabled;
+            //}
 
-            if (blending.Enabled)
-            {
-                if ((_renderState.Blending.SourceRGBFactor != blending.SourceRGBFactor) ||
-                    (_renderState.Blending.DestinationRGBFactor != blending.DestinationRGBFactor) ||
-                    (_renderState.Blending.SourceAlphaFactor != blending.SourceAlphaFactor) ||
-                    (_renderState.Blending.DestinationAlphaFactor != blending.DestinationAlphaFactor))
-                {
-                    GL.BlendFuncSeparate(
-                        TypeConverterGL3x.To(blending.SourceRGBFactor),
-                        TypeConverterGL3x.To(blending.DestinationRGBFactor),
-                        TypeConverterGL3x.To(blending.SourceAlphaFactor),
-                        TypeConverterGL3x.To(blending.DestinationAlphaFactor));
+            //if (blending.Enabled)
+            //{
+            //    if ((_renderState.Blending.SourceRGBFactor != blending.SourceRGBFactor) ||
+            //        (_renderState.Blending.DestinationRGBFactor != blending.DestinationRGBFactor) ||
+            //        (_renderState.Blending.SourceAlphaFactor != blending.SourceAlphaFactor) ||
+            //        (_renderState.Blending.DestinationAlphaFactor != blending.DestinationAlphaFactor))
+            //    {
+            //        GL.BlendFuncSeparate(
+            //            TypeConverterGL3x.To(blending.SourceRGBFactor),
+            //            TypeConverterGL3x.To(blending.DestinationRGBFactor),
+            //            TypeConverterGL3x.To(blending.SourceAlphaFactor),
+            //            TypeConverterGL3x.To(blending.DestinationAlphaFactor));
 
-                    _renderState.Blending.SourceRGBFactor = blending.SourceRGBFactor;
-                    _renderState.Blending.DestinationRGBFactor = blending.DestinationRGBFactor;
-                    _renderState.Blending.SourceAlphaFactor = blending.SourceAlphaFactor;
-                    _renderState.Blending.DestinationAlphaFactor = blending.DestinationAlphaFactor;
-                }
+            //        _renderState.Blending.SourceRGBFactor = blending.SourceRGBFactor;
+            //        _renderState.Blending.DestinationRGBFactor = blending.DestinationRGBFactor;
+            //        _renderState.Blending.SourceAlphaFactor = blending.SourceAlphaFactor;
+            //        _renderState.Blending.DestinationAlphaFactor = blending.DestinationAlphaFactor;
+            //    }
 
-                if ((_renderState.Blending.RGBEquation != blending.RGBEquation) ||
-                    (_renderState.Blending.AlphaEquation != blending.AlphaEquation))
-                {
-                    GL.BlendEquationSeparate(
-                        TypeConverterGL3x.To(blending.RGBEquation),
-                        TypeConverterGL3x.To(blending.AlphaEquation));
+            //    if ((_renderState.Blending.RGBEquation != blending.RGBEquation) ||
+            //        (_renderState.Blending.AlphaEquation != blending.AlphaEquation))
+            //    {
+            //        GL.BlendEquationSeparate(
+            //            TypeConverterGL3x.To(blending.RGBEquation),
+            //            TypeConverterGL3x.To(blending.AlphaEquation));
 
-                    _renderState.Blending.RGBEquation = blending.RGBEquation;
-                    _renderState.Blending.AlphaEquation = blending.AlphaEquation;
-                }
+            //        _renderState.Blending.RGBEquation = blending.RGBEquation;
+            //        _renderState.Blending.AlphaEquation = blending.AlphaEquation;
+            //    }
 
-                if (_renderState.Blending.Color != blending.Color)
-                {
-                    GL.BlendColor(blending.Color);
-                    _renderState.Blending.Color = blending.Color;
-                }
-            }
+            //    if (_renderState.Blending.Color != blending.Color)
+            //    {
+            //        GL.BlendColor(blending.Color);
+            //        _renderState.Blending.Color = blending.Color;
+            //    }
+            //}
         }
 
         private void ApplyColorMask(ColorMask colorMask)

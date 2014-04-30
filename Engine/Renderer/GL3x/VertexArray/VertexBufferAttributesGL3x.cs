@@ -141,13 +141,13 @@ namespace OpenGlobe.Renderer.GL3x
             VertexBufferAttribute attribute = _attributes[index].VertexBufferAttribute;
             VertexBufferGL3x bufferObjectGL = (VertexBufferGL3x)attribute.VertexBuffer;
             
-            bufferObjectGL.Bind();
-            GL.VertexAttribPointer(index,
-                attribute.NumberOfComponents,
-                TypeConverterGL3x.To(attribute.ComponentDatatype),
-                attribute.Normalize,
-                attribute.StrideInBytes,
-                attribute.OffsetInBytes);
+            //bufferObjectGL.Bind();
+            //GL.VertexAttribPointer(index,
+            //    attribute.NumberOfComponents,
+            //    TypeConverterGL3x.To(attribute.ComponentDatatype),
+            //    attribute.Normalize,
+            //    attribute.StrideInBytes,
+            //    attribute.OffsetInBytes);
         }
 
         private static void Detach(int index)

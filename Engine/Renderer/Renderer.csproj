@@ -86,8 +86,11 @@
     <Compile Include="GL3x\Buffers\UniformBufferGL3x.cs" />
     <Compile Include="GL3x\Buffers\VertexBufferGL3x.cs" />
     <Compile Include="GL3x\Buffers\WritePixelBufferGL3x.cs" />
+    <Compile Include="GL3x\ContextGL3x.cs" />
     <Compile Include="GL3x\ExtensionsGL3x.cs" />
     <Compile Include="GL3x\Framebuffer\ColorAttachmentsGL3x.cs" />
+    <Compile Include="GL3x\Framebuffer\FramebufferGL3x.cs" />
+    <Compile Include="GL3x\GraphicsWindowGL3x.cs" />
     <Compile Include="GL3x\ICleanable.cs" />
     <Compile Include="GL3x\ICleanableObserver.cs" />
     <Compile Include="GL3x\Input\KeyboardGL3x.cs" />
@@ -101,6 +104,9 @@
     <Compile Include="GL3x\Names\TextureNameGL3x.cs" />
     <Compile Include="GL3x\Names\VertexArrayNameGL3x.cs" />
     <Compile Include="GL3x\Shaders\FragmentOutputsGL3x.cs" />
+    <Compile Include="GL3x\Shaders\ShaderObjectGL3x.cs" />
+    <Compile Include="GL3x\Shaders\ShaderProgramGL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformBlockGL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformBoolGL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformBoolVector2GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformBoolVector3GL3x.cs" />
@@ -128,6 +134,8 @@
     <Compile Include="GL3x\Textures\TextureSamplerGL3x.cs" />
     <Compile Include="GL3x\Textures\TextureUnitGL3x.cs" />
     <Compile Include="GL3x\Textures\TextureUnitsGL3x.cs" />
+    <Compile Include="GL3x\VertexArray\VertexArrayGL3x.cs" />
+    <Compile Include="GL3x\VertexArray\VertexBufferAttributesGL3x.cs" />
     <Compile Include="GraphicsWindow.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -374,6 +382,7 @@
     <Compile Include="VertexArray\VertexArraySizes.cs" />
     <Compile Include="VertexArray\VertexBufferAttribute.cs" />
     <Compile Include="VertexArray\VertexBufferAttributes.cs" />
+    <Compile Include="VertexArray\VertexLocations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -387,7 +396,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GL3x\Synchronization\" />
-    <Folder Include="GL3x\VertexArray\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
