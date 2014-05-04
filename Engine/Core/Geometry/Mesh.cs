@@ -28,11 +28,11 @@ namespace Engine.Core
     //    TriangleStripAdjacency
     //}
 
-    public enum WindingOrder
-    {
-        Clockwise,
-        Counterclockwise
-    }
+    //public enum WindingOrder
+    //{
+    //    Clockwise,
+    //    Counterclockwise
+    //}
 
     public class Mesh
     {
@@ -49,7 +49,7 @@ namespace Engine.Core
         public IndicesBase Indices { get; set; }
 
         public PrimitiveType PrimitiveType { get; set; }
-        public WindingOrder FrontFaceWindingOrder { get; set; }
+        public FrontFaceDirection FrontFaceWindingOrder { get; set; }
 
         private VertexAttributeCollection _attributes;
     }

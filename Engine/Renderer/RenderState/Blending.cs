@@ -8,74 +8,32 @@
 #endregion
 
 using System.Drawing;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
-    public enum SourceBlendingFactor
-    {
-        Zero,
-        One,
-        SourceAlpha,
-        OneMinusSourceAlpha,
-        DestinationAlpha,
-        OneMinusDestinationAlpha,
-        DestinationColor,
-        OneMinusDestinationColor,
-        SourceAlphaSaturate,
-        ConstantColor,
-        OneMinusConstantColor,
-        ConstantAlpha,
-        OneMinusConstantAlpha
-    }
-
-    public enum DestinationBlendingFactor
-    {
-        Zero,
-        One,
-        SourceColor,
-        OneMinusSourceColor,
-        SourceAlpha,
-        OneMinusSourceAlpha,
-        DestinationAlpha,
-        OneMinusDestinationAlpha,
-        DestinationColor,
-        OneMinusDestinationColor,
-        ConstantColor,
-        OneMinusConstantColor,
-        ConstantAlpha,
-        OneMinusConstantAlpha
-    }
-
-    public enum BlendEquation
-    {
-        Add,
-        Minimum,
-        Maximum,
-        Subtract,
-        ReverseSubtract
-    }
-
+ 
     public class Blending
     {
         public Blending()
         {
             Enabled = false;
-            SourceRGBFactor = SourceBlendingFactor.One;
-            SourceAlphaFactor = SourceBlendingFactor.One;
-            DestinationRGBFactor = DestinationBlendingFactor.Zero;
-            DestinationAlphaFactor = DestinationBlendingFactor.Zero;
-            RGBEquation = BlendEquation.Add;
-            AlphaEquation = BlendEquation.Add;
+            SourceRGBFactor = BlendingFactorSrc.One;
+            SourceAlphaFactor = BlendingFactorSrc.One;
+            DestinationRGBFactor = BlendingFactorDest.Zero;
+            DestinationAlphaFactor = BlendingFactorDest.Zero;
+            RGBEquation = BlendEquationMode.FuncAdd;
+            AlphaEquation = BlendEquationMode.FuncAdd;
             Color = Color.FromArgb(0, 0, 0, 0);
         }
 
         public bool Enabled { get; set; }
-        public SourceBlendingFactor SourceRGBFactor { get; set; }
-        public SourceBlendingFactor SourceAlphaFactor { get; set; }
-        public DestinationBlendingFactor DestinationRGBFactor { get; set; }
-        public DestinationBlendingFactor DestinationAlphaFactor { get; set; }
-        public BlendEquation RGBEquation { get; set; }
-        public BlendEquation AlphaEquation { get; set; }
+        public BlendingFactorSrc SourceRGBFactor { get; set; }
+        public BlendingFactorSrc SourceAlphaFactor { get; set; }
+        public BlendingFactorDest DestinationRGBFactor { get; set; }
+        public BlendingFactorDest DestinationAlphaFactor { get; set; }
+        public BlendEquationMode RGBEquation { get; set; }
+        public BlendEquationMode AlphaEquation { get; set; }
         public Color Color { get; set; }
     }
 }

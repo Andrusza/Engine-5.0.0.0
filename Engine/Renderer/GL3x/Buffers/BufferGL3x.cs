@@ -45,10 +45,7 @@ namespace OpenGlobe.Renderer.GL3x
             GC.AddMemoryPressure(sizeInBytes);
         }
 
-        public void CopyFromSystemMemory<T>(
-            T[] bufferInSystemMemory,
-            int destinationOffsetInBytes,
-            int lengthInBytes) where T : struct
+        public void CopyFromSystemMemory<T>( T[] bufferInSystemMemory, int destinationOffsetInBytes, int lengthInBytes) where T : struct
         {
             if (destinationOffsetInBytes < 0)
             {

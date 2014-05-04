@@ -14,16 +14,9 @@ namespace OpenGlobe.Renderer
 {
     public struct Texture2DDescription : IEquatable<Texture2DDescription>
     {
-        public Texture2DDescription(int width, int height, TextureFormat format)
-            : this(width, height, format, false)
-        {
-        }
+        public Texture2DDescription(int width, int height, TextureFormat format) : this(width, height, format, false) { }
 
-        public Texture2DDescription(
-            int width, 
-            int height, 
-            TextureFormat format,
-            bool generateMipmaps)
+        public Texture2DDescription( int width, int height, TextureFormat format, bool generateMipmaps)
         {
             _width = width;
             _height = height;

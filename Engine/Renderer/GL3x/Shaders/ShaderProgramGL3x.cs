@@ -123,10 +123,10 @@ namespace OpenGlobe.Renderer.GL3x
             int programHandle = program.Value;
 
             int numberOfUniforms = 0;
-            //GL.GetProgram(programHandle, GetProgramParameterName.ActiveUniforms, out numberOfUniforms);
+            GL.GetProgram(programHandle, GetProgramParameterName.ActiveUniforms, out numberOfUniforms);
 
             int uniformNameMaxLength = 0;
-            //GL.GetProgram(programHandle, GetProgramParameterName.ActiveUniformMaxLength, out uniformNameMaxLength);
+            GL.GetProgram(programHandle, GetProgramParameterName.ActiveUniformMaxLength, out uniformNameMaxLength);
 
             UniformCollection uniforms = new UniformCollection();
             for (int i = 0; i < numberOfUniforms; ++i)
@@ -269,7 +269,7 @@ namespace OpenGlobe.Renderer.GL3x
                     return new UniformIntGL3x(name, location, type, this);
             }
 
-            return null;
+            throw new ArgumentOutOfRangeException("type");
         }
 
         private static UniformBlockCollection FindUniformBlocks(ShaderProgramNameGL3x program)
@@ -277,13 +277,12 @@ namespace OpenGlobe.Renderer.GL3x
             int programHandle = program.Value;
 
             int numberOfUniformBlocks = 0;
-            //GL.GetProgram(programHandle, GetProgramParameterName.ActiveUniformBlocks, out numberOfUniformBlocks);
+            GL.GetProgram(programHandle, GetProgramParameterName.ActiveUniformBlocks, out numberOfUniformBlocks);
 
             UniformBlockCollection uniformBlocks = new UniformBlockCollection();
             for (int i = 0; i < numberOfUniformBlocks; ++i)
             {
-                string uniformBlockName = String.Empty;
-                //GL.GetActiveUniformBlockName(programHandle, i);
+                //string uniformBlockName = GL.GetActiveUniformBlock()
 
                 int uniformBlockSizeInBytes;
                 GL.GetActiveUniformBlock(programHandle, i, ActiveUniformBlockParameter.UniformBlockDataSize, out uniformBlockSizeInBytes);

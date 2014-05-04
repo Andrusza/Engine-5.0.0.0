@@ -9,28 +9,22 @@
 
 using System.Drawing;
 using Engine.Core;
-
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
-    public enum CullFace
-    {
-        Front,
-        Back,
-        FrontAndBack
-    }
-
+    
     public class FacetCulling
     {
         public FacetCulling()
         {
             Enabled = true;
-            Face = CullFace.Back;
-            FrontFaceWindingOrder = WindingOrder.Counterclockwise;
+            Face = CullFaceMode.Back;
+            FrontFaceWindingOrder = FrontFaceDirection.Ccw;
         }
 
         public bool Enabled { get; set; }
-        public CullFace Face { get; set; }
-        public WindingOrder FrontFaceWindingOrder { get; set; }
+        public CullFaceMode Face { get; set; }
+        public FrontFaceDirection FrontFaceWindingOrder { get; set; }
     }
 }
