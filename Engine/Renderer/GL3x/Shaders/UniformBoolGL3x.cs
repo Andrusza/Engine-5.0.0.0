@@ -15,7 +15,7 @@ namespace OpenGlobe.Renderer.GL3x
     internal class UniformBoolGL3x : Uniform<bool>, ICleanable
     {
         internal UniformBoolGL3x(string name, int location, ICleanableObserver observer)
-            : base(name, UniformType.Bool)
+            : base(name, ActiveUniformType.Bool)
         {
             _location = location;
             _dirty = true;

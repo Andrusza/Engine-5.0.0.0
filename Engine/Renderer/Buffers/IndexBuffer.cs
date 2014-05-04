@@ -14,18 +14,7 @@ using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
-    public enum IndexBufferDatatype
-    {
-        //
-        // OpenGL supports byte indices but D3D does not.  We do not use them 
-        // because they are unlikely to have a speed or memory benefit:
-        //
-        // http://www.opengl.org/discussion_boards/ubbthreads.php?ubb=showflat&Number=285547
-        //
-
-        UnsignedShort,
-        UnsignedInt
-    }
+    
 
     public abstract class IndexBuffer : Disposable
     {
@@ -52,7 +41,7 @@ namespace OpenGlobe.Renderer
         public abstract T[] CopyToSystemMemory<T>(int offsetInBytes, int sizeInBytes) where T : struct;
 
         public abstract int SizeInBytes { get; }
-        public abstract IndexBufferDatatype Datatype { get; }
+        public abstract DrawElementsType Datatype { get; }
         public abstract BufferUsageHint UsageHint { get; }
     }
 }

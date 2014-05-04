@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="BlittableBGRA.cs" />
     <Compile Include="BlittableRGBA.cs" />
-    <Compile Include="Buffers\BufferHint.cs" />
     <Compile Include="Buffers\ClearBuffers.cs" />
     <Compile Include="Buffers\IndexBuffer.cs" />
     <Compile Include="Buffers\PixelBufferHint.cs" />
@@ -128,12 +127,14 @@
     <Compile Include="GL3x\Shaders\UniformIntVector2GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformIntVector3GL3x.cs" />
     <Compile Include="GL3x\Shaders\UniformIntVector4GL3x.cs" />
+    <Compile Include="GL3x\Synchronization\FenceGL3x.cs" />
     <Compile Include="GL3x\Textures\Texture2DGL3x.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GL3x\Textures\TextureSamplerGL3x.cs" />
     <Compile Include="GL3x\Textures\TextureUnitGL3x.cs" />
     <Compile Include="GL3x\Textures\TextureUnitsGL3x.cs" />
+    <Compile Include="GL3x\TypeConverterGL3x.cs" />
     <Compile Include="GL3x\VertexArray\VertexArrayGL3x.cs" />
     <Compile Include="GL3x\VertexArray\VertexBufferAttributesGL3x.cs" />
     <Compile Include="GraphicsWindow.cs">
@@ -374,6 +375,7 @@
     </Compile>
     <Compile Include="Textures\TextureUtility.cs" />
     <Compile Include="Textures\TextureWrap.cs" />
+    <Compile Include="Tools\TextureAtlas.cs" />
     <Compile Include="Tools\TextureCoordinateCollection.cs" />
     <Compile Include="VertexArray\ComponentDatatype.cs" />
     <Compile Include="VertexArray\VertexArray.cs">
@@ -394,9 +396,7 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GL3x\Synchronization\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

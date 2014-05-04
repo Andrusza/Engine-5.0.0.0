@@ -14,7 +14,7 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal class UniformIntGL3x : Uniform<int>, ICleanable
     {
-        internal UniformIntGL3x(string name, int location, UniformType type, ICleanableObserver observer)
+        internal UniformIntGL3x(string name, int location, ActiveUniformType type, ICleanableObserver observer)
             : base(name, type)
         {
             _location = location;

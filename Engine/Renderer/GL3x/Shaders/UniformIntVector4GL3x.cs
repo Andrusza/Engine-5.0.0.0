@@ -16,7 +16,7 @@ namespace OpenGlobe.Renderer.GL3x
     internal class UniformIntVector4GL3x : Uniform<Vector4I>, ICleanable
     {
         internal UniformIntVector4GL3x(string name, int location, ICleanableObserver observer)
-            : base(name, UniformType.IntVector4)
+            : base(name, ActiveUniformType.IntVec4)
         {
             _location = location;
             _dirty = true;

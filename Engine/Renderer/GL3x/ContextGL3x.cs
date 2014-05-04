@@ -176,7 +176,7 @@ namespace OpenGlobe.Renderer.GL3x
                 _clearStencil = clearState.Stencil;
             }
 
-            //GL.Clear(TypeConverterGL3x.To(clearState.Buffers));
+            GL.Clear(TypeConverterGL3x.To(clearState.Buffers));
         }
 
         public override void Draw(PrimitiveType primitiveType, int offset, int count, DrawState drawState, SceneState sceneState)
@@ -189,14 +189,16 @@ namespace OpenGlobe.Renderer.GL3x
             
             if (indexBuffer != null)
             {
-                //GL.DrawRangeElements(TypeConverterGL3x.To(primitiveType),
-                //    0, vertexArray.MaximumArrayIndex(), count,
-                //    TypeConverterGL3x.To(indexBuffer.Datatype), new
-                //    IntPtr(offset * VertexArraySizes.SizeOf(indexBuffer.Datatype)));
+                GL.DrawRangeElements(primitiveType,
+                                     0,
+                                     vertexArray.MaximumArrayIndex(),
+                                     count,
+                                     indexBuffer.Datatype,
+                                     new IntPtr(offset * VertexArraySizes.SizeOf(indexBuffer.Datatype)));
             }
             else
             {
-                //GL.DrawArrays(TypeConverterGL3x.To(primitiveType), offset, count);
+                GL.DrawArrays(primitiveType, offset, count);
             }
         }
 

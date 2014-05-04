@@ -1,37 +1,21 @@
 ﻿#region License
+
 //
 // (C) Copyright 2009 Patrick Cozzi and Deron Ohlarik
 //
 // Distributed under the MIT License.
 // See License.txt or http://www.opensource.org/licenses/mit-license.php.
 //
-#endregion
 
+#endregion License
+
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
-    public enum ShaderVertexAttributeType
-    {
-        Float,
-        FloatVector2,
-        FloatVector3,
-        FloatVector4,
-        FloatMatrix22,
-        FloatMatrix33,
-        FloatMatrix44,
-        Int,
-        IntVector2,
-        IntVector3,
-        IntVector4
-    }
-
     public class ShaderVertexAttribute
     {
-        public ShaderVertexAttribute(
-            string name, 
-            int location,
-            ShaderVertexAttributeType type,
-            int length)
+        public ShaderVertexAttribute(string name, int location, ActiveAttribType type, int length)
         {
             _name = name;
             _location = location;
@@ -49,7 +33,7 @@ namespace OpenGlobe.Renderer
             get { return _location; }
         }
 
-        public ShaderVertexAttributeType Datatype
+        public ActiveAttribType Datatype
         {
             get { return _type; }
         }
@@ -61,7 +45,7 @@ namespace OpenGlobe.Renderer
 
         private string _name;
         private int _location;
-        private ShaderVertexAttributeType _type;
+        private ActiveAttribType _type;
         private int _length;                            // TODO:  Array type
     }
 }

@@ -1,17 +1,19 @@
 ﻿#region License
+
 //
 // (C) Copyright 2009 Patrick Cozzi and Deron Ohlarik
 //
 // Distributed under the MIT License.
 // See License.txt or http://www.opensource.org/licenses/mit-license.php.
 //
-#endregion
 
+#endregion License
+
+using Engine.Core;
+using OpenGlobe.Core;
+using OpenTK.Graphics.OpenGL4;
 using System;
 using System.Globalization;
-using OpenTK.Graphics.OpenGL;
-using OpenGlobe.Core;
-using Engine.Core;
 
 namespace OpenGlobe.Renderer.GL3x
 {
@@ -19,73 +21,15 @@ namespace OpenGlobe.Renderer.GL3x
     {
         public ShaderObjectGL3x(ShaderType shaderType, string source)
         {
-            string builtinConstants =
-                "#version 330 \n" +
-
-                "#define og_positionVertexLocation          " + VertexLocations.Position.ToString(NumberFormatInfo.InvariantInfo) + " \n" +
-                "#define og_normalVertexLocation            " + VertexLocations.Normal.ToString(NumberFormatInfo.InvariantInfo) + " \n" +
-                "#define og_textureCoordinateVertexLocation " + VertexLocations.TextureCoordinate.ToString(NumberFormatInfo.InvariantInfo) + " \n" +
-                "#define og_colorVertexLocation             " + VertexLocations.Color.ToString(NumberFormatInfo.InvariantInfo) + " \n" +
-                "#define og_positionHighVertexLocation      " + VertexLocations.PositionHigh.ToString(NumberFormatInfo.InvariantInfo) + " \n" +
-                "#define og_positionLowVertexLocation       " + VertexLocations.PositionLow.ToString(NumberFormatInfo.InvariantInfo) + " \n" +
-
-                "const float og_E =                " + Math.E.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_pi =               " + Math.PI.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_oneOverPi =        " + Trig.OneOverPi.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_piOverTwo =        " + Trig.PiOverTwo.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_piOverThree =      " + Trig.PiOverThree.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_piOverFour =       " + Trig.PiOverFour.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_piOverSix =        " + Trig.PiOverSix.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_threePiOver2 =     " + Trig.ThreePiOver2.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_twoPi =            " + Trig.TwoPi.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_oneOverTwoPi =     " + Trig.OneOverTwoPi.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_radiansPerDegree = " + Trig.RadiansPerDegree.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_maximumFloat =     " + float.MaxValue.ToString(NumberFormatInfo.InvariantInfo) + "; \n" +
-                "const float og_minimumFloat =     " + float.MinValue.ToString(NumberFormatInfo.InvariantInfo) + "; \n";
-
-            string builtinFunctions = EmbeddedResources.GetText("OpenGlobe.Renderer.GL3x.GLSL.BuiltinFunctions.glsl");
-
-            string modifiedSource;
-
-            //
-            // This requires that #version be the first line in the shader.  This
-            // doesn't follow the spec exactly, which allows whitespace and
-            // comments to come beforehand.
-            //
-            if (source.StartsWith("#version", StringComparison.InvariantCulture))
-            {
-                if (!source.StartsWith("#version 330", StringComparison.InvariantCulture))
-                {
-                    throw new ArgumentException("Only GLSL version 330 is supported.");
-                }
-
-                modifiedSource = "//" + source;
-            }
-            else
-            {
-                modifiedSource = source;
-            }
-
-            string[] sources = new[] { builtinConstants, builtinFunctions, modifiedSource };
-            int[] lengths = new[] { builtinConstants.Length, builtinFunctions.Length, modifiedSource.Length };
-
             _shaderObject = GL.CreateShader(shaderType);
-            //unsafe
-            //{
-            //    fixed (int *lengthPointer = lengths)
-            //    {
-            //        GL.ShaderSource(_shaderObject, sources.Length, sources, lengthPointer);
-            //    }
-            //}
+            
             GL.CompileShader(_shaderObject);
-
             int compileStatus;
+
             GL.GetShader(_shaderObject, ShaderParameter.CompileStatus, out compileStatus);
 
             if (compileStatus == 0)
             {
-                Console.WriteLine(sources[0]);
-                Console.WriteLine(sources[1]);
                 throw new CouldNotCreateVideoCardResourceException("Could not compile shader object.  Compile Log:  \n\n" + CompileLog);
             }
         }
@@ -118,7 +62,7 @@ namespace OpenGlobe.Renderer.GL3x
             base.Dispose(disposing);
         }
 
-        #endregion
+        #endregion Disposable Members
 
         private int _shaderObject;
     }

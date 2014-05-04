@@ -15,9 +15,9 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal class WritePixelBufferGL3x : WritePixelBuffer
     {
-        public WritePixelBufferGL3x(PixelBufferUsageHint usageHint, int sizeInBytes)
+        public WritePixelBufferGL3x(BufferUsageHint usageHint, int sizeInBytes)
         {
-            _bufferObject = new PixelBufferGL3x(BufferTarget.PixelUnpackBuffer, ToBufferUsageHint(usageHint), sizeInBytes);
+            _bufferObject = new PixelBufferGL3x(BufferTarget.PixelUnpackBuffer, usageHint, sizeInBytes);
             _usageHint = usageHint;
         }
 
@@ -61,7 +61,7 @@ namespace OpenGlobe.Renderer.GL3x
             get { return _bufferObject.SizeInBytes; }
         }
 
-        public override PixelBufferUsageHint UsageHint
+        public override BufferUsageHint UsageHint
         {
             get { return _usageHint; }
         }
@@ -81,19 +81,11 @@ namespace OpenGlobe.Renderer.GL3x
 
         #endregion
 
-        static BufferUsageHint ToBufferUsageHint(PixelBufferUsageHint usageHint)
-        {
-            return _BufferUsageHints[(int)usageHint];
-        }
+        
 
         private PixelBufferGL3x _bufferObject;
-        private PixelBufferUsageHint _usageHint;
+        private BufferUsageHint _usageHint;
 
-        private static readonly BufferUsageHint[] _BufferUsageHints = new[]
-        {
-            BufferUsageHint.StreamDraw,
-            BufferUsageHint.StaticDraw,
-            BufferUsageHint.DynamicDraw
-        };
+       
     }
 }

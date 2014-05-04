@@ -45,11 +45,11 @@ namespace OpenGlobe.Renderer.GL3x
         {
             if (typeof(T) == typeof(ushort))
             {
-                _dataType = IndexBufferDatatype.UnsignedShort;
+                _dataType = DrawElementsType.UnsignedShort;
             }
             else if (typeof(T) == typeof(uint))
             {
-                _dataType = IndexBufferDatatype.UnsignedInt;
+                _dataType = DrawElementsType.UnsignedInt;
             }
             else
             {
@@ -77,7 +77,7 @@ namespace OpenGlobe.Renderer.GL3x
             get { return _bufferObject.UsageHint; }
         }
 
-        public override IndexBufferDatatype Datatype
+        public override DrawElementsType Datatype
         {
             get { return _dataType; }
         }
@@ -98,7 +98,7 @@ namespace OpenGlobe.Renderer.GL3x
         #endregion
 
         BufferGL3x _bufferObject;
-        IndexBufferDatatype _dataType;
+        DrawElementsType _dataType;
         int _count;
     }
 }

@@ -19,10 +19,7 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal sealed class PixelBufferGL3x : IDisposable
     {
-        public PixelBufferGL3x(
-            BufferTarget type,
-            BufferUsageHint usageHint,
-            int sizeInBytes)
+        public PixelBufferGL3x( BufferTarget type, BufferUsageHint usageHint, int sizeInBytes) 
         {
             if (sizeInBytes <= 0)
             {
@@ -46,14 +43,10 @@ namespace OpenGlobe.Renderer.GL3x
             //
             Bind();
             GL.BufferData(_type, new IntPtr(sizeInBytes), new IntPtr(), _usageHint);
-
             GC.AddMemoryPressure(sizeInBytes);
         }
 
-        public void CopyFromSystemMemory<T>(
-            T[] bufferInSystemMemory,
-            int destinationOffsetInBytes,
-            int lengthInBytes) where T : struct
+        public void CopyFromSystemMemory<T>( T[] bufferInSystemMemory, int destinationOffsetInBytes, int lengthInBytes) where T : struct
         {
             if (destinationOffsetInBytes < 0)
             {
@@ -80,10 +73,7 @@ namespace OpenGlobe.Renderer.GL3x
             }
 
             Bind();
-            GL.BufferSubData<T>(_type,
-                new IntPtr(destinationOffsetInBytes),
-                new IntPtr(lengthInBytes),
-                bufferInSystemMemory);
+            GL.BufferSubData<T>(_type, new IntPtr(destinationOffsetInBytes), new IntPtr(lengthInBytes), bufferInSystemMemory);
         }
         
         public void CopyFromBitmap(Bitmap bitmap)

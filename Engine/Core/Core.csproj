@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArraySizeInBytes.cs" />
+    <Compile Include="CollectionAlgorithms.cs" />
     <Compile Include="Disposable.cs" />
     <Compile Include="Geometry\Indices\IndicesBase.cs" />
     <Compile Include="Geometry\Indices\IndicesType.cs" />

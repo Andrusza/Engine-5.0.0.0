@@ -16,7 +16,7 @@ namespace OpenGlobe.Renderer.GL3x
     internal class UniformFloatMatrix24GL3x : Uniform<Matrix24<float>>, ICleanable
     {
         internal UniformFloatMatrix24GL3x(string name, int location, ICleanableObserver observer)
-            : base(name, UniformType.FloatMatrix24)
+            : base(name, ActiveUniformType.FloatMat2x4)
         {
             _location = location;
             _value = new Matrix24<float>();

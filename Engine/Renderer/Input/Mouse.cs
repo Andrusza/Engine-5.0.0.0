@@ -7,6 +7,7 @@
 //
 #endregion
 
+using OpenTK.Input;
 using System;
 using System.Drawing;
 

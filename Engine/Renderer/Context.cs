@@ -18,16 +18,7 @@ using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
-    [Flags]
-    public enum ClearBuffers
-    {
-        ColorBuffer = 1,
-        DepthBuffer = 2,
-        StencilBuffer = 4,
-        ColorAndDepthBuffer = ColorBuffer | DepthBuffer, 
-        All = ColorBuffer | DepthBuffer | StencilBuffer
-    }
-
+    
     public abstract class Context
     {
         public abstract void MakeCurrent();

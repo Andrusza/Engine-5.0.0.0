@@ -7,17 +7,12 @@
 //
 #endregion
 
+using OpenTK.Graphics.OpenGL4;
 namespace OpenGlobe.Renderer
 {
     public class UniformBlockArrayMember : UniformBlockMember
     {
-        internal UniformBlockArrayMember(
-            string name,
-            UniformType type,
-            int offsetInBytes,
-            int length,
-            int elementStrideInBytes)
-            : base(name, type, offsetInBytes)
+        internal UniformBlockArrayMember( string name, ActiveUniformType type, int offsetInBytes, int length, int elementStrideInBytes) : base(name, type, offsetInBytes)
         {
             _length = length;
             _elementStrideInBytes = elementStrideInBytes;

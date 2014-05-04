@@ -10,19 +10,22 @@
 using System;
 using OpenGlobe.Core;
 using Engine.Core;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
     internal static class VertexArraySizes
     {
-        public static int SizeOf(IndexBufferDatatype type)
+        public static int SizeOf(DrawElementsType type)
         {
             switch (type)
             {
-                case IndexBufferDatatype.UnsignedShort:
+                case DrawElementsType.UnsignedShort:
                     return sizeof(ushort);
-                case IndexBufferDatatype.UnsignedInt:
+                case DrawElementsType.UnsignedInt:
                     return sizeof(uint);
+                case DrawElementsType.UnsignedByte:
+                    return sizeof(sbyte);
             }
 
             throw new ArgumentException("type");

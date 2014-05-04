@@ -8,6 +8,7 @@
 #endregion
 
 using Engine.Core;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
@@ -17,18 +18,18 @@ namespace OpenGlobe.Renderer
         Signaled
     }
 
-    public enum ClientWaitResult
-    {
-        AlreadySignaled,
-        Signaled,
-        TimeoutExpired
-    }
+    //public enum WaitSyncStatus
+    //{
+    //    AlreadySignaled,
+    //    Signaled,
+    //    TimeoutExpired
+    //}
 
     public abstract class Fence : Disposable
     {
         public abstract void ServerWait();
-        public abstract ClientWaitResult ClientWait();
-        public abstract ClientWaitResult ClientWait(int timeoutInNanoseconds);
+        public abstract WaitSyncStatus ClientWait();
+        public abstract WaitSyncStatus ClientWait(int timeoutInNanoseconds);
         public abstract SynchronizationStatus Status();
     }
 }

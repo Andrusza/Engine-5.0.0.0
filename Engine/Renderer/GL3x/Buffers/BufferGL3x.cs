@@ -16,10 +16,7 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal sealed class BufferGL3x : IDisposable
     {
-        public BufferGL3x(
-            BufferTarget type, 
-            BufferUsageHint usageHint, 
-            int sizeInBytes)
+        public BufferGL3x(BufferTarget type, BufferUsageHint usageHint, int sizeInBytes)
         {
             if (sizeInBytes <= 0)
             {
@@ -79,10 +76,7 @@ namespace OpenGlobe.Renderer.GL3x
 
             GL.BindVertexArray(0);
             Bind();
-            GL.BufferSubData<T>(_type,
-                new IntPtr(destinationOffsetInBytes),
-                new IntPtr(lengthInBytes),
-                bufferInSystemMemory);
+            GL.BufferSubData<T>(_type, new IntPtr(destinationOffsetInBytes), new IntPtr(lengthInBytes), bufferInSystemMemory);
         }
 
         public T[] CopyToSystemMemory<T>(int offsetInBytes, int lengthInBytes) where T : struct

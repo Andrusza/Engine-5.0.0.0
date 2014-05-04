@@ -7,19 +7,12 @@
 //
 #endregion
 
+using OpenTK.Graphics.OpenGL4;
 namespace OpenGlobe.Renderer
 {
     public class UniformBlockMatrixArrayMember : UniformBlockMember
     {
-        internal UniformBlockMatrixArrayMember(
-            string name,
-            UniformType type,
-            int offsetInBytes,
-            int length,
-            int elementStrideInBytes,
-            int matrixStrideInBytes,
-            bool rowMajor)
-            : base(name, type, offsetInBytes)
+        internal UniformBlockMatrixArrayMember( string name, ActiveUniformType type, int offsetInBytes, int length, int elementStrideInBytes, int matrixStrideInBytes, bool rowMajor) : base(name, type, offsetInBytes)
         {
             _length = length;
             _elementStrideInBytes = elementStrideInBytes;

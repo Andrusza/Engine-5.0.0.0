@@ -7,13 +7,14 @@
 //
 #endregion
 
+using OpenTK.Input;
 using System;
 
 namespace OpenGlobe.Renderer
 {
     public class KeyboardKeyEventArgs : EventArgs
     {
-        public KeyboardKeyEventArgs(KeyboardKeyEvent keyboardEvent, KeyboardKey key)
+        public KeyboardKeyEventArgs(KeyboardKeyEvent keyboardEvent, Key key)
         {
             _keyboardEvent = keyboardEvent;
             _key = key;
@@ -24,12 +25,12 @@ namespace OpenGlobe.Renderer
             get { return _keyboardEvent; }
         }
 
-        public KeyboardKey Key
+        public Key Key
         {
             get { return _key; }
         }
 
         private KeyboardKeyEvent _keyboardEvent;
-        private KeyboardKey _key;
+        private Key _key;
     }
 }

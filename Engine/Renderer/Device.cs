@@ -395,7 +395,7 @@ namespace OpenGlobe.Renderer
         //    return new UniformBufferGL3x(usageHint, sizeInBytes);
         //}
 
-        //public static WritePixelBuffer CreateWritePixelBuffer(PixelBufferUsageHint usageHint, int sizeInBytes)
+        //public static WritePixelBuffer CreateWritePixelBuffer(BufferUsageHint usageHint, int sizeInBytes)
         //{
         //    return new WritePixelBufferGL3x(usageHint, sizeInBytes);
         //}
@@ -422,7 +422,7 @@ namespace OpenGlobe.Renderer
 
         //private static Texture2D CreateTexture2DFromBitmap(Bitmap bitmap, TextureFormat format, bool generateMipmaps, TextureTarget textureTarget)
         //{
-        //    using (WritePixelBuffer pixelBuffer = Device.CreateWritePixelBuffer(PixelBufferUsageHint.Stream, 
+        //    using (WritePixelBuffer pixelBuffer = Device.CreateWritePixelBuffer(BufferUsageHint.Stream, 
         //        BitmapAlgorithms.SizeOfPixelsInBytes(bitmap)))
         //    {
         //        pixelBuffer.CopyFromBitmap(bitmap);

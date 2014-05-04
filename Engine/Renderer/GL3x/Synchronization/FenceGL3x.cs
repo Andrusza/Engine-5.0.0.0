@@ -1,15 +1,16 @@
 ﻿#region License
+
 //
 // (C) Copyright 2010 Patrick Cozzi and Deron Ohlarik
 //
 // Distributed under the MIT License.
 // See License.txt or http://www.opensource.org/licenses/mit-license.php.
 //
-#endregion
 
-using System;
-using OpenGlobe.Renderer;
+#endregion License
+
 using OpenTK.Graphics.OpenGL4;
+using System;
 
 namespace OpenGlobe.Renderer.GL3x
 {
@@ -25,31 +26,19 @@ namespace OpenGlobe.Renderer.GL3x
             GL.WaitSync(_name.Value, 0, (long)ArbSync.TimeoutIgnored);
         }
 
-        public override ClientWaitResult ClientWait()
+        public override WaitSyncStatus ClientWait()
         {
             return ClientWait((int)ArbSync.TimeoutIgnored);
         }
 
-        public override ClientWaitResult ClientWait(int timeoutInNanoseconds)
+        public override WaitSyncStatus ClientWait(int timeoutInNanoseconds)
         {
             if ((timeoutInNanoseconds < 0) && (timeoutInNanoseconds != (int)ArbSync.TimeoutIgnored))
             {
                 throw new ArgumentOutOfRangeException("timeoutInNanoseconds");
             }
 
-            ArbSync result = GL.ClientWaitSync(_name.Value, 0, timeoutInNanoseconds);
-
-            switch (result)
-            {
-                case ArbSync.AlreadySignaled:
-                    return ClientWaitResult.AlreadySignaled;
-                case ArbSync.ConditionSatisfied:
-                    return ClientWaitResult.Signaled;
-                case ArbSync.TimeoutExpired:
-                    return ClientWaitResult.TimeoutExpired;
-            }
-
-            return ClientWaitResult.TimeoutExpired;     // ArbSync.WaitFailed
+            return GL.ClientWaitSync(_name.Value, 0, timeoutInNanoseconds);
         }
 
         public override SynchronizationStatus Status()
@@ -57,7 +46,7 @@ namespace OpenGlobe.Renderer.GL3x
             int length;
             int status;
 
-            GL.GetSync(_name.Value, ArbSync.SyncStatus, 1, out length, out status);
+            GL.GetSync(_name.Value, SyncParameterName.SyncStatus, 1, out length, out status);
 
             if (status == (int)ArbSync.Unsignaled)
             {
@@ -80,7 +69,7 @@ namespace OpenGlobe.Renderer.GL3x
             base.Dispose(disposing);
         }
 
-        #endregion
+        #endregion Disposable Members
 
         private FenceNameGL3x _name;
     }

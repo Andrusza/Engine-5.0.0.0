@@ -10,7 +10,7 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 using OpenGlobe.Renderer;
 using OpenGlobe.Core;
 

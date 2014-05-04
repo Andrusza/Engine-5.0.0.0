@@ -18,7 +18,7 @@ namespace OpenGlobe.Renderer.GL3x
     internal class UniformFloatVector2GL3x : Uniform<Vector2F>, ICleanable
     {
         internal UniformFloatVector2GL3x(string name, int location, ICleanableObserver observer)
-            : base(name, UniformType.FloatVector2)
+            : base(name, ActiveUniformType.FloatVec2)
         {
             _location = location;
             _dirty = true;

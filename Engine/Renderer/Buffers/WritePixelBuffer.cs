@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Drawing;
 using System.Drawing.Imaging;
 using Engine.Core;
+using OpenTK.Graphics.OpenGL4;
 
 
 namespace OpenGlobe.Renderer
@@ -40,9 +41,9 @@ namespace OpenGlobe.Renderer
         }
 
         public abstract T[] CopyToSystemMemory<T>(int offsetInBytes, int sizeInBytes) where T : struct;
-        public abstract Bitmap CopyToBitmap(int width, int height, PixelFormat pixelFormat);
+        public abstract Bitmap CopyToBitmap(int width, int height, System.Drawing.Imaging.PixelFormat pixelFormat);
 
         public abstract int SizeInBytes { get; }
-        public abstract PixelBufferUsageHint UsageHint { get; }
+        public abstract BufferUsageHint UsageHint { get; }
     }
 }

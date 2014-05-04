@@ -7,14 +7,12 @@
 //
 #endregion
 
+using OpenTK.Graphics.OpenGL4;
 namespace OpenGlobe.Renderer
 {
     public class UniformBlockMember
     {
-        internal UniformBlockMember(
-            string name,
-            UniformType type,
-            int offsetInBytes)
+        internal UniformBlockMember( string name, ActiveUniformType type, int offsetInBytes)
         {
             _name = name;
             _type = type;
@@ -26,7 +24,7 @@ namespace OpenGlobe.Renderer
             get { return _name; }
         }
 
-        public UniformType Datatype
+        public ActiveUniformType Datatype
         {
             get { return _type; }
         }
@@ -37,7 +35,7 @@ namespace OpenGlobe.Renderer
         }
 
         private string _name;
-        private UniformType _type;
+        private ActiveUniformType _type;
         private int _offsetInBytes;
     }
 }

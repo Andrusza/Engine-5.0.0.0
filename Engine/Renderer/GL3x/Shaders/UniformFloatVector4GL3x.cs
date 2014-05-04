@@ -18,7 +18,7 @@ namespace OpenGlobe.Renderer.GL3x
     internal class UniformFloatVector4GL3x : Uniform<Vector4F>, ICleanable
     {
         internal UniformFloatVector4GL3x(string name, int location, ICleanableObserver observer)
-            : base(name, UniformType.FloatVector4)
+            : base(name, ActiveUniformType.FloatVec4)
         {
             _location = location;
             _dirty = true;

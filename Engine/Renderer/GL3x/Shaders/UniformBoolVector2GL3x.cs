@@ -16,7 +16,7 @@ namespace OpenGlobe.Renderer.GL3x
     internal class UniformBoolVector2GL3x : Uniform<Vector2B>, ICleanable
     {
         internal UniformBoolVector2GL3x(string name, int location, ICleanableObserver observer)
-            : base(name, UniformType.BoolVector2)
+            : base(name, ActiveUniformType.BoolVec2)
         {
             _location = location;
             _dirty = true;

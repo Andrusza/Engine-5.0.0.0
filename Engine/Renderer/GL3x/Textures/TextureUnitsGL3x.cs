@@ -9,7 +9,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 using OpenGlobe.Renderer;
 
 namespace OpenGlobe.Renderer.GL3x

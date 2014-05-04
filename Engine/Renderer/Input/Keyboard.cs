@@ -7,6 +7,7 @@
 //
 #endregion
 
+using OpenTK.Input;
 using System;
 
 namespace OpenGlobe.Renderer
@@ -16,7 +17,7 @@ namespace OpenGlobe.Renderer
         public event EventHandler<KeyboardKeyEventArgs> KeyDown;
         public event EventHandler<KeyboardKeyEventArgs> KeyUp;
 
-        protected virtual void OnKeyDown(KeyboardKey key)
+        protected virtual void OnKeyDown(Key key)
         {
             EventHandler<KeyboardKeyEventArgs> handler = KeyDown;
             if (handler != null)
@@ -25,7 +26,7 @@ namespace OpenGlobe.Renderer
             }
         }
 
-        protected virtual void OnKeyUp(KeyboardKey key)
+        protected virtual void OnKeyUp(Key key)
         {
             EventHandler<KeyboardKeyEventArgs> handler = KeyUp;
             if (handler != null)

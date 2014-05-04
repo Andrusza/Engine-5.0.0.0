@@ -16,7 +16,7 @@ namespace OpenGlobe.Renderer.GL3x
     internal class UniformFloatMatrix44GL3x : Uniform<Matrix4F>, ICleanable
     {
         internal UniformFloatMatrix44GL3x(string name, int location, ICleanableObserver observer)
-            : base(name, UniformType.FloatMatrix44)
+            : base(name, ActiveUniformType.FloatMat4)
         {
             _location = location;
             _value = new Matrix4F();

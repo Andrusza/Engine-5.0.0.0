@@ -1,23 +1,25 @@
 ﻿#region License
+
 //
 // (C) Copyright 2009 Patrick Cozzi and Deron Ohlarik
 //
 // Distributed under the MIT License.
 // See License.txt or http://www.opensource.org/licenses/mit-license.php.
 //
-#endregion
 
-using System.Drawing;
+#endregion License
+
 using OpenTK.Graphics.OpenGL4;
+using System.Drawing;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 
 namespace OpenGlobe.Renderer.GL3x
 {
     internal class ReadPixelBufferGL3x : ReadPixelBuffer
     {
-        public ReadPixelBufferGL3x(PixelBufferUsageHint usageHint, int sizeInBytes)
+        public ReadPixelBufferGL3x(BufferUsageHint usageHint, int sizeInBytes)
         {
-            _bufferObject = new PixelBufferGL3x(BufferTarget.PixelPackBuffer, ToBufferUsageHint(usageHint), sizeInBytes);
+            _bufferObject = new PixelBufferGL3x(BufferTarget.PixelPackBuffer, usageHint, sizeInBytes);
             _usageHint = usageHint;
         }
 
@@ -56,12 +58,12 @@ namespace OpenGlobe.Renderer.GL3x
             get { return _bufferObject.SizeInBytes; }
         }
 
-        public override PixelBufferUsageHint UsageHint
+        public override BufferUsageHint UsageHint
         {
             get { return _usageHint; }
         }
 
-        #endregion
+        #endregion ReadPixelBuffer Members
 
         #region Disposable Members
 
@@ -74,21 +76,9 @@ namespace OpenGlobe.Renderer.GL3x
             base.Dispose(disposing);
         }
 
-        #endregion
-
-        static BufferUsageHint ToBufferUsageHint(PixelBufferUsageHint usageHint)
-        {
-            return _BufferUsageHints[(int)usageHint];
-        }
+        #endregion Disposable Members
 
         private PixelBufferGL3x _bufferObject;
-        private PixelBufferUsageHint _usageHint;
-
-        private static readonly BufferUsageHint[] _BufferUsageHints = new[]
-        {
-            BufferUsageHint.StreamRead,
-            BufferUsageHint.StaticRead,
-            BufferUsageHint.DynamicRead
-        };
+        private BufferUsageHint _usageHint;
     }
 }
