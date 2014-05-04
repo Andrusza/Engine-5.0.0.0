@@ -9,9 +9,5 @@
 
 namespace OpenGlobe.Renderer
 {
-    public enum TextureMagFilter
-    {
-        Nearest,
-        Linear
-    }
+    
 }

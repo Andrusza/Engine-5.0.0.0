@@ -20,14 +20,14 @@ namespace OpenGlobe.Renderer
             _nearestClamp = Device.CreateTexture2DSampler(
                     TextureMinFilter.Nearest,
                     TextureMagFilter.Nearest,
-                    TextureWrapMode.Clamp,
-                    TextureWrapMode.Clamp);
+                    TextureWrapMode.ClampToBorder,
+                    TextureWrapMode.ClampToBorder);
 
             _linearClamp = Device.CreateTexture2DSampler(
                     TextureMinFilter.Linear,
                     TextureMagFilter.Linear,
-                    TextureWrapMode.Clamp,
-                    TextureWrapMode.Clamp);
+                    TextureWrapMode.ClampToBorder,
+                    TextureWrapMode.ClampToBorder);
 
             _nearestRepeat = Device.CreateTexture2DSampler(
                     TextureMinFilter.Nearest,

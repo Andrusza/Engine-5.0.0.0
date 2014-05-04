@@ -532,8 +532,8 @@ namespace OpenGlobe.Renderer.GL3x
 #if DEBUG
             GL.ValidateProgram(_boundShaderProgram.Handle.Value);
 
-            int validateStatus;
-            GL.GetProgram(_boundShaderProgram.Handle.Value, ProgramParameter.ValidateStatus, out validateStatus);
+            int validateStatus = 0;
+            GL.GetProgram(_boundShaderProgram.Handle.Value, GetProgramParameterName.ValidateStatus, out validateStatus);
             if (validateStatus == 0)
             {
                 throw new ArgumentException(

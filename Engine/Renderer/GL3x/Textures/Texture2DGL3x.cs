@@ -205,15 +205,10 @@ namespace OpenGlobe.Renderer.GL3x
 
         private void ApplySampler(TextureSampler sampler)
         {
-            //TextureMinFilter minFilter = TypeConverterGL3x.To(sampler.MinificationFilter);
-            //TextureMagFilter magFilter = TypeConverterGL3x.To(sampler.MagnificationFilter);
-            //TextureWrapMode wrapS = TypeConverterGL3x.To(sampler.WrapS);
-            //TextureWrapMode wrapT = TypeConverterGL3x.To(sampler.WrapT);
-
-            //GL.TexParameter(_target, TextureParameterName.TextureMinFilter, (int)minFilter);
-            //GL.TexParameter(_target, TextureParameterName.TextureMagFilter, (int)magFilter);
-            //GL.TexParameter(_target, TextureParameterName.TextureWrapModeS, (int)wrapS);
-            //GL.TexParameter(_target, TextureParameterName.TextureWrapModeT, (int)wrapT);
+            GL.TexParameter(_target, TextureParameterName.TextureMinFilter, (int)sampler.MinificationFilter);
+            GL.TexParameter(_target, TextureParameterName.TextureMagFilter, (int)sampler.MagnificationFilter);
+            GL.TexParameter(_target, TextureParameterName.TextureWrapS, (int)sampler.WrapS);
+            GL.TexParameter(_target, TextureParameterName.TextureWrapT, (int)sampler.WrapT);
         }
 
         #region Disposable Members

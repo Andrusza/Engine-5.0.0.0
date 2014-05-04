@@ -9,10 +9,5 @@
 
 namespace OpenGlobe.Renderer
 {
-    public enum TextureWrapMode
-    {
-        Clamp,
-        Repeat,
-        MirroredRepeat
-    }
+    
 }

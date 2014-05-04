@@ -18,9 +18,12 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal class ShaderProgramGL3x : ShaderProgram, ICleanableObserver
     {
-        public ShaderProgramGL3x(string vertexShaderSource, string geometryShaderSource, string tessEvaluationShaderSource, string tessControlShaderSource, string fragmentShaderSource)
+        public ShaderProgramGL3x(string vertexShaderSource, string geometryShaderSource, string tessEvaluationShaderSource, string tessControlShaderSource, string fragmentShaderSource,string computeShaderSource)
         {
-            _vertexShader = new ShaderObjectGL3x(ShaderType.VertexShader, vertexShaderSource);
+            if (string.IsNullOrEmpty(vertexShaderSource))
+            {
+                 _vertexShader  = new ShaderObjectGL3x(ShaderType.VertexShader, vertexShaderSource);
+            }
 
             if (string.IsNullOrEmpty(tessEvaluationShaderSource))
             {
@@ -37,12 +40,18 @@ namespace OpenGlobe.Renderer.GL3x
                 _geometryShader = new ShaderObjectGL3x(ShaderType.GeometryShader, geometryShaderSource);
             }
 
-            _fragmentShader = new ShaderObjectGL3x(ShaderType.FragmentShader, fragmentShaderSource);
+            if (string.IsNullOrEmpty(fragmentShaderSource))
+            {
+                _fragmentShader = new ShaderObjectGL3x(ShaderType.FragmentShader, fragmentShaderSource);
+            }
 
             _program = new ShaderProgramNameGL3x();
             int programHandle = _program.Value;
 
-            GL.AttachShader(programHandle, _vertexShader.Handle);
+            if (string.IsNullOrEmpty(vertexShaderSource))
+            {
+                GL.AttachShader(programHandle, _vertexShader.Handle);
+            }
 
             if (string.IsNullOrEmpty(tessEvaluationShaderSource))
             {
@@ -59,7 +68,16 @@ namespace OpenGlobe.Renderer.GL3x
                 GL.AttachShader(programHandle, _geometryShader.Handle);
             }
 
-            GL.AttachShader(programHandle, _fragmentShader.Handle);
+            if (string.IsNullOrEmpty(fragmentShaderSource))
+            {
+                GL.AttachShader(programHandle, _fragmentShader.Handle);
+            }
+
+            if (string.IsNullOrEmpty(computeShaderSource))
+            {
+                GL.AttachShader(programHandle, _computeShader.Handle);
+            }
+
             GL.LinkProgram(programHandle);
 
             int linkStatus = 0;
@@ -283,6 +301,7 @@ namespace OpenGlobe.Renderer.GL3x
             for (int i = 0; i < numberOfUniformBlocks; ++i)
             {
                 //string uniformBlockName = GL.GetActiveUniformBlock()
+                string uniformBlockName = null; //usunąć
 
                 int uniformBlockSizeInBytes;
                 GL.GetActiveUniformBlock(programHandle, i, ActiveUniformBlockParameter.UniformBlockDataSize, out uniformBlockSizeInBytes);
@@ -498,6 +517,7 @@ namespace OpenGlobe.Renderer.GL3x
         private readonly ShaderObjectGL3x _fragmentShader;
         private readonly ShaderObjectGL3x _tessEvaluationShader;
         private readonly ShaderObjectGL3x _tessControlShader;
+        private readonly ShaderObjectGL3x _computeShader;
         private readonly ShaderProgramNameGL3x _program;
         private readonly FragmentOutputsGL3x _fragmentOutputs;
         private readonly ShaderVertexAttributeCollection _vertexAttributes;

@@ -47,15 +47,15 @@ namespace OpenGlobe.Renderer.GL3x
 
                         if (value.Normalize)
                         {
-                            if ((value.ComponentDatatype != ComponentDatatype.Byte) &&
-                                (value.ComponentDatatype != ComponentDatatype.UnsignedByte) &&
-                                (value.ComponentDatatype != ComponentDatatype.Short) &&
-                                (value.ComponentDatatype != ComponentDatatype.UnsignedShort) &&
-                                (value.ComponentDatatype != ComponentDatatype.Int) &&
-                                (value.ComponentDatatype != ComponentDatatype.UnsignedInt))
+                            if ((value.VertexAttribIPointerType != VertexAttribIPointerType.Byte) &&
+                                (value.VertexAttribIPointerType != VertexAttribIPointerType.UnsignedByte) &&
+                                (value.VertexAttribIPointerType != VertexAttribIPointerType.Short) &&
+                                (value.VertexAttribIPointerType != VertexAttribIPointerType.UnsignedShort) &&
+                                (value.VertexAttribIPointerType != VertexAttribIPointerType.Int) &&
+                                (value.VertexAttribIPointerType != VertexAttribIPointerType.UnsignedInt))
                             {
                                 throw new ArgumentException(
-                                    "When Normalize is true, ComponentDatatype must be Byte, UnsignedByte, Short, UnsignedShort, Int, or UnsignedInt.");
+                                    "When Normalize is true, VertexAttribIPointerType must be Byte, UnsignedByte, Short, UnsignedShort, Int, or UnsignedInt.");
                             }
                         }
                     }
@@ -140,11 +140,12 @@ namespace OpenGlobe.Renderer.GL3x
 
             VertexBufferAttribute attribute = _attributes[index].VertexBufferAttribute;
             VertexBufferGL3x bufferObjectGL = (VertexBufferGL3x)attribute.VertexBuffer;
-            
-            //bufferObjectGL.Bind();
+
+            bufferObjectGL.Bind();
+            //GL.GetVertexAttribPointer(index,)
             //GL.VertexAttribPointer(index,
             //    attribute.NumberOfComponents,
-            //    TypeConverterGL3x.To(attribute.ComponentDatatype),
+            //    attribute.VertexAttribIPointerType,
             //    attribute.Normalize,
             //    attribute.StrideInBytes,
             //    attribute.OffsetInBytes);

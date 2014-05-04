@@ -250,9 +250,9 @@ namespace OpenGlobe.Renderer
 
             //        int stride = 2 * SizeInBytes<Vector3F>.Value;
             //        meshBuffers.Attributes[highLocation] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.Float, 3, false, 0, stride);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.Float, 3, false, 0, stride);
             //        meshBuffers.Attributes[lowLocation] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.Float, 3, false, SizeInBytes<Vector3F>.Value, stride);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.Float, 3, false, SizeInBytes<Vector3F>.Value, stride);
 
             //        ignoreAttributes.Add(emulated.Name + "High");
             //        ignoreAttributes.Add(emulated.Name + "Low");
@@ -288,63 +288,63 @@ namespace OpenGlobe.Renderer
             //        VertexBuffer vertexBuffer = Device.CreateVertexBuffer(usageHint, ArraySizeInBytes.Size(valuesArray));
             //        vertexBuffer.CopyFromSystemMemory(valuesArray);
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.Float, 3);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.Float, 3);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.HalfFloat)
             //    {
             //        VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<Half>)attribute).Values, usageHint);
 
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.HalfFloat, 1);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.HalfFloat, 1);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.HalfFloatVector2)
             //    {
             //        VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<Vector2H>)attribute).Values, usageHint);
 
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.HalfFloat, 2);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.HalfFloat, 2);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.HalfFloatVector3)
             //    {
             //        VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<Vector3H>)attribute).Values, usageHint);
 
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.HalfFloat, 3);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.HalfFloat, 3);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.HalfFloatVector4)
             //    {
             //        VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<Vector4H>)attribute).Values, usageHint);
 
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.HalfFloat, 4);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.HalfFloat, 4);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.Float)
             //    {
             //        VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<float>)attribute).Values, usageHint);
 
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.Float, 1);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.Float, 1);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.FloatVector2)
             //    {
             //        VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<Vector2F>)attribute).Values, usageHint);
 
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.Float, 2);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.Float, 2);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.FloatVector3)
             //    {
             //        VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<Vector3F>)attribute).Values, usageHint);
 
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.Float, 3);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.Float, 3);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.FloatVector4)
             //    {
             //        VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<Vector4F>)attribute).Values, usageHint);
 
             //        meshBuffers.Attributes[shaderAttribute.Location] =
-            //            new VertexBufferAttribute(vertexBuffer, ComponentDatatype.Float, 4);
+            //            new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.Float, 4);
             //    }
             //    else if (attribute.Datatype == VertexAttributeType.UnsignedByte)
             //    {
@@ -353,7 +353,7 @@ namespace OpenGlobe.Renderer
             //            VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<byte>)attribute).Values, usageHint);
 
             //            meshBuffers.Attributes[shaderAttribute.Location] =
-            //                new VertexBufferAttribute(vertexBuffer, ComponentDatatype.UnsignedByte, 4, true, 0, 0);
+            //                new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.UnsignedByte, 4, true, 0, 0);
             //        }
 
             //        else if (attribute is VertexAttributeRGB)
@@ -361,14 +361,14 @@ namespace OpenGlobe.Renderer
             //            VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<byte>)attribute).Values, usageHint);
 
             //            meshBuffers.Attributes[shaderAttribute.Location] =
-            //                new VertexBufferAttribute(vertexBuffer, ComponentDatatype.UnsignedByte, 3, true, 0, 0);
+            //                new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.UnsignedByte, 3, true, 0, 0);
             //        }
             //        else
             //        {
             //            VertexBuffer vertexBuffer = CreateVertexBuffer(((VertexAttribute<byte>)attribute).Values, usageHint);
 
             //            meshBuffers.Attributes[shaderAttribute.Location] =
-            //                new VertexBufferAttribute(vertexBuffer, ComponentDatatype.UnsignedByte, 1);
+            //                new VertexBufferAttribute(vertexBuffer, VertexAttribIPointerType.UnsignedByte, 1);
             //        }
             //    }
             //    else

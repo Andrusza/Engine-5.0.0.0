@@ -31,25 +31,22 @@ namespace OpenGlobe.Renderer
             throw new ArgumentException("type");
         }
 
-        public static int SizeOf(ComponentDatatype type)
+        public static int SizeOf(VertexAttribIPointerType type)
         {
             switch (type)
             {
-                case ComponentDatatype.Byte:
-                case ComponentDatatype.UnsignedByte:
+                case VertexAttribIPointerType.Byte:
+                case VertexAttribIPointerType.UnsignedByte:
                     return sizeof(byte);
-                case ComponentDatatype.Short:
+                case VertexAttribIPointerType.Short:
                     return sizeof(short);
-                case ComponentDatatype.UnsignedShort:
+                case VertexAttribIPointerType.UnsignedShort:
                     return sizeof(ushort);
-                case ComponentDatatype.Int:
+                case VertexAttribIPointerType.Int:
                     return sizeof(int);
-                case ComponentDatatype.UnsignedInt:
+                case VertexAttribIPointerType.UnsignedInt:
                     return sizeof(uint);
-                case ComponentDatatype.Float:
-                    return sizeof(float);
-                case ComponentDatatype.HalfFloat:
-                    return SizeInBytes<Half>.Value;
+              
             }
 
             throw new ArgumentException("type");

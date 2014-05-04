@@ -10,6 +10,7 @@
 using System.Diagnostics;
 using OpenGlobe.Core;
 using System;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
@@ -17,7 +18,7 @@ namespace OpenGlobe.Renderer
     {
         public VertexBufferAttribute(
             VertexBuffer vertexBuffer,
-            ComponentDatatype componentDatatype,
+            VertexAttribIPointerType componentDatatype,
             int numberOfComponents)
             : this(vertexBuffer, componentDatatype, numberOfComponents, false, 0, 0)
         {
@@ -25,7 +26,7 @@ namespace OpenGlobe.Renderer
 
         public VertexBufferAttribute(
             VertexBuffer vertexBuffer,
-            ComponentDatatype componentDatatype,
+            VertexAttribIPointerType componentDatatype,
             int numberOfComponents,
             bool normalize,
             int offsetInBytes,
@@ -70,7 +71,7 @@ namespace OpenGlobe.Renderer
             get { return _vertexBuffer; }
         }
 
-        public ComponentDatatype ComponentDatatype
+        public VertexAttribIPointerType VertexAttribIPointerType
         {
             get { return _componentDatatype; }
         }
@@ -96,7 +97,7 @@ namespace OpenGlobe.Renderer
         }
 
         private VertexBuffer _vertexBuffer;
-        private ComponentDatatype _componentDatatype;
+        private VertexAttribIPointerType _componentDatatype;
         private int _numberOfComponents;
         private bool _normalize;
         private int _offsetInBytes;
