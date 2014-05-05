@@ -142,7 +142,7 @@ namespace OpenGlobe.Renderer.GL3x
             VertexBufferGL3x bufferObjectGL = (VertexBufferGL3x)attribute.VertexBuffer;
 
             bufferObjectGL.Bind();
-            //GL.GetVertexAttribPointer(index,)
+            //GL.GetVertexAttribPointer()
             //GL.VertexAttribPointer(index,
             //    attribute.NumberOfComponents,
             //    attribute.VertexAttribIPointerType,

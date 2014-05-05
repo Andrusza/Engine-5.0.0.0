@@ -7,6 +7,7 @@
 //
 #endregion
 
+using OpenTK.Graphics.OpenGL4;
 using System;
 using System.Globalization;
 
@@ -14,9 +15,9 @@ namespace OpenGlobe.Renderer
 {
     public struct Texture2DDescription : IEquatable<Texture2DDescription>
     {
-        public Texture2DDescription(int width, int height, TextureFormat format) : this(width, height, format, false) { }
+        public Texture2DDescription(int width, int height, PixelInternalFormat format) : this(width, height, format, false) { }
 
-        public Texture2DDescription( int width, int height, TextureFormat format, bool generateMipmaps)
+        public Texture2DDescription(int width, int height, PixelInternalFormat format, bool generateMipmaps)
         {
             _width = width;
             _height = height;
@@ -34,7 +35,7 @@ namespace OpenGlobe.Renderer
             get { return _height; }
         }
 
-        public TextureFormat TextureFormat
+        public PixelInternalFormat TextureFormat
         {
             get { return _format; }
         }
@@ -57,11 +58,11 @@ namespace OpenGlobe.Renderer
             get
             {
                 return
-                    _format == TextureFormat.Depth16 || 
-                    _format == TextureFormat.Depth24 || 
-                    _format == TextureFormat.Depth32f || 
-                    _format == TextureFormat.Depth24Stencil8 || 
-                    _format == TextureFormat.Depth32fStencil8;
+                    _format == PixelInternalFormat.DepthComponent16 ||
+                    _format == PixelInternalFormat.DepthComponent24 ||
+                    _format == PixelInternalFormat.DepthComponent32f ||
+                    _format == PixelInternalFormat.Depth24Stencil8 ||
+                    _format == PixelInternalFormat.Depth32fStencil8;
             }
         }
 
@@ -70,8 +71,8 @@ namespace OpenGlobe.Renderer
             get
             {
                 return
-                    _format == TextureFormat.Depth24Stencil8 || 
-                    _format == TextureFormat.Depth32fStencil8;
+                    _format == PixelInternalFormat.Depth24Stencil8 ||
+                    _format == PixelInternalFormat.Depth32fStencil8;
             }
         }
 
@@ -244,7 +245,7 @@ namespace OpenGlobe.Renderer
 
         private readonly int _width;
         private readonly int _height;
-        private readonly TextureFormat _format;
+        private readonly PixelInternalFormat _format;
         private readonly bool _generateMipmaps;
     }
 }

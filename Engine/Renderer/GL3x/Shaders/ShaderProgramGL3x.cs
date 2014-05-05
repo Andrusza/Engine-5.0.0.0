@@ -45,6 +45,11 @@ namespace OpenGlobe.Renderer.GL3x
                 _fragmentShader = new ShaderObjectGL3x(ShaderType.FragmentShader, fragmentShaderSource);
             }
 
+            if (string.IsNullOrEmpty(fragmentShaderSource))
+            {
+                _computeShader = new ShaderObjectGL3x(ShaderType.ComputeShader, computeShaderSource);
+            }
+
             _program = new ShaderProgramNameGL3x();
             int programHandle = _program.Value;
 
@@ -354,14 +359,7 @@ namespace OpenGlobe.Renderer.GL3x
             return uniformBlocks;
         }
 
-        private static UniformBlockMember CreateUniformBlockMember(
-            string name,
-            ActiveUniformType type,
-            int offsetInBytes,
-            int length,
-            int arrayStrideInBytes,
-            int matrixStrideInBytes,
-            int rowMajor)
+        private static UniformBlockMember CreateUniformBlockMember( string name, ActiveUniformType type, int offsetInBytes, int length, int arrayStrideInBytes, int matrixStrideInBytes, int rowMajor)
         {
             if (length == 1)
             {

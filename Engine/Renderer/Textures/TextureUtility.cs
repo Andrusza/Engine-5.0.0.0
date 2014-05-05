@@ -1,14 +1,16 @@
 ﻿#region License
+
 //
 // (C) Copyright 2009 Patrick Cozzi and Deron Ohlarik
 //
 // Distributed under the MIT License.
 // See License.txt or http://www.opensource.org/licenses/mit-license.php.
 //
-#endregion
 
+#endregion License
+
+using OpenTK.Graphics.OpenGL4;
 using System;
-using Engine.Core;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 
 namespace OpenGlobe.Renderer
@@ -27,15 +29,19 @@ namespace OpenGlobe.Renderer
             {
                 case ImagingPixelFormat.Format16bppRgb555:
                     return ImageDatatype.UnsignedShort5551;
+
                 case ImagingPixelFormat.Format16bppRgb565:
                     return ImageDatatype.UnsignedShort565;
+
                 case ImagingPixelFormat.Format24bppRgb:
                 case ImagingPixelFormat.Format32bppRgb:
                 case ImagingPixelFormat.Format32bppArgb:
                     return ImageDatatype.UnsignedByte;
+
                 case ImagingPixelFormat.Format48bppRgb:
                 case ImagingPixelFormat.Format64bppArgb:
                     return ImageDatatype.UnsignedShort;
+
                 case ImagingPixelFormat.Format16bppArgb1555:
                     return ImageDatatype.UnsignedShort1555Reversed;
             }
@@ -43,7 +49,7 @@ namespace OpenGlobe.Renderer
             throw new ArgumentException("pixelFormat");
         }
 
-        public static ImageFormat ImagingPixelFormatToImageFormat(ImagingPixelFormat pixelFormat)
+        public static OpenTK.Graphics.OpenGL4.PixelFormat ImagingPixelFormatToImageFormat(ImagingPixelFormat pixelFormat)
         {
             if (!Supported(pixelFormat))
             {
@@ -57,11 +63,12 @@ namespace OpenGlobe.Renderer
                 case ImagingPixelFormat.Format24bppRgb:
                 case ImagingPixelFormat.Format32bppRgb:
                 case ImagingPixelFormat.Format48bppRgb:
-                    return ImageFormat.BlueGreenRed;
+                    return PixelFormat.Bgr;
+
                 case ImagingPixelFormat.Format16bppArgb1555:
                 case ImagingPixelFormat.Format32bppArgb:
                 case ImagingPixelFormat.Format64bppArgb:
-                    return ImageFormat.BlueGreenRedAlpha;
+                    return PixelFormat.Bgra;
             }
 
             throw new ArgumentException("pixelFormat");
@@ -91,12 +98,7 @@ namespace OpenGlobe.Renderer
             return (i != 0) && ((i & (i - 1)) == 0);
         }
 
-        public static int RequiredSizeInBytes(
-            int width, 
-            int height, 
-            ImageFormat format, 
-            ImageDatatype dataType, 
-            int rowAlignment)
+        public static int RequiredSizeInBytes(int width, int height, PixelFormat format, PixelType dataType, int rowAlignment)
         {
             int rowSize = width * NumberOfChannels(format) * SizeInBytes(dataType);
 
@@ -106,104 +108,106 @@ namespace OpenGlobe.Renderer
             return rowSize * height;
         }
 
-        public static int NumberOfChannels(ImageFormat format)
+        public static int NumberOfChannels(PixelFormat format)
         {
             switch (format)
             {
-                case ImageFormat.StencilIndex:
+                case PixelFormat.StencilIndex:
+                case PixelFormat.DepthComponent:
+                case PixelFormat.Red:
+                case PixelFormat.Green:
+                case PixelFormat.Blue:
+                case PixelFormat.RedInteger:
+                case PixelFormat.GreenInteger:
+                case PixelFormat.BlueInteger:
                     return 1;
-                case ImageFormat.DepthComponent:
-                    return 1;
-                case ImageFormat.Red:
-                    return 1;
-                case ImageFormat.Green:
-                    return 1;
-                case ImageFormat.Blue:
-                    return 1;
-                case ImageFormat.RedGreenBlue:
-                    return 3;
-                case ImageFormat.RedGreenBlueAlpha:
-                    return 4;
-                case ImageFormat.BlueGreenRed:
-                    return 3;
-                case ImageFormat.BlueGreenRedAlpha:
-                    return 4;
-                case ImageFormat.RedGreen:
+
+                case PixelFormat.Rg:
+                case PixelFormat.RgInteger:
+                case PixelFormat.DepthStencil:
                     return 2;
-                case ImageFormat.RedGreenInteger:
-                    return 2;
-                case ImageFormat.DepthStencil:
-                    return 2;
-                case ImageFormat.RedInteger:
-                    return 1;
-                case ImageFormat.GreenInteger:
-                    return 1;
-                case ImageFormat.BlueInteger:
-                    return 1;
-                case ImageFormat.RedGreenBlueInteger:
+
+                case PixelFormat.Rgb:
+                case PixelFormat.Bgr:
+                case PixelFormat.RgbInteger:
+                case PixelFormat.BgrInteger:
                     return 3;
-                case ImageFormat.RedGreenBlueAlphaInteger:
-                    return 4;
-                case ImageFormat.BlueGreenRedInteger:
-                    return 3;
-                case ImageFormat.BlueGreenRedAlphaInteger:
+
+                case PixelFormat.Rgba:
+                case PixelFormat.Bgra:
+                case PixelFormat.RgbaInteger:
+                case PixelFormat.BgraInteger:
                     return 4;
             }
 
             throw new ArgumentException("format");
         }
 
-        public static int SizeInBytes(ImageDatatype dataType)
+        public static int SizeInBytes(PixelType dataType)
         {
             switch (dataType)
             {
-                case ImageDatatype.Byte:
+                case PixelType.Byte:
                     return 1;
-                case ImageDatatype.UnsignedByte:
+
+                case PixelType.UnsignedByte:
                     return 1;
-                case ImageDatatype.Short:
+
+                case PixelType.Short:
                     return 2;
-                case ImageDatatype.UnsignedShort:
+
+                case PixelType.UnsignedShort:
                     return 2;
-                case ImageDatatype.Int:
+
+                case PixelType.Int:
                     return 4;
-                case ImageDatatype.UnsignedInt:
+
+                case PixelType.UnsignedInt:
                     return 4;
-                case ImageDatatype.Float:
+
+                case PixelType.Float:
                     return 4;
-                case ImageDatatype.HalfFloat:
+
+                case PixelType.HalfFloat:
                     return 2;
-                case ImageDatatype.UnsignedByte332:
+
+                case PixelType.UnsignedByte332:
                     return 1;
-                case ImageDatatype.UnsignedShort4444:
+
+                case PixelType.UnsignedShort4444:
                     return 2;
-                case ImageDatatype.UnsignedShort5551:
+
+                case PixelType.UnsignedShort5551:
                     return 2;
-                case ImageDatatype.UnsignedInt8888:
+
+                case PixelType.UnsignedInt8888:
                     return 4;
-                case ImageDatatype.UnsignedInt1010102:
+
+                case PixelType.UnsignedInt1010102:
                     return 4;
-                case ImageDatatype.UnsignedByte233Reversed:
+
+                case PixelType.UnsignedByte233Reversed:
                     return 1;
-                case ImageDatatype.UnsignedShort565:
+
+                case PixelType.UnsignedShort565:
                     return 2;
-                case ImageDatatype.UnsignedShort565Reversed:
+
+                case PixelType.UnsignedShort565Reversed:
                     return 2;
-                case ImageDatatype.UnsignedShort4444Reversed:
+
+                case PixelType.UnsignedShort4444Reversed:
                     return 2;
-                case ImageDatatype.UnsignedShort1555Reversed:
+
+                case PixelType.UnsignedShort1555Reversed:
                     return 2;
-                case ImageDatatype.UnsignedInt8888Reversed:
+
+                case PixelType.UnsignedInt8888Reversed:
                     return 4;
-                case ImageDatatype.UnsignedInt2101010Reversed:
+
+                case PixelType.UnsignedInt2101010Reversed:
                     return 4;
-                case ImageDatatype.UnsignedInt248:
-                    return 4;
-                case ImageDatatype.UnsignedInt10F11F11FReversed:
-                    return 4;
-                case ImageDatatype.UnsignedInt5999Reversed:
-                    return 4;
-                case ImageDatatype.Float32UnsignedInt248Reversed:
+
+                case PixelType.UnsignedInt248:
                     return 4;
             }
 

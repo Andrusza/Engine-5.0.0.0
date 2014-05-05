@@ -1,11 +1,13 @@
 ﻿#region License
+
 //
 // (C) Copyright 2010 Patrick Cozzi and Kevin Ring
 //
 // Distributed under the MIT License.
 // See License.txt or http://www.opensource.org/licenses/mit-license.php.
 //
-#endregion
+
+#endregion License
 
 using OpenTK.Graphics.OpenGL4;
 
@@ -13,38 +15,24 @@ namespace OpenGlobe.Renderer.GL3x
 {
     internal class TextureSamplerGL3x : TextureSampler
     {
-        public TextureSamplerGL3x(
-            TextureMinFilter minificationFilter,
-            TextureMagFilter magnificationFilter,
-            TextureWrapMode wrapS,
-            TextureWrapMode wrapT,
-            float maximumAnistropy)
-            : base(
-                minificationFilter, 
-                magnificationFilter, 
-                wrapS, 
-                wrapT, 
-                maximumAnistropy)
+        public TextureSamplerGL3x(TextureMinFilter minificationFilter, TextureMagFilter magnificationFilter, TextureWrapMode wrapS, TextureWrapMode wrapT, float maximumAnistropy)
+            : base(minificationFilter, magnificationFilter, wrapS, wrapT, maximumAnistropy)
         {
             _name = new SamplerNameGL3x();
 
-            
+            int glMinificationFilter = (int)minificationFilter;
+            int glMagnificationFilter = (int)magnificationFilter;
+            int glWrapS = (int)wrapS;
+            int glWrapT = (int)wrapT;
 
-            //int glMinificationFilter = (int)minificationFilter
-            //int glMagnificationFilter = (int)TextureMinFilter;
-            //int glWrapS = (int)TypeConverterGL3x.To(wrapS);
-            //int glWrapT = (int)TypeConverterGL3x.To(wrapT);
-
-            
-
-            //GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureMinFilter, ref glMinificationFilter);
-            //GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureMagFilter, ref glMagnificationFilter);
-            //GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureWrapModeS, ref glWrapS);
-            //GL.SamplerParameterI(_name.Value, (ArbSamplerObjects)All.TextureWrapModeT, ref glWrapT);
+            GL.SamplerParameterI(_name.Value, SamplerParameterName.TextureMinFilter, ref glMinificationFilter);
+            GL.SamplerParameterI(_name.Value, SamplerParameterName.TextureMagFilter, ref glMagnificationFilter);
+            GL.SamplerParameterI(_name.Value, SamplerParameterName.TextureWrapS, ref glWrapS);
+            GL.SamplerParameterI(_name.Value, SamplerParameterName.TextureWrapT, ref glWrapT);
 
             if (Device.Extensions.AnisotropicFiltering)
             {
-                //GL.SamplerParameter(_name.Value, (ArbSamplerObjects)All.TextureMaxAnisotropyExt, maximumAnistropy);
+                GL.SamplerParameter(_name.Value, SamplerParameterName.TextureMaxAnisotropyExt, maximumAnistropy);
             }
             else
             {
@@ -76,7 +64,7 @@ namespace OpenGlobe.Renderer.GL3x
             base.Dispose(disposing);
         }
 
-        #endregion
+        #endregion Disposable Members
 
         private readonly SamplerNameGL3x _name;
     }

@@ -7,6 +7,7 @@
 //
 #endregion
 
+using OpenTK.Graphics.OpenGL4;
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -23,7 +24,7 @@ namespace OpenGlobe.Renderer
         public byte R { get; set; }
         public byte A { get; set; }
 
-        public static readonly ImageFormat Format = ImageFormat.BlueGreenRedAlpha;
+        public static readonly PixelFormat Format = PixelFormat.Bgra;
         public static readonly ImageDatatype Datatype = ImageDatatype.UnsignedByte;
 
         public BlittableBGRA(Color color)

@@ -56,7 +56,7 @@ namespace OpenGlobe.Renderer.GL3x
             //
             WritePixelBufferGL3x.UnBind();
             BindToLastTextureUnit();
-            //GL.TexImage2D(_target, 0, description.TextureFormat, description.Width, description.Height, 0, description.TextureFormat, description.TextureFormat, new IntPtr());
+            GL.TexImage2D(_target, 0, description.TextureFormat, description.Width, description.Height, 0, description.TextureFormat, description.TextureFormat, new IntPtr());
 
             //
             // Default sampler, compatiable when attaching a non-mimapped 
@@ -95,15 +95,7 @@ namespace OpenGlobe.Renderer.GL3x
 
         #region Texture2D Members
 
-        public override void CopyFromBuffer(
-            WritePixelBuffer pixelBuffer,
-            int xOffset,
-            int yOffset,
-            int width,
-            int height,
-            ImageFormat format,
-            ImageDatatype dataType,
-            int rowAlignment)
+        public override void CopyFromBuffer(WritePixelBuffer pixelBuffer, int xOffset, int yOffset, int width, int height, PixelFormat format, PixelType dataType, int rowAlignment)
         {
             if (pixelBuffer.SizeInBytes < TextureUtility.RequiredSizeInBytes(
                 width, height, format, dataType, rowAlignment))
@@ -135,46 +127,32 @@ namespace OpenGlobe.Renderer.GL3x
 
             WritePixelBufferGL3x bufferObjectGL = (WritePixelBufferGL3x)pixelBuffer;
 
-            //bufferObjectGL.Bind();
-            //BindToLastTextureUnit();
-            //GL.PixelStore(PixelStoreParameter.UnpackAlignment, rowAlignment);
-            //GL.TexSubImage2D(_target, 0,
-            //    xOffset,
-            //    yOffset,
-            //    width,
-            //    height,
-            //    format,
-            //    dataType,
-            //    new IntPtr());
+            bufferObjectGL.Bind();
+            BindToLastTextureUnit();
+            GL.PixelStore(PixelStoreParameter.UnpackAlignment, rowAlignment);
+            GL.TexSubImage2D(_target, 0, xOffset, yOffset, width, height, format, dataType, new IntPtr());
 
             GenerateMipmaps();
         }
 
-        public override ReadPixelBuffer CopyToBuffer(
-            ImageFormat format, 
-            ImageDatatype dataType,
-            int rowAlignment)
+        public override ReadPixelBuffer CopyToBuffer( PixelFormat format, PixelType dataType, int rowAlignment)
         {
-            if (format == ImageFormat.StencilIndex)
+            if (format == PixelFormat.StencilIndex)
             {
                 throw new ArgumentException("StencilIndex is not supported by CopyToBuffer.  Try DepthStencil instead.", "format");
             }
 
             VerifyRowAlignment(rowAlignment);
 
-            //ReadPixelBufferGL3x pixelBuffer = new ReadPixelBufferGL3x(PixelBufferHint.Stream,
-            //    TextureUtility.RequiredSizeInBytes(_description.Width, _description.Height, format, dataType, rowAlignment));
+            ReadPixelBufferGL3x pixelBuffer = new ReadPixelBufferGL3x(BufferUsageHint.StreamRead,TextureUtility.RequiredSizeInBytes(_description.Width, _description.Height, format, dataType, rowAlignment));
 
-            //pixelBuffer.Bind();
-            //BindToLastTextureUnit();
-            //GL.PixelStore(PixelStoreParameter.PackAlignment, rowAlignment);
-            //GL.GetTexImage(_target, 0,
-            //    TypeConverterGL3x.To(format),
-            //    TypeConverterGL3x.To(dataType),
-            //    new IntPtr());
+            pixelBuffer.Bind();
+            BindToLastTextureUnit();
+            GL.PixelStore(PixelStoreParameter.PackAlignment, rowAlignment);
+            GL.GetTexImage(_target, 0, format, dataType, new IntPtr());
 
-            //return pixelBuffer;
-            return null;
+            return pixelBuffer;
+           
         }
 
         private void VerifyRowAlignment(int rowAlignment)

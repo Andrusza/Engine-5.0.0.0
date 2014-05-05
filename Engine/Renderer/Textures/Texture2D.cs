@@ -9,51 +9,34 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
+
 using System.Diagnostics;
 using Engine.Core;
 using OpenGlobe.Core;
+using OpenTK.Graphics.OpenGL4;
 
 namespace OpenGlobe.Renderer
 {
     public abstract class Texture2D : Disposable
     {
-        public virtual void CopyFromBuffer(
-            WritePixelBuffer pixelBuffer,
-            ImageFormat format,
-            ImageDatatype dataType)
+        public virtual void CopyFromBuffer(WritePixelBuffer pixelBuffer, PixelFormat format, PixelType dataType)
         {
             CopyFromBuffer(pixelBuffer, 0, 0, Description.Width, Description.Height, format, dataType, 4);
         }
 
-        public virtual void CopyFromBuffer(
-            WritePixelBuffer pixelBuffer,
-            ImageFormat format,
-            ImageDatatype dataType,
-            int rowAlignment)
+        public virtual void CopyFromBuffer(WritePixelBuffer pixelBuffer, PixelFormat format, PixelType dataType, int rowAlignment)
         {
             CopyFromBuffer(pixelBuffer, 0, 0, Description.Width, Description.Height, format, dataType, rowAlignment);
         }
 
-        public abstract void CopyFromBuffer(
-            WritePixelBuffer pixelBuffer,
-            int xOffset,
-            int yOffset,
-            int width,
-            int height,
-            ImageFormat format,
-            ImageDatatype dataType,
-            int rowAlignment);
+        public abstract void CopyFromBuffer(WritePixelBuffer pixelBuffer, int xOffset, int yOffset, int width, int height, PixelFormat format, PixelType dataType, int rowAlignment);
 
-        public virtual ReadPixelBuffer CopyToBuffer(ImageFormat format, ImageDatatype dataType)
+        public virtual ReadPixelBuffer CopyToBuffer(PixelFormat format, PixelType dataType)
         {
             return CopyToBuffer(format, dataType, 4);
         }
-        
-        public abstract ReadPixelBuffer CopyToBuffer(
-            ImageFormat format, 
-            ImageDatatype dataType,
-            int rowAlignment);
+
+        public abstract ReadPixelBuffer CopyToBuffer(PixelFormat format, PixelType dataType, int rowAlignment);
 
         public abstract Texture2DDescription Description { get; }
 
@@ -85,26 +68,26 @@ namespace OpenGlobe.Renderer
             // The pixel buffer uses four byte row alignment because it matches
             // a bitmap's row alignment (BitmapData.Stride).
             //
-            using (ReadPixelBuffer pixelBuffer = CopyToBuffer(ImageFormat.BlueGreenRed, ImageDatatype.UnsignedByte, 4))
+            using (ReadPixelBuffer pixelBuffer = CopyToBuffer(PixelFormat.Bgr, PixelType.UnsignedByte, 4))
             {
-                Bitmap bitmap = pixelBuffer.CopyToBitmap(Description.Width, Description.Height, PixelFormat.Format24bppRgb);
+                Bitmap bitmap = pixelBuffer.CopyToBitmap(Description.Width, Description.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 bitmap.Save(filename);
             }
         }
 
         private void SaveDepth(string filename)
         {
-            SaveFloat(filename, ImageFormat.DepthComponent);
+            SaveFloat(filename, PixelFormat.DepthComponent);
         }
 
         private void SaveRed(string filename)
         {
-            SaveFloat(filename, ImageFormat.Red);
+            SaveFloat(filename, PixelFormat.Red);
         }
 
-        private void SaveFloat(string filename, ImageFormat imageFormat)
+        private void SaveFloat(string filename, PixelFormat imageFormat)
         {
-            using (ReadPixelBuffer pixelBuffer = CopyToBuffer(imageFormat, ImageDatatype.Float, 1))
+            using (ReadPixelBuffer pixelBuffer = CopyToBuffer(imageFormat, PixelType.Float, 1))
             {
                 float[] depths = pixelBuffer.CopyToSystemMemory<float>();
 
@@ -122,7 +105,7 @@ namespace OpenGlobe.Renderer
                 //
                 float oneOverDelta = (deltaValue > 0) ? (1 / deltaValue) : 1;
 
-                Bitmap bitmap = new Bitmap(Description.Width, Description.Height, PixelFormat.Format24bppRgb);
+                Bitmap bitmap = new Bitmap(Description.Width, Description.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 int j = 0;
                 for (int y = Description.Height - 1; y >= 0; --y)
                 {
