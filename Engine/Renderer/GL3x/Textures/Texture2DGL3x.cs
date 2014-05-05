@@ -54,9 +54,8 @@ namespace OpenGlobe.Renderer.GL3x
             //
             // TexImage2D is just used to allocate the texture so a PBO can't be bound.
             //
-            WritePixelBufferGL3x.UnBind();
             BindToLastTextureUnit();
-            GL.TexImage2D(_target, 0, description.TextureFormat, description.Width, description.Height, 0, description.TextureFormat, description.TextureFormat, new IntPtr());
+            GL.TexImage2D(_target, 0, TypeConverterGL3x.To(description.TextureFormat), description.Width, description.Height, 0, TypeConverterGL3x.TextureToPixelFormat(description.TextureFormat), TypeConverterGL3x.TextureToPixelType(description.TextureFormat), new IntPtr());
 
             //
             // Default sampler, compatiable when attaching a non-mimapped 
