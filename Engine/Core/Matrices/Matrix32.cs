@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 namespace Engine.Core
 {
     /// <summary>
-    /// 3x2 matrix - 3 columns and 2 rows.
+    /// 4x2 matrix - 3 columns and 2 rows.
     /// </summary>
     public class Matrix32<T> : IEquatable<Matrix32<T>> where T : IEquatable<T>
     {

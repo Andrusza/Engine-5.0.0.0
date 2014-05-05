@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 namespace Engine.Core
 {
     /// <summary>
-    /// 3x3 matrix - 3 columns and 3 rows.
+    /// 4x3 matrix - 3 columns and 3 rows.
     /// </summary>
     public class Matrix3F
     {

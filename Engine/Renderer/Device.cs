@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Diagnostics;
 using OpenGlobe.Core;
-using OpenGlobe.Renderer.GL3x;
+using OpenGlobe.Renderer.GL4x;
 using OpenTK.Graphics.OpenGL4;
 using ImagingPixelFormat = System.Drawing.Imaging.PixelFormat;
 using Engine.Core;
@@ -39,7 +39,7 @@ namespace OpenGlobe.Renderer
 
                 ///////////////////////////////////////////////////////////////
 
-                s_extensions = new ExtensionsGL3x();
+                s_extensions = new ExtensionsGL4x();
 
                 ///////////////////////////////////////////////////////////////
 
@@ -103,7 +103,7 @@ namespace OpenGlobe.Renderer
 
         public static GraphicsWindow CreateWindow(int width, int height, string title, GameWindowFlags GameWindowFlags)
         {
-            //return new GraphicsWindowGL3x(width, height, title, GameWindowFlags);
+            //return new GraphicsWindowGL4x(width, height, title, GameWindowFlags);
             return null;
         }
 
@@ -111,7 +111,7 @@ namespace OpenGlobe.Renderer
             string vertexShaderSource,
             string fragmentShaderSource)
         {
-            //return new ShaderProgramGL3x(vertexShaderSource, fragmentShaderSource);
+            //return new ShaderProgramGL4x(vertexShaderSource, fragmentShaderSource);
             return null;
         }
 
@@ -120,18 +120,18 @@ namespace OpenGlobe.Renderer
             string geometryShaderSource,
             string fragmentShaderSource)
         {
-            //return new ShaderProgramGL3x(vertexShaderSource, geometryShaderSource, fragmentShaderSource);
+            //return new ShaderProgramGL4x(vertexShaderSource, geometryShaderSource, fragmentShaderSource);
             return null;
         }
 
         //public static VertexBuffer CreateVertexBuffer(BufferUsageHint usageHint, int sizeInBytes)
         //{
-        //    return new VertexBufferGL3x(usageHint, sizeInBytes);
+        //    return new VertexBufferGL4x(usageHint, sizeInBytes);
         //}
 
         //public static IndexBuffer CreateIndexBuffer(BufferUsageHint usageHint, int sizeInBytes)
         //{
-        //    return new IndexBufferGL3x(usageHint, sizeInBytes);
+        //    return new IndexBufferGL4x(usageHint, sizeInBytes);
         //}
 
         public static MeshBuffers CreateMeshBuffers(Mesh mesh, ShaderVertexAttributeCollection shaderAttributes, BufferUsageHint usageHint)
@@ -392,17 +392,17 @@ namespace OpenGlobe.Renderer
 
         //public static UniformBuffer CreateUniformBuffer(BufferUsageHint usageHint, int sizeInBytes)
         //{
-        //    return new UniformBufferGL3x(usageHint, sizeInBytes);
+        //    return new UniformBufferGL4x(usageHint, sizeInBytes);
         //}
 
         //public static WritePixelBuffer CreateWritePixelBuffer(BufferUsageHint usageHint, int sizeInBytes)
         //{
-        //    return new WritePixelBufferGL3x(usageHint, sizeInBytes);
+        //    return new WritePixelBufferGL4x(usageHint, sizeInBytes);
         //}
 
         //public static Texture2D CreateTexture2D(Texture2DDescription description)
         //{
-        //    return new Texture2DGL3x(description, TextureTarget.Texture2D);
+        //    return new Texture2DGL4x(description, TextureTarget.Texture2D);
         //}
 
         //public static Texture2D CreateTexture2D(Bitmap bitmap, TextureFormat format, bool generateMipmaps)
@@ -412,7 +412,7 @@ namespace OpenGlobe.Renderer
 
         //public static Texture2D CreateTexture2DRectangle(Texture2DDescription description)
         //{
-        //    return new Texture2DGL3x(description, TextureTarget.TextureRectangle);
+        //    return new Texture2DGL4x(description, TextureTarget.TextureRectangle);
         //}
 
         //public static Texture2D CreateTexture2DRectangle(Bitmap bitmap, TextureFormat format)
@@ -428,7 +428,7 @@ namespace OpenGlobe.Renderer
         //        pixelBuffer.CopyFromBitmap(bitmap);
 
         //        Texture2DDescription description = new Texture2DDescription(bitmap.Width, bitmap.Height, format, generateMipmaps);
-        //        Texture2D texture = new Texture2DGL3x(description, textureTarget);
+        //        Texture2D texture = new Texture2DGL4x(description, textureTarget);
         //        texture.CopyFromBuffer(pixelBuffer,
         //            TextureUtility.ImagingPixelFormatToImageFormat(bitmap.PixelFormat),
         //            TextureUtility.ImagingPixelFormatToDatatype(bitmap.PixelFormat));
@@ -486,7 +486,7 @@ namespace OpenGlobe.Renderer
             TextureWrapMode wrapS,
             TextureWrapMode wrapT)
         {
-            return new TextureSamplerGL3x(
+            return new TextureSamplerGL4x(
                 minificationFilter,
                 magnificationFilter,
                 wrapS,
@@ -501,7 +501,7 @@ namespace OpenGlobe.Renderer
             TextureWrapMode wrapT,
             float maximumAnistropy)
         {
-            return new TextureSamplerGL3x(
+            return new TextureSamplerGL4x(
                 minificationFilter,
                 magnificationFilter,
                 wrapS,
@@ -516,7 +516,7 @@ namespace OpenGlobe.Renderer
 
         //public static Fence CreateFence()
         //{
-        //    //return new FenceGL3x(); 
+        //    //return new FenceGL4x(); 
         //    return null;
         //}
 

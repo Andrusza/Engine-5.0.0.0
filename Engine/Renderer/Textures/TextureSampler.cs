@@ -14,12 +14,7 @@ namespace OpenGlobe.Renderer
 {
     public abstract class TextureSampler : Disposable
     {
-        protected TextureSampler(
-            TextureMinFilter minificationFilter,
-            TextureMagFilter magnificationFilter,
-            TextureWrapMode wrapS,
-            TextureWrapMode wrapT,
-            float maximumAnistropy)
+        protected TextureSampler( TextureMinFilter minificationFilter, TextureMagFilter magnificationFilter, TextureWrapMode wrapS, TextureWrapMode wrapT, float maximumAnistropy) 
         {
             _minificationFilter = minificationFilter;
             _magnificationFilter = magnificationFilter;
